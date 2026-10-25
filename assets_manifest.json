@@ -2462,8 +2462,8 @@
       "role": "README.md",
       "destination": "README.md",
       "status": "included",
-      "bytes": 111506,
-      "sha256": "5f168e62aeac702e34ccb589d6fd5e72c8851b475eac5a8a7430a222634811e3",
+      "bytes": 112232,
+      "sha256": "174f590f5c8f138e42bb9d9c605db14d98ae5659c6b81373237c4248df2c1017",
       "methods": [
         "report"
       ],
@@ -6224,7 +6224,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/residual_support/protocol/frozen_selection.json",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "protocol",
@@ -6354,7 +6355,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/frozen_policy/reporting_selection.json",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "protocol",
@@ -6367,7 +6369,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/frozen_policy/scaler.json",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "protocol",
@@ -6380,7 +6383,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/frozen_policy/reward_scale.json",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "protocol",
@@ -6432,7 +6436,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/rm_scaling/rm/small_fit_rows.csv",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "protocol",
@@ -6445,7 +6450,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/rm_scaling/rm/large_fit_rows.csv",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "protocol",
@@ -6458,7 +6464,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/rm_scaling/rm/rm_dev_rows.csv",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "protocol",
@@ -6471,7 +6478,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/policy_diagnostics/rm/C_split_manifest.json",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "protocol",
@@ -6484,7 +6492,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/policy_diagnostics/rm/C_ablation_manifest.json",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6497,7 +6506,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/residual_support/rm/models/additive_ridge.joblib",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6510,7 +6520,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/residual_support/rm/models/external_audit_predictor.joblib",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6523,7 +6534,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/residual_support/rm/models/history_only.joblib",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6536,7 +6548,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/residual_support/rm/models/item_metadata.joblib",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6549,7 +6562,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/residual_support/rm/models/optimized_rm.joblib",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6562,7 +6576,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/policy_diagnostics/rm/C_history_only.joblib",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6575,7 +6590,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/policy_diagnostics/rm/C_item_only.joblib",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6588,7 +6604,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/policy_diagnostics/rm/C_prefix_safe_affinity_extension.joblib",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6601,7 +6618,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/policy_diagnostics/rm/C_refit_residual_support_optimized_control.joblib",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6614,7 +6632,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/policy_diagnostics/rm/C_strict_additive_linear.joblib",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6627,7 +6646,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/policy_diagnostics/rm/prefix_affinity_embeddings.npy",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6640,7 +6660,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/rm_scaling/rm/large_affinity.joblib",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6653,7 +6674,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/rm_scaling/rm/large_base.joblib",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6673,7 +6695,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/analytic_q_distillation_b0.3_seed17_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6693,7 +6716,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/analytic_q_distillation_b0.3_seed17_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6713,7 +6737,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/analytic_q_distillation_b0.3_seed42_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6733,7 +6758,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/analytic_q_distillation_b0.3_seed42_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6753,7 +6779,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/analytic_q_distillation_b0.3_seed73_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6773,7 +6800,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/analytic_q_distillation_b0.3_seed73_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6793,7 +6821,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/analytic_q_distillation_b1_seed17_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6813,7 +6842,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/analytic_q_distillation_b1_seed17_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6833,7 +6863,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/analytic_q_distillation_b1_seed42_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6853,7 +6884,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/analytic_q_distillation_b1_seed42_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6873,7 +6905,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/analytic_q_distillation_b1_seed73_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6893,7 +6926,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/analytic_q_distillation_b1_seed73_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6913,7 +6947,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/exact_expected_reward_b0.3_seed17_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6933,7 +6968,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/exact_expected_reward_b0.3_seed17_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6953,7 +6989,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/exact_expected_reward_b0.3_seed17_no_feedback/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6973,7 +7010,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/exact_expected_reward_b0.3_seed17_no_feedback/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -6993,7 +7031,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/exact_expected_reward_b0.3_seed42_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7013,7 +7052,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/exact_expected_reward_b0.3_seed42_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7033,7 +7073,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/exact_expected_reward_b0.3_seed42_no_feedback/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7053,7 +7094,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/exact_expected_reward_b0.3_seed42_no_feedback/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7073,7 +7115,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/exact_expected_reward_b0.3_seed73_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7093,7 +7136,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/exact_expected_reward_b0.3_seed73_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7113,7 +7157,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/exact_expected_reward_b0.3_seed73_no_feedback/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7133,7 +7178,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/exact_expected_reward_b0.3_seed73_no_feedback/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7153,7 +7199,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/exact_expected_reward_b1_seed17_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7173,7 +7220,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/exact_expected_reward_b1_seed17_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7193,7 +7241,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/exact_expected_reward_b1_seed42_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7213,7 +7262,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/exact_expected_reward_b1_seed42_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7233,7 +7283,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/exact_expected_reward_b1_seed73_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7253,7 +7304,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/exact_expected_reward_b1_seed73_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7273,7 +7325,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/sampled_loo_b0.3_seed17_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7293,7 +7346,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/sampled_loo_b0.3_seed17_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7313,7 +7367,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/sampled_loo_b0.3_seed42_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7333,7 +7388,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/sampled_loo_b0.3_seed42_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7353,7 +7409,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/sampled_loo_b0.3_seed73_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7373,7 +7430,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/sampled_loo_b0.3_seed73_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7393,7 +7451,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/sampled_loo_b1_seed17_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7413,7 +7472,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/sampled_loo_b1_seed17_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7433,7 +7493,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/sampled_loo_b1_seed42_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7453,7 +7514,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/sampled_loo_b1_seed42_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7473,7 +7535,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/sampled_loo_b1_seed73_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7493,7 +7556,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy/runs/sampled_loo_b1_seed73_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7513,7 +7577,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy_diagnostic/runs/exact_expected_reward_b0.3_seed17_continuation/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7533,7 +7598,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/residual_support/policy_diagnostic/runs/exact_expected_reward_b0.3_seed17_continuation/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7553,7 +7619,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/exact/runs/exact_expected_reward_b0.3_seed17_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7573,7 +7640,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/exact/runs/exact_expected_reward_b0.3_seed17_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7593,7 +7661,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/exact/runs/exact_expected_reward_b0.3_seed42_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7613,7 +7682,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/exact/runs/exact_expected_reward_b0.3_seed42_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7633,7 +7703,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/exact/runs/exact_expected_reward_b0.3_seed73_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7653,7 +7724,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/exact/runs/exact_expected_reward_b0.3_seed73_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7673,7 +7745,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/sampled16/runs/sampled_loo_b0.3_seed17_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7693,7 +7766,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/sampled16/runs/sampled_loo_b0.3_seed17_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7713,7 +7787,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/sampled16/runs/sampled_loo_b0.3_seed42_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7733,7 +7808,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/sampled16/runs/sampled_loo_b0.3_seed42_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7753,7 +7829,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/sampled16/runs/sampled_loo_b0.3_seed73_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7773,7 +7850,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/sampled16/runs/sampled_loo_b0.3_seed73_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7793,7 +7871,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/sampled4/runs/sampled_loo_b0.3_seed17_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7813,7 +7892,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/sampled4/runs/sampled_loo_b0.3_seed17_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7833,7 +7913,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/sampled4/runs/sampled_loo_b0.3_seed42_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7853,7 +7934,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/sampled4/runs/sampled_loo_b0.3_seed42_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7873,7 +7955,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/sampled4/runs/sampled_loo_b0.3_seed73_full/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7893,7 +7976,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/sampled4/runs/sampled_loo_b0.3_seed73_full/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7913,7 +7997,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/frozen_policy/policy/exact_gradient_old_deployed_b3_seed17/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7933,7 +8018,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/frozen_policy/policy/exact_gradient_old_deployed_b3_seed17/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7953,7 +8039,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/frozen_policy/policy/exact_gradient_old_deployed_b3_seed42/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7973,7 +8060,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/frozen_policy/policy/exact_gradient_old_deployed_b3_seed42/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -7993,7 +8081,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/frozen_policy/policy/exact_gradient_old_deployed_b3_seed73/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8013,7 +8102,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/frozen_policy/policy/exact_gradient_old_deployed_b3_seed73/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8033,7 +8123,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/frozen_policy/policy/sampled_loo_old_deployed_b1_seed17/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8053,7 +8144,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/frozen_policy/policy/sampled_loo_old_deployed_b1_seed17/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8073,7 +8165,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/frozen_policy/policy/sampled_loo_old_deployed_b3_seed17/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8093,7 +8186,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/frozen_policy/policy/sampled_loo_old_deployed_b3_seed17/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8113,7 +8207,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/frozen_policy/policy/sampled_loo_old_deployed_b3_seed42/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8133,7 +8228,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/frozen_policy/policy/sampled_loo_old_deployed_b3_seed42/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8153,7 +8249,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/frozen_policy/policy/sampled_loo_old_deployed_b3_seed73/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8173,7 +8270,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/frozen_policy/policy/sampled_loo_old_deployed_b3_seed73/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8193,7 +8291,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/A_seed17/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8213,7 +8312,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/A_seed17/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8233,7 +8333,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/A_seed42/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8253,7 +8354,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/A_seed42/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8273,7 +8375,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/A_seed73/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8293,7 +8396,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/A_seed73/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8313,7 +8417,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/E_seed17/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8333,7 +8438,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/E_seed17/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8353,7 +8459,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/E_seed42/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8373,7 +8480,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/E_seed42/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8393,7 +8501,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/E_seed73/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8413,7 +8522,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/E_seed73/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8433,7 +8543,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/L_seed17/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8453,7 +8564,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/L_seed17/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8473,7 +8585,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/L_seed42/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8493,7 +8606,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/L_seed42/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8513,7 +8627,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/L_seed73/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8533,7 +8648,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/L_seed73/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8553,7 +8669,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/S_seed17/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8573,7 +8690,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/S_seed17/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8593,7 +8711,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/S_seed42/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8613,7 +8732,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/S_seed42/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8633,7 +8753,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/S_seed73/best.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "models",
@@ -8653,7 +8774,8 @@
         "models/reward/tabular/priors_for_policy_cache.npz"
       ],
       "runtime_path": "artifacts/rm_scaling/policy/S_seed73/last.pt",
-      "preparation": "Included; no download required."
+      "preparation": "Included; no download required.",
+      "evaluation_metadata": true
     },
     {
       "role": "prepared_data",
@@ -10756,7 +10878,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/residual_support/rm/priors_for_policy_cache.npz",
-      "preparation": "Included fixed protocol/input."
+      "preparation": "Included fixed protocol/input.",
+      "evaluation_metadata": true
     },
     {
       "role": "model_input",
@@ -10769,7 +10892,8 @@
       ],
       "dependencies": [],
       "runtime_path": "artifacts/residual_support/rm/priors_for_rm_fit.npz",
-      "preparation": "Included fixed protocol/input."
+      "preparation": "Included fixed protocol/input.",
+      "evaluation_metadata": true
     },
     {
       "role": "full_model_weight",
@@ -11922,8 +12046,8 @@
       ],
       "dependencies": [],
       "preparation": "Included in this bundle.",
-      "bytes": 7554,
-      "sha256": "29a9ef814118500102d1cb95314c7ddf5a466b5421b3460983182a213309a451"
+      "bytes": 9738,
+      "sha256": "5f5820cbee9f9209249881729f302527877c98529fa84d99cfd6bd4c4e8c975d"
     },
     {
       "destination": "scripts/smoke_e2e.py",
@@ -11970,8 +12094,8 @@
       ],
       "dependencies": [],
       "preparation": "Included in this bundle.",
-      "bytes": 3358,
-      "sha256": "2bda36d89c0fb35cdc3ef3831c276e1f078fe9834226d37e0a28d5a33f9f8de7"
+      "bytes": 7466,
+      "sha256": "4f42f60ccfa5219d065723b6c8094029bce34c71bd74bc42404db57494bbd200"
     },
     {
       "role": "actor",

@@ -16,8 +16,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 111506,
-      "sha256": "5f168e62aeac702e34ccb589d6fd5e72c8851b475eac5a8a7430a222634811e3"
+      "bytes": 112232,
+      "sha256": "174f590f5c8f138e42bb9d9c605db14d98ae5659c6b81373237c4248df2c1017"
     },
     {
       "path": "artifacts/full_model/lrfix/runs/tminus14/q1_exact_ordinary_b1_s17/metrics.jsonl",
@@ -646,8 +646,8 @@
     },
     {
       "path": "assets_manifest.json",
-      "bytes": 448357,
-      "sha256": "80a2f487b26cd7da435270a4e8b2cbfa4f2503bbe464046c6ae4ca1ef344c7b4"
+      "bytes": 452823,
+      "sha256": "471421098e86163af345f6e65b95b97111ba0a8303d6f5d50d8cd0b52380ae19"
     },
     {
       "path": "checks/bundle.json",
@@ -751,13 +751,13 @@
     },
     {
       "path": "checks/validation.json",
-      "bytes": 2729,
-      "sha256": "948417d4168e7bf211614261fa5fbc773506f689decb43c34566fceb38645702"
+      "bytes": 3440,
+      "sha256": "faced2b6215e7eb41e381ab0ca7d49724a48bbd4aa22f53dc6e99b78a52a61a2"
     },
     {
       "path": "checks/validation.md",
-      "bytes": 7324,
-      "sha256": "8b7f9ec9e82c75a261ff872c8d17bf37ffce6ea06e3c6e3d0643c079a38183f0"
+      "bytes": 8230,
+      "sha256": "d835170160cf8e0068c932f209f513d7266f76a448d602b655d6779e5f6073c9"
     },
     {
       "path": "configs/base.yaml",
@@ -3146,8 +3146,8 @@
     },
     {
       "path": "scripts/reproduce.py",
-      "bytes": 7554,
-      "sha256": "29a9ef814118500102d1cb95314c7ddf5a466b5421b3460983182a213309a451"
+      "bytes": 9738,
+      "sha256": "5f5820cbee9f9209249881729f302527877c98529fa84d99cfd6bd4c4e8c975d"
     },
     {
       "path": "scripts/smoke_e2e.py",
@@ -3881,8 +3881,8 @@
     },
     {
       "path": "tests/test_bundle_protocol.py",
-      "bytes": 3358,
-      "sha256": "2bda36d89c0fb35cdc3ef3831c276e1f078fe9834226d37e0a28d5a33f9f8de7"
+      "bytes": 7466,
+      "sha256": "4f42f60ccfa5219d065723b6c8094029bce34c71bd74bc42404db57494bbd200"
     },
     {
       "path": "tests/test_full_model_temporal.py",

@@ -65,5 +65,23 @@
     "all_checkpoint_weights_included": true,
     "full_top10_evidence_included": true,
     "Git_LFS": true
+  },
+  "reproduction_review_2026_10_25": {
+    "tests_passed": 148,
+    "tests_skipped": 1,
+    "new_regression_tests": 5,
+    "stages": 20,
+    "full_raw_data_training": false,
+    "full_GPT_inference": false,
+    "changes": [
+      "Keep saved weights and learned selection artifacts out of fresh training workspaces.",
+      "Preserve the new run state between large-rm, rm-scaling-policy and evaluation.",
+      "Check stage dependencies before execution.",
+      "Include matched-SFT summary, compact-head continuation/selection/evaluation, and full-model analysis."
+    ],
+    "reaggregated_values": 148,
+    "bootstrap_contrasts": 8,
+    "bundle_modules": 124,
+    "bundle_links": 36
   }
 }

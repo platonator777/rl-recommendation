@@ -18,11 +18,16 @@ def commands(stage, work):
         names={'neural-rm':['rm'],'full-model-rl':['rl-cache','rl-pilot','rl-core','rl-freeze'],
                'long-term':['long-term'],'horizon':['horizon'],'horizon-evaluation':['horizon-evaluation']}
         return [legacy(s) for s in names.get(stage,[stage])]
-    if stage=='matched-sft':return [module('tlab.residual_support.sft','--config',cfg('residual_support/sft.yaml'),'--workspace',work,'--prepare')]+[module('tlab.residual_support.sft','--config',cfg('residual_support/sft.yaml'),'--workspace',work,'--method',m) for m in ['dense','last_target']]
+    if stage=='full-model-analysis':return [legacy('analysis')]
+    if stage=='matched-sft':return [module('tlab.residual_support.sft','--config',cfg('residual_support/sft.yaml'),'--workspace',work,'--prepare')]+[module('tlab.residual_support.sft','--config',cfg('residual_support/sft.yaml'),'--workspace',work,'--method',m) for m in ['dense','last_target']]+[module('tlab.residual_support.sft','--config',cfg('residual_support/sft.yaml'),'--workspace',work,'--summarize')]
     if stage=='tabular-rm':return [module('tlab.residual_support.rm','--config',cfg('residual_support/rm.yaml'),'--workspace',work)]
     if stage=='affinity-rm':return [module('tlab.policy_diagnostics.c_rm')]
     if stage=='large-rm':return [module('tlab.rm_scaling.experiment','--stage','prepare')]
-    if stage=='compact-head':return [module('tlab.residual_support.cache','--config',cfg('residual_support/policy.yaml'),'--workspace',work,'--split',s) for s in ['train','development','final']]+[module('tlab.residual_support.train_policy','--config',cfg('residual_support/policy.yaml'),'--workspace',work)]
+    if stage=='compact-head':return [module('tlab.residual_support.cache','--config',cfg('residual_support/policy.yaml'),'--workspace',work,'--split',s) for s in ['train','development','final']]+[
+        module('tlab.residual_support.train_policy','--config',cfg('residual_support/policy.yaml'),'--workspace',work),
+        module('tlab.residual_support.continue_policy','--config',cfg('residual_support/policy_diagnostic.yaml'),'--workspace',work,'--source-run','artifacts/residual_support/policy/runs/exact_expected_reward_b0.3_seed17_full','--diagnostic-name','exact_expected_reward_b0.3_seed17_continuation'),
+        module('tlab.residual_support.train_policy','--config',cfg('residual_support/policy.yaml'),'--workspace',work,'--freeze-selection'),
+        module('tlab.residual_support.evaluation','--config',cfg('residual_support/policy.yaml'),'--workspace',work)]
     if stage=='sample-count':return [module('tlab.policy_diagnostics.run_policy_branch')]
     if stage=='common-cache':return [module('tlab.policy_diagnostics.temporal'),module('tlab.policy_diagnostics.cache_adapter')]
     if stage=='full-model-backtest':return [module('tlab.experiments.full_model_temporal','--config',cfg('full_model_tminus14_reward_scale_fix.yaml'),'--stage',s) for s in ['prepare','train-sft','train-rm','rm-gate','cache','train-rl','validation','final-test']]
@@ -32,12 +37,12 @@ def commands(stage, work):
     if stage=='temporal-evaluate':return [[py,str(ROOT/'scripts/check_models.py'),'--workspace',str(work),'--require-external'],[py,'-c','from tlab.rm_scaling.temporal import run_temporal_once; run_temporal_once()']]
     raise ValueError(stage)
 
-STAGES=['prepare','sft','neural-rm','full-model-rl','full-model-backtest','matched-sft','tabular-rm','affinity-rm','compact-head','common-cache','sample-count','tabular-policy','large-rm','rm-scaling-policy','evaluate','temporal-evaluate','long-term','horizon','horizon-evaluation']
+STAGES=['prepare','sft','neural-rm','full-model-rl','full-model-analysis','full-model-backtest','matched-sft','tabular-rm','affinity-rm','compact-head','common-cache','sample-count','tabular-policy','large-rm','rm-scaling-policy','evaluate','temporal-evaluate','long-term','horizon','horizon-evaluation']
 DEPENDENCIES={
  'prepare':[], 'sft':['prepare'], 'matched-sft':['full-model-backtest'], 'neural-rm':['prepare'],
- 'full-model-rl':['sft','neural-rm'], 'full-model-backtest':['full-model-rl'], 'tabular-rm':['full-model-backtest'], 'affinity-rm':['tabular-rm'],
+ 'full-model-rl':['sft','neural-rm'], 'full-model-analysis':['full-model-rl'], 'full-model-backtest':['full-model-rl'], 'tabular-rm':['full-model-backtest'], 'affinity-rm':['tabular-rm'],
  'compact-head':['tabular-rm'], 'common-cache':['compact-head'], 'sample-count':['compact-head'], 'tabular-policy':['common-cache','affinity-rm'],
- 'large-rm':['affinity-rm'], 'rm-scaling-policy':['large-rm','tabular-policy'],
+ 'large-rm':['tabular-policy'], 'rm-scaling-policy':['large-rm','tabular-policy'],
  'evaluate':['rm-scaling-policy'], 'temporal-evaluate':['evaluate'], 'long-term':['full-model-rl'],
  'horizon':['full-model-rl'], 'horizon-evaluation':['horizon']}
 
@@ -50,13 +55,13 @@ def initialize(work, evaluation=False):
     import yaml
     for name in ['full_model_reward_scale_fix.yaml','full_model_tminus14_reward_scale_fix.yaml']:
         path=work/'configs'/name
-        config=yaml.safe_load(path.read_text())
+        config=yaml.safe_load(path.read_text(encoding='utf-8'))
         artifact=config['project']['artifacts_dir']
         config['project'].update(panels_source_root=artifact+'/panels',cache_source_root=artifact+'/cache',cache_source_read_only=False)
         config['project'].pop('temporal_model_source_root',None)
         config['project'].pop('temporal_e5_source_root',None)
-        path.write_text(yaml.safe_dump(config,sort_keys=False))
-    manifest=json.loads((ROOT/'assets_manifest.json').read_text())
+        path.write_text(yaml.safe_dump(config,sort_keys=False),encoding='utf-8')
+    manifest=json.loads((ROOT/'assets_manifest.json').read_text(encoding='utf-8'))
     for asset in manifest['assets']:
         runtime=asset.get('runtime_path')
         if asset['status']=='included' and runtime and (evaluation or not asset.get('evaluation_metadata')):
@@ -64,6 +69,17 @@ def initialize(work, evaluation=False):
             if not dst.exists():
                 dst.parent.mkdir(parents=True,exist_ok=True)
                 shutil.copy2(ROOT/asset['destination'],dst)
+                if not evaluation and runtime=='artifacts/policy_diagnostics/protocol/budget.json':
+                    budget=json.loads(dst.read_text(encoding='utf-8'))
+                    budget['measured_work']=[]
+                    budget['wall_time_seconds']=0
+                    budget['remaining_new_stage_seconds']=budget['new_stage_cap_seconds']
+                    budget['remaining_to_total_stop_from_known_lower_bound_seconds']=budget['remaining_to_stop_threshold_seconds_from_lower_bound']
+                    dst.write_text(json.dumps(budget,indent=2),encoding='utf-8')
+                if not evaluation and runtime=='artifacts/policy_diagnostics/protocol/stage_status.json':
+                    status=json.loads(dst.read_text(encoding='utf-8'))
+                    status['stages']={name:{'status':'planned','evidence':[]} for name in status['stages']}
+                    dst.write_text(json.dumps(status,indent=2),encoding='utf-8')
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
@@ -85,9 +101,16 @@ def main():
     done=json.loads(receipt.read_text()) if receipt.exists() else []
     training=set(STAGES)-{'evaluate','temporal-evaluate'}
     if any(s in done for s in stages if s in training):p.error('stage already executed here; use a fresh workspace for a new training run')
-    if any(s in training for s in stages) and (work/'artifacts/rm_scaling/run_status.json').exists():
+    if any(s in training for s in stages) and (work/'artifacts/rm_scaling/run_status.json').exists() and 'large-rm' not in done:
         p.error('historical completed state detected; use a fresh workspace')
-    initialize(work,evaluation=all(s in {'evaluate','temporal-evaluate'} for s in stages))
+    available=set(done)
+    for s in stages:
+        # A separate evaluation workspace may use bundled weights and externally prepared caches.
+        if s in training or available & training:
+            missing=set(DEPENDENCIES[s])-available
+            if missing:p.error(f'{s} requires completed stages: {", ".join(sorted(missing))}')
+        available.add(s)
+    initialize(work,evaluation=not (set(stages)|set(done)) & training)
     env=dict(os.environ,TLAB_WORKSPACE=str(work),PYTHONPATH=str(ROOT/'src'),PYTHONIOENCODING='utf-8')
     for row in plan:
         for cmd in row['commands']:subprocess.run(cmd,cwd=work,env=env,check=True)
