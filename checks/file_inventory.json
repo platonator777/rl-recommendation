@@ -16,8 +16,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 111522,
-      "sha256": "2f3444bbed246849f5b0264cf30ef97dbe1e447de6036a21e1856262cecf8513"
+      "bytes": 111506,
+      "sha256": "5f168e62aeac702e34ccb589d6fd5e72c8851b475eac5a8a7430a222634811e3"
     },
     {
       "path": "artifacts/full_model/lrfix/runs/tminus14/q1_exact_ordinary_b1_s17/metrics.jsonl",
@@ -647,7 +647,7 @@
     {
       "path": "assets_manifest.json",
       "bytes": 448357,
-      "sha256": "e21a84b842a27081151d55a595487bf0d77a52ba9f5b52c8855e46d504b85a75"
+      "sha256": "80a2f487b26cd7da435270a4e8b2cbfa4f2503bbe464046c6ae4ca1ef344c7b4"
     },
     {
       "path": "checks/bundle.json",
