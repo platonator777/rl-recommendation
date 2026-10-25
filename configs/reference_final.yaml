@@ -1,0 +1,362 @@
+project:
+  seed: 17
+  data_dir: data
+  artifacts_dir: artifacts/reference
+dataset:
+  repo_id: yandex/yambda
+  revision: main
+  files:
+    listens: flat/50m/listens.parquet
+    likes: flat/50m/likes.parquet
+    unlikes: flat/50m/unlikes.parquet
+  timestamp_unit_seconds: 1
+  timestamp_bin_seconds: 5
+  rm_user_split_seed: 17
+  rm_audit_fraction: 0.2
+  catalog_size: 20000
+  history_events: 200
+  history_length: 201
+  train_days: 21
+  validation_days: 14
+  test_days: 7
+  rm_validation_days: 7
+  rl_anchor_days: 7
+model:
+  n_layer: 4
+  n_embd: 256
+  n_head: 4
+  n_positions: 256
+  dropout: 0.1
+training:
+  precision: auto
+  rl_learning_rate: 1.0e-05
+  rl_group_size: 8
+  rl_clip_epsilon: 0.2
+  validation_seed: 17
+  rl_validation_seed: 17
+  rl_anchor_seed: 17
+  rl_reward_scale_seed: 90017
+  rl_validation_anchors_per_user: 10
+  rl_reward_cache_contexts: 512
+  rl_rollout_batch_contexts: 16
+  rl_minibatch_contexts: 16
+  rl_rollout_batches: 5000
+  rl_update_epochs:
+  - 1
+  - 4
+  rl_old_policy_kl_stop: 0.02
+  rl_max_rollout_batches: 10000
+  rl_checkpoint_interval: 100
+  rl_validation_interval_batches: 500
+  rl_reward_scale_contexts: 512
+  rl_reward_catalog_chunk_size: 512
+data:
+  source_dir: data/raw
+  processed_dir: data/processed
+  num_workers: 0
+final:
+  selection_id: reference_final_validation_frozen_20261014
+  selection_split: validation
+  selected_family: GRPO_Q1_H1_beta1_centered_corrected_reuse1
+  selection_rule: Freeze the previously selected H=1 Q1 beta=1 centered-corrected,
+    reuse=1 candidates by rollout seed using validation-only ranking and stated point/CI
+    guardrails. Freeze SFT, matched same-walltime CE, Q2-seconds screen and H=5 checkpoints
+    as comparison/diagnostic candidates. No Test metric or policy score from RM_audit
+    is used for selection.
+  selection_rationale: The primary comparison is incremental RL gain from the weak
+    and strong seed17 SFT starts under the qualified Q1 RM_reference fit, with rollout seeds
+    17/42/73. Exactly one strong SFT 2M-target × 10-additional-pass recipe was trained
+    on seed17 per user direction; no strong SFT training runs on seeds42/73 were performed.
+    Those seeds are rollout randomness only and reuse the frozen seed17 actors. The
+    candidate set also preserves same-walltime CE, Q2 and H=5 diagnostics, including
+    guardrail failures, for transparent comparison. The existing Test split was previously
+    opened, so any final Test result is a post_test_research_iteration and is not
+    a fresh holdout.
+  test_status: post_test_research_iteration
+  model_config: configs/reference_rl.yaml
+  output: artifacts/reference/final_test_evaluation_reference.json
+  test_protocol:
+    anchors_per_user: 10
+    anchor_seed: 17
+    batch_size: 16
+    top_k: 10
+    bootstrap_seed: 17
+  models:
+  - name: SFTweak
+    family: SFT
+    seed: 17
+    role: reference
+    checkpoint: artifacts/reference/runs/sft_weak_seed17_mb16/best.pt
+    run_manifest: artifacts/reference/runs/sft_weak_seed17_mb16/run_manifest.json
+    validation_evidence:
+    - artifacts/reference/policy_validation_controls_q2_seed17.json
+    validation_summary:
+      validation_ndcg10: 0.004664011
+      source: full_catalog_validation
+  - name: SFTstrong
+    family: SFT_strong_2M_x10
+    seed: 17
+    role: reference
+    checkpoint: artifacts/reference/runs/sft_strong_seed17/best.pt
+    run_manifest: artifacts/reference/runs/sft_strong_seed17/run_manifest.json
+    validation_evidence:
+    - artifacts/reference/policy_validation_controls_q2_seed17.json
+    validation_summary:
+      validation_ndcg10: 0.0160853038
+      strong_sft_training_seeds:
+      - 17
+      scope: single strong SFT run by user direction
+  - name: CEweak
+    family: CE_same_walltime
+    seed: 17
+    role: diagnostic
+    checkpoint: artifacts/reference/runs/same_ce_weak_seed17/best.pt
+    run_manifest: artifacts/reference/runs/same_ce_weak_seed17/run_manifest.json
+    validation_evidence:
+    - artifacts/reference/policy_validation_controls_q2_seed17.json
+    reference_name: SFTweak
+    validation_summary:
+      validation_ndcg10: 0.008019506
+      wall_seconds: 663.2757
+  - name: CEstrong
+    family: CE_same_walltime
+    seed: 17
+    role: diagnostic
+    checkpoint: artifacts/reference/runs/same_ce_strong_seed17/best.pt
+    run_manifest: artifacts/reference/runs/same_ce_strong_seed17/run_manifest.json
+    validation_evidence:
+    - artifacts/reference/policy_validation_controls_q2_seed17.json
+    reference_name: SFTstrong
+    validation_summary:
+      validation_ndcg10: 0.015145588
+      wall_seconds: 666.5918
+  - name: weak17
+    family: GRPO_Q1_H1_beta1_centered_corrected_reuse1
+    seed: 17
+    role: selected_validation_candidate
+    checkpoint: artifacts/reference/runs/grpo_reference_q1_weak17_reuse1_beta1/validation_checkpoints/update_03500.pt
+    run_manifest: artifacts/reference/runs/grpo_reference_q1_weak17_reuse1_beta1/run_manifest.json
+    validation_evidence:
+    - artifacts/reference/policy_validation_beta1_matched_seeds_17_42_73_final.json
+    reference_name: SFTweak
+    validation_summary:
+      update: 3500
+      validation_point_changes:
+        ndcg@10_absolute: 0.0008755794561322913
+        ndcg@10_relative: 0.1877310014211666
+        exposure_coverage_relative: -0.08830845771144269
+        head_share_top10_absolute: -0.0034262155245948223
+        repeat_rate_top10_absolute: -0.0003696332101222645
+      bootstrap_ndcg10:
+        mean_difference: 0.0008755794561322905
+        ci_95_low: 0.00022361498785528462
+        ci_95_high: 0.0015818041763194372
+        n_users: 7034
+        repetitions: 2000
+      point_guardrails:
+        ndcg_loss_at_most_2pct: true
+        coverage_loss_at_most_10pct: true
+        head_share_increase_at_most_5pp: true
+        repeat_increase_at_most_5pp: true
+      ci_guardrails:
+        ndcg_ci_lower_within_2pct_loss: true
+  - name: strong17
+    family: GRPO_Q1_H1_beta1_centered_corrected_reuse1
+    seed: 17
+    role: selected_validation_candidate
+    checkpoint: artifacts/reference/runs/grpo_reference_q1_strong17_beta1_exact_update500/last.pt
+    run_manifest: artifacts/reference/runs/grpo_reference_q1_strong17_beta1_exact_update500/run_manifest.json
+    validation_evidence:
+    - artifacts/reference/policy_validation_beta1_matched_seeds_17_42_73_final.json
+    reference_name: SFTstrong
+    validation_summary:
+      update: 500
+      validation_point_changes:
+        ndcg@10_absolute: 0.0006693139937573728
+        ndcg@10_relative: 0.04161027999256861
+        exposure_coverage_relative: -0.03532008830022082
+        head_share_top10_absolute: 0.006653397782200754
+        repeat_rate_top10_absolute: -0.0010520329826556735
+      bootstrap_ndcg10:
+        mean_difference: 0.0006693139937573822
+        ci_95_low: -0.0002914844485521691
+        ci_95_high: 0.001613812316719078
+        n_users: 7034
+        repetitions: 2000
+      point_guardrails:
+        ndcg_loss_at_most_2pct: true
+        coverage_loss_at_most_10pct: true
+        head_share_increase_at_most_5pp: true
+        repeat_increase_at_most_5pp: true
+      ci_guardrails:
+        ndcg_ci_lower_within_2pct_loss: true
+  - name: weak42
+    family: GRPO_Q1_H1_beta1_centered_corrected_reuse1
+    seed: 42
+    role: selected_validation_candidate
+    checkpoint: artifacts/reference/runs/grpo_main_h1_rm_reference_weak_seed42_beta1/validation_checkpoints/update_04000.pt
+    run_manifest: artifacts/reference/runs/grpo_main_h1_rm_reference_weak_seed42_beta1/run_manifest.json
+    validation_evidence:
+    - artifacts/reference/policy_validation_beta1_matched_seeds_17_42_73_final.json
+    reference_name: SFTweak
+    validation_summary:
+      update: 4000
+      validation_point_changes:
+        ndcg@10_absolute: 0.0009494094833059959
+        ndcg@10_relative: 0.20356072976757655
+        exposure_coverage_relative: -0.09203980099502496
+        head_share_top10_absolute: -0.0020187659937446756
+        repeat_rate_top10_absolute: -0.0004549331816889393
+      bootstrap_ndcg10:
+        mean_difference: 0.0009494094833059944
+        ci_95_low: 0.0002620751138002727
+        ci_95_high: 0.0016943037817084884
+        n_users: 7034
+        repetitions: 2000
+      point_guardrails:
+        ndcg_loss_at_most_2pct: true
+        coverage_loss_at_most_10pct: true
+        head_share_increase_at_most_5pp: true
+        repeat_increase_at_most_5pp: true
+      ci_guardrails:
+        ndcg_ci_lower_within_2pct_loss: true
+  - name: strong42
+    family: GRPO_Q1_H1_beta1_centered_corrected_reuse1
+    seed: 42
+    role: selected_validation_candidate
+    checkpoint: artifacts/reference/runs/grpo_main_h1_rm_reference_strong_seed42_beta1/validation_checkpoints/update_01500.pt
+    run_manifest: artifacts/reference/runs/grpo_main_h1_rm_reference_strong_seed42_beta1/run_manifest.json
+    validation_evidence:
+    - artifacts/reference/policy_validation_beta1_matched_seeds_17_42_73_final.json
+    reference_name: SFTstrong
+    validation_summary:
+      update: 1500
+      validation_point_changes:
+        ndcg@10_absolute: 0.0004478077700575539
+        ndcg@10_relative: 0.02783955941267413
+        exposure_coverage_relative: -0.04225796278776417
+        head_share_top10_absolute: 0.002601649132783629
+        repeat_rate_top10_absolute: -0.001976116007961326
+      bootstrap_ndcg10:
+        mean_difference: 0.00044780777005756333
+        ci_95_low: -0.0005795266044997681
+        ci_95_high: 0.0014888921242515835
+        n_users: 7034
+        repetitions: 2000
+      point_guardrails:
+        ndcg_loss_at_most_2pct: true
+        coverage_loss_at_most_10pct: true
+        head_share_increase_at_most_5pp: true
+        repeat_increase_at_most_5pp: true
+      ci_guardrails:
+        ndcg_ci_lower_within_2pct_loss: false
+  - name: weak73
+    family: GRPO_Q1_H1_beta1_centered_corrected_reuse1
+    seed: 73
+    role: selected_validation_candidate
+    checkpoint: artifacts/reference/runs/grpo_main_h1_rm_reference_weak_seed73_beta1/validation_checkpoints/update_04500.pt
+    run_manifest: artifacts/reference/runs/grpo_main_h1_rm_reference_weak_seed73_beta1/run_manifest.json
+    validation_evidence:
+    - artifacts/reference/policy_validation_beta1_matched_seeds_17_42_73_final.json
+    reference_name: SFTweak
+    validation_summary:
+      update: 4500
+      validation_point_changes:
+        ndcg@10_absolute: 0.0011597197774771582
+        ndcg@10_relative: 0.2486528820073468
+        exposure_coverage_relative: -0.0945273631840795
+        head_share_top10_absolute: 0.002957065680978088
+        repeat_rate_top10_absolute: -0.0003127665624111445
+      bootstrap_ndcg10:
+        mean_difference: 0.0011597197774771593
+        ci_95_low: 0.0003654771504635691
+        ci_95_high: 0.00195481124833999
+        n_users: 7034
+        repetitions: 2000
+      point_guardrails:
+        ndcg_loss_at_most_2pct: true
+        coverage_loss_at_most_10pct: true
+        head_share_increase_at_most_5pp: true
+        repeat_increase_at_most_5pp: true
+      ci_guardrails:
+        ndcg_ci_lower_within_2pct_loss: true
+  - name: strong73
+    family: GRPO_Q1_H1_beta1_centered_corrected_reuse1
+    seed: 73
+    role: selected_validation_candidate
+    checkpoint: artifacts/reference/runs/grpo_main_h1_rm_reference_strong_seed73_beta1/validation_checkpoints/update_00500.pt
+    run_manifest: artifacts/reference/runs/grpo_main_h1_rm_reference_strong_seed73_beta1/run_manifest.json
+    validation_evidence:
+    - artifacts/reference/policy_validation_beta1_matched_seeds_17_42_73_final.json
+    reference_name: SFTstrong
+    validation_summary:
+      update: 500
+      validation_point_changes:
+        ndcg@10_absolute: 0.0004833514659339268
+        ndcg@10_relative: 0.03004925942071357
+        exposure_coverage_relative: -0.033007463471039666
+        head_share_top10_absolute: 0.005032698322433887
+        repeat_rate_top10_absolute: -0.0009240830253056664
+      bootstrap_ndcg10:
+        mean_difference: 0.0004833514659339263
+        ci_95_low: -0.0003825796883247174
+        ci_95_high: 0.0013086968877140423
+        n_users: 7034
+        repetitions: 2000
+      point_guardrails:
+        ndcg_loss_at_most_2pct: true
+        coverage_loss_at_most_10pct: true
+        head_share_increase_at_most_5pp: true
+        repeat_increase_at_most_5pp: true
+      ci_guardrails:
+        ndcg_ci_lower_within_2pct_loss: false
+  - name: H5_update500
+    family: GRPO_Q1_H5_beta1
+    seed: 17
+    role: diagnostic
+    checkpoint: artifacts/reference/runs/grpo_h5_reference_strong_seed17_beta1_full/validation_checkpoints/update_00500.pt
+    run_manifest: artifacts/reference/runs/grpo_h5_reference_strong_seed17_beta1_full/run_manifest.json
+    validation_evidence:
+    - artifacts/reference/h5_policy_validation_seed17.json
+    reference_name: SFTstrong
+    validation_summary:
+      update: 500
+      validation_ndcg10: 0.016907999
+      ci_guardrail_pass: true
+      rm_fit_unsupported_top10: 0.1258
+  - name: H5_update1000
+    family: GRPO_Q1_H5_beta1
+    seed: 17
+    role: diagnostic
+    checkpoint: artifacts/reference/runs/grpo_h5_reference_strong_seed17_beta1_full/validation_checkpoints/update_01000.pt
+    run_manifest: artifacts/reference/runs/grpo_h5_reference_strong_seed17_beta1_full/run_manifest.json
+    validation_evidence:
+    - artifacts/reference/h5_policy_validation_seed17.json
+    reference_name: SFTstrong
+    validation_summary:
+      update: 1000
+      validation_ndcg10: 0.016237123
+      ci_guardrail_pass: false
+      rm_fit_unsupported_top10: 0.1785
+  - name: Q2_seconds_weak
+    family: GRPO_Q2_seconds_beta1_screen
+    seed: 17
+    role: diagnostic
+    checkpoint: artifacts/reference/runs/grpo_q2_seconds_weak_seed17_beta1_1000/last.pt
+    run_manifest: artifacts/reference/runs/grpo_q2_seconds_weak_seed17_beta1_1000/run_manifest.json
+    validation_evidence:
+    - artifacts/reference/policy_validation_controls_q2_seed17.json
+    reference_name: SFTweak
+    validation_summary:
+      validation_guardrail_pass: false
+  - name: Q2_seconds_strong
+    family: GRPO_Q2_seconds_beta1_screen
+    seed: 17
+    role: diagnostic
+    checkpoint: artifacts/reference/runs/grpo_q2_seconds_strong_seed17_beta1_1000/last.pt
+    run_manifest: artifacts/reference/runs/grpo_q2_seconds_strong_seed17_beta1_1000/run_manifest.json
+    validation_evidence:
+    - artifacts/reference/policy_validation_controls_q2_seed17.json
+    reference_name: SFTstrong
+    validation_summary:
+      validation_guardrail_pass: false

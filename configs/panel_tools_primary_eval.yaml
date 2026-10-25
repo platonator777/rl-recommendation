@@ -1,0 +1,12 @@
+protocol_id: tlab_yambda_policy_diagnostics026-10-21_r1
+selection_id: frozen_primary_one_event_per_user_v1
+source_panel: artifacts/panel_tools/evaluation/full_model_sft_weak_seed17_validation_panel.jsonl
+split: validation
+targets_per_user: 1
+selection_seed: 17
+selection_rule: "For each uid, choose the event with minimum SHA256(seed:event_id) among the already frozen pre-scoring panel; no ratio, catalog, or model-score filter."
+primary_metric: user_macro_ndcg_at_10
+secondary_metrics: [user_macro_recall_at_10, positive_nonorganic, new_positive_nonorganic, repeat_vs_new, known_catalog_vs_oov]
+oov_target: unconditional_miss
+evaluation_label: frozen_retrospective_evaluation
+exposure_note: "The Yambda revision and validation periods were already explored in V1-full_model; this is not an independent test."

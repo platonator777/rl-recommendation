@@ -1,0 +1,34 @@
+protocol_id: tlab_yambda_residual_support_exploratory_2026-10-22
+core_config: configs/residual_support/core.yaml
+rm_config: configs/residual_support/rm.yaml
+panels:
+  train: artifacts/residual_support/panels/a_rl_train.jsonl
+  development: artifacts/residual_support/panels/validation_development.jsonl
+  final: artifacts/residual_support/panels/test_retrospective.jsonl
+cache_root: artifacts/residual_support/cache
+support_size: 500
+history_events: 200
+batch_size: 16
+train:
+  seed_values: [17, 42, 73]
+  beta_values: [1.0, 0.3]
+  objectives: [sampled_loo, exact_expected_reward, analytic_q_distillation]
+  hidden_dim: 32
+  learning_rate: 0.001
+  batch_contexts: 32
+  samples_per_context: 4
+  max_updates: 10000
+  check_every: 500
+  minimum_updates: 1000
+  patience_checks: 8
+  objective_min_delta: 0.0001
+  no_feedback_control: true
+  dev_guard_tolerance: 0.02
+  bootstrap_draws: 2000
+  checkpoint_rule: "Among registered candidates, select by highest development support-constrained exact objective subject to the paired 2% NDCG guard versus strong; if no trained method passes, retain strong as primary and report all methods."
+outputs:
+  run_root: artifacts/residual_support/policy
+  evaluation_root: artifacts/residual_support/evaluation
+selection:
+  additional_run_manifests:
+    - artifacts/residual_support/policy_diagnostic/runs/exact_expected_reward_b0.3_seed17_continuation/run_manifest.json

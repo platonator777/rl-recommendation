@@ -1,0 +1,14 @@
+{
+  "mean": 0.675908088684082,
+  "std": 0.4220077097415924,
+  "std_floor": 0.001,
+  "version": "residual_support_f_rm_fit_sample_ratio_z_v1",
+  "fit_target_rows": 26423,
+  "fit_target_users": 5475,
+  "target_range": [
+    0.0,
+    1.0
+  ],
+  "fit_feature_cutoff_raw_exclusive": 18501444.25,
+  "source_rows_sha256": "d5238bed68632ac452943263454a236c3fd2559457f0dca240d601919991c49b"
+}

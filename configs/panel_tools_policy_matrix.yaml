@@ -1,0 +1,71 @@
+protocol_id: tlab_yambda_policy_diagnostics026-10-21_r1
+selection_id: frozen_core_policy_matrix_v1
+objective: normalized_ratio
+seed: 17
+seed_schedule: [17, 42]
+catalog:
+  bridge_size: 20000
+  reference_checkpoint: models/actor/weak.pt
+evaluation:
+  primary_split: validation
+  primary_targets_per_user: 1
+  primary_topk: 10
+  panel_selection_seed: 17
+  primary_panel_file: artifacts/panel_tools/evaluation/frozen_primary_validation_panel.jsonl
+  label: frozen retrospective evaluation
+support:
+  primary_k: 500
+  sensitivity_k: 1000
+  sensitivity_contexts: 128
+  full_catalog_orientation_contexts: 128
+  preserve_reference_mass: true
+  preserve_unchanged_tail: true
+analytic_policy:
+  beta_grid: [3.0, 1.0, 0.3, 0.1]
+  normalization: frozen_reward_scale_v1
+trainable_policy:
+  hidden_width: 32
+  beta_values: [1.0, 0.3]
+  max_pilot_updates: 100
+  methods: [sampled_loo, exact_expected_reward, analytic_q_distillation]
+  training_contexts:
+    split: A_RL
+    contexts: 512
+    one_anchor_per_user: true
+    selection_seed: 17
+    panel_file: artifacts/panel_tools/evaluation/frozen_a_rl_policy_train_panel.jsonl
+    samples_per_context: 4
+  feature_variants:
+    - name: full_available
+      objectives: [sampled_loo, exact_expected_reward, analytic_q_distillation]
+      includes_past_ratio: true
+      includes_artist_mapping: false
+    - name: no_feedback
+      objectives: [exact_expected_reward]
+      includes_past_ratio: false
+      includes_artist_mapping: false
+repeat_control:
+  method: history_frequency_reranker
+  score: strict_prior_count_in_200_events
+  tie_break: base_actor_log_probability_then_raw_item_id
+baseline_controls:
+  train_popularity: all_known_train_catalog_counts
+  recent_train_popularity:
+    window_days: 14
+    cutoff: train_cutoff_exclusive
+    population: all_known_catalog_events_in_train
+  smoothed_markov:
+    alpha_popularity_pseudocount_mass: 1.0
+    selection: fixed_without_a_panel_tools_alpha_sweep
+  history_frequency: strict_prior_count_in_200_events
+training_budget:
+  phase_cap_hours: 5
+  first_seed: 17
+  second_seed: 42
+  third_seed: null
+  decision_rule: "Run seed 42 only if the 100-step pilot and final evaluation remain within the 5-hour head phase cap; otherwise report a seed-17 pilot without an optimizer-stability claim."
+selection_constraints:
+  no_policy_parameter_tuning_on_rm_audit: true
+  no_parameter_changes_after_frozen_final: true
+  no_independent_test_claim: true
+  keep_algorithm_support_features_and_compute_as_separate_factors: true

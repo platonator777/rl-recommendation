@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": "main_fits_completed",
+  "branch_id": "sample_count_4_vs_16_with_exact_control",
+  "completed_arms": [
+    "sampled4",
+    "sampled16",
+    "exact"
+  ],
+  "arm_count": 3,
+  "run_count": 9,
+  "planned_run_count": 9,
+  "branch_elapsed_seconds_in_this_invocation": 2210.914,
+  "budget_includes_preprocessing_and_inline_development_evaluation": true
+}

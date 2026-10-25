@@ -1,0 +1,471 @@
+{
+  "schema_version": 1,
+  "protocol_id": "tlab_yambda_policy_diagnostics_sample_count_matched_2026-10-22",
+  "status": "main_fit_completed",
+  "run_count": 3,
+  "planned_run_count": 3,
+  "runs": [
+    {
+      "run_name": "sampled_loo_b0.3_seed17_full",
+      "objective": "sampled_loo",
+      "beta": 0.3,
+      "seed": 17,
+      "variant": "full",
+      "updates_completed": 6000,
+      "stop_reason": "max_updates",
+      "elapsed_training_and_evaluation_seconds": 241.2698117000109,
+      "best_checkpoint_step": 0,
+      "best_dev_support_objective": 0.015256563629157812,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.015731899938353288,
+          "recall@10": 0.029182879377431907,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.002498956974888287,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.01625149428229941,
+            "recall@10": 0.031609195402298854,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.00520149347833754,
+            "recall@10": 0.012987012987012988,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.025023144405032033,
+            "recall@10": 0.04639175257731959,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.0072622177244515375,
+            "recall@10": 0.016129032258064516,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.023628445761840627,
+            "recall@10": 0.041353383458646614,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.009317193797643005,
+            "recall@10": 0.024390243902439025,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.027334209750736443,
+            "recall@10": 0.051643192488262914,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.04411764705882353,
+            "recall@10": 0.058823529411764705,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.014833888808592245,
+            "recall@10": 0.037037037037037035,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.009259259259259259,
+            "recall@10": 0.027777777777777776,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.039123963124920905,
+            "recall@10": 0.07777777777777778,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.07142857142857142,
+            "recall@10": 0.07142857142857142,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": true,
+        "lower_bound": 0.00017773889110599228,
+        "n_users": 514,
+        "mean_adjusted_difference": 0.00031463799876706595,
+        "ci_lower": 0.0001569241117095259,
+        "ci_upper": 0.000511753054593042,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19818
+      },
+      "best_checkpoint_sha256": "b38251808d65c3d370525e301e1a1af32bc80244c70158f84e74a4456c87c46f"
+    },
+    {
+      "run_name": "sampled_loo_b0.3_seed42_full",
+      "objective": "sampled_loo",
+      "beta": 0.3,
+      "seed": 42,
+      "variant": "full",
+      "updates_completed": 6000,
+      "stop_reason": "max_updates",
+      "elapsed_training_and_evaluation_seconds": 236.60879050000221,
+      "best_checkpoint_step": 2000,
+      "best_dev_support_objective": 0.025217412075875797,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.015463594022171559,
+          "recall@10": 0.02529182879377432,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.0029251123424773044,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.016505474582912946,
+            "recall@10": 0.02586206896551724,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.003246753246753247,
+            "recall@10": 0.006493506493506494,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.02703043894254487,
+            "recall@10": 0.041237113402061855,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.0053126184084997365,
+            "recall@10": 0.012096774193548387,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.02492766151160995,
+            "recall@10": 0.03759398496240601,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.024607104400073163,
+            "recall@10": 0.036585365853658534,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.025820789711346426,
+            "recall@10": 0.04225352112676056,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.012666957590393914,
+            "recall@10": 0.029411764705882353,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.009259259259259259,
+            "recall@10": 0.018518518518518517,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.04530360426587382,
+            "recall@10": 0.05555555555555555,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.04014417112535831,
+            "recall@10": 0.06666666666666667,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.005093405892860143,
+        "n_users": 514,
+        "mean_adjusted_difference": 4.6332082585340194e-05,
+        "ci_lower": -0.006072267854411801,
+        "ci_upper": 0.005873423845162264,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19843
+      },
+      "best_checkpoint_sha256": "e8b19853a861db710ac2a3d8e62536482e0ae184ffc500c6a8248a179f51a968"
+    },
+    {
+      "run_name": "sampled_loo_b0.3_seed73_full",
+      "objective": "sampled_loo",
+      "beta": 0.3,
+      "seed": 73,
+      "variant": "full",
+      "updates_completed": 6000,
+      "stop_reason": "max_updates",
+      "elapsed_training_and_evaluation_seconds": 236.96040030001313,
+      "best_checkpoint_step": 6000,
+      "best_dev_support_objective": 0.025855086106038743,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.01579869958581263,
+          "recall@10": 0.02529182879377432,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.0029039822159424144,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.017786939738604304,
+            "recall@10": 0.028735632183908046,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.004096946451762711,
+            "recall@10": 0.006493506493506494,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.028654253997231136,
+            "recall@10": 0.04639175257731959,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.006296799643729236,
+            "recall@10": 0.012096774193548387,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.024657613817529477,
+            "recall@10": 0.03759398496240601,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.015388530574913599,
+            "recall@10": 0.024390243902439025,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.02985292056321491,
+            "recall@10": 0.046948356807511735,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.014705882352941176,
+            "recall@10": 0.029411764705882353,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.011683884325397362,
+            "recall@10": 0.018518518518518517,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.03505165297619209,
+            "recall@10": 0.05555555555555555,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.04774517520355471,
+            "recall@10": 0.07777777777777778,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.004298799606694906,
+        "n_users": 514,
+        "mean_adjusted_difference": 0.00038143764622640815,
+        "ci_lower": -0.005526500491127977,
+        "ci_upper": 0.00581767720088373,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19874
+      },
+      "best_checkpoint_sha256": "535027a14f94d7461b376fad9e0fe82084402eb82d67e05f48e0d8075cfca25b"
+    }
+  ],
+  "actor_checkpoint_sha256_unchanged": "51b6e2d6635c7ef4b08f9a345d6f08003d0ce2d3f98f63cba991ee8a4dea8381",
+  "optimized_rm_sha256_unchanged": "a781df889b53a3d3ee426073fc7139c3e0f1d1794d950a6a1c1d94c11d5aec29",
+  "train_only_scaler_sha256": "2cf42891df8e0637eff7dc241d7cf2cf28ac2ce1b4a959e2a76a3f92c0835b95",
+  "training_contexts": 4134,
+  "development_contexts": 514,
+  "max_updates": 6000,
+  "minimum_updates": 6000,
+  "checkpoint_rule": "last.pt at exactly 6000 updates is the primary endpoint for this matched-update comparison; best.pt under the inherited dev-objective + 2% guard is reported separately; seeds 17/42/73 are never selected by per-seed result.",
+  "all_methods_use_same_support_reference_reward_scale": true,
+  "evaluation_roles": {
+    "train": "A_RL, one context per user",
+    "development": "validation, disjoint users",
+    "final": "test, disjoint users, retrospective only"
+  },
+  "completed_at_utc": "2026-10-22T06:11:22.767731+00:00"
+}

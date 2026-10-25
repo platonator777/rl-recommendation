@@ -1,0 +1,128 @@
+{
+  "status": "frozen_before_reporting_scoring",
+  "selected_rm": "old_deployed",
+  "analytic_selected_rm_beta": 1.0,
+  "policy_beta_candidates": [
+    1.0,
+    3.0
+  ],
+  "beta": 3.0,
+  "policy_beta_selection": {
+    "selected_beta": 3.0,
+    "rule": "best trained seed17 sampled-LOO checkpoint by dev NDCG@10; ties by lower mass-weighted KL",
+    "search_rows": [
+      {
+        "beta": 1.0,
+        "best_step": 3000,
+        "dev_ndcg10": 0.01247004628460255,
+        "mass_weighted_kl": 0.010042655265098278,
+        "run_name": "sampled_loo_old_deployed_b1_seed17"
+      },
+      {
+        "beta": 3.0,
+        "best_step": 1500,
+        "dev_ndcg10": 0.013114571366035688,
+        "mass_weighted_kl": 0.0009973815304935554,
+        "run_name": "sampled_loo_old_deployed_b3_seed17"
+      }
+    ]
+  },
+  "sampled_rl": {
+    "17": {
+      "run_name": "sampled_loo_old_deployed_b3_seed17",
+      "run_dir": "artifacts\\frozen_policy\\policy\\sampled_loo_old_deployed_b3_seed17",
+      "best_checkpoint_path": "artifacts\\frozen_policy\\policy\\sampled_loo_old_deployed_b3_seed17\\best.pt",
+      "best_checkpoint_sha256": "a2cc87c58cfc27f601a90cb62fc9a7b74b9530b02c9af48708b16feff278f627",
+      "best_step": 1500,
+      "best_dev_ndcg10": 0.013114571366035688,
+      "best_dev_mass_weighted_kl": 0.0009973815304935554,
+      "seed": 17,
+      "beta": 3.0,
+      "objective": "sampled_loo",
+      "reward_model": "old_deployed"
+    },
+    "42": {
+      "run_name": "sampled_loo_old_deployed_b3_seed42",
+      "run_dir": "artifacts\\frozen_policy\\policy\\sampled_loo_old_deployed_b3_seed42",
+      "best_checkpoint_path": "artifacts\\frozen_policy\\policy\\sampled_loo_old_deployed_b3_seed42\\best.pt",
+      "best_checkpoint_sha256": "b6399af203cdcc274a6c6232bbb7473b21f6109c2a90a35b6b96f67b9c8e2d7f",
+      "best_step": 500,
+      "best_dev_ndcg10": 0.013300575339605542,
+      "best_dev_mass_weighted_kl": 0.0010093458481655292,
+      "seed": 42,
+      "beta": 3.0,
+      "objective": "sampled_loo",
+      "reward_model": "old_deployed"
+    },
+    "73": {
+      "run_name": "sampled_loo_old_deployed_b3_seed73",
+      "run_dir": "artifacts\\frozen_policy\\policy\\sampled_loo_old_deployed_b3_seed73",
+      "best_checkpoint_path": "artifacts\\frozen_policy\\policy\\sampled_loo_old_deployed_b3_seed73\\best.pt",
+      "best_checkpoint_sha256": "af23d618d4aa5fd1d29cc88d8fc967afa2790242d7b0256aa8314f949ef02e98",
+      "best_step": 500,
+      "best_dev_ndcg10": 0.013101457346216299,
+      "best_dev_mass_weighted_kl": 0.000854963698301904,
+      "seed": 73,
+      "beta": 3.0,
+      "objective": "sampled_loo",
+      "reward_model": "old_deployed"
+    }
+  },
+  "exact_gradient": {
+    "17": {
+      "run_name": "exact_gradient_old_deployed_b3_seed17",
+      "run_dir": "artifacts\\frozen_policy\\policy\\exact_gradient_old_deployed_b3_seed17",
+      "best_checkpoint_path": "artifacts\\frozen_policy\\policy\\exact_gradient_old_deployed_b3_seed17\\best.pt",
+      "best_checkpoint_sha256": "69fe1b2da46f30314ce7313cb3c069d2d0c1407940c08aca0c63cfac461fcba6",
+      "best_step": 1000,
+      "best_dev_ndcg10": 0.01303961854399578,
+      "best_dev_mass_weighted_kl": 0.0010569459856948596,
+      "seed": 17,
+      "beta": 3.0,
+      "objective": "exact_expected_reward",
+      "reward_model": "old_deployed"
+    },
+    "42": {
+      "run_name": "exact_gradient_old_deployed_b3_seed42",
+      "run_dir": "artifacts\\frozen_policy\\policy\\exact_gradient_old_deployed_b3_seed42",
+      "best_checkpoint_path": "artifacts\\frozen_policy\\policy\\exact_gradient_old_deployed_b3_seed42\\best.pt",
+      "best_checkpoint_sha256": "c31097dc5f4416e3f6b6e8798494000f899a4d645e97afe529aa93f39eb4b3cc",
+      "best_step": 1500,
+      "best_dev_ndcg10": 0.013046927249978968,
+      "best_dev_mass_weighted_kl": 0.0010691205371333454,
+      "seed": 42,
+      "beta": 3.0,
+      "objective": "exact_expected_reward",
+      "reward_model": "old_deployed"
+    },
+    "73": {
+      "run_name": "exact_gradient_old_deployed_b3_seed73",
+      "run_dir": "artifacts\\frozen_policy\\policy\\exact_gradient_old_deployed_b3_seed73",
+      "best_checkpoint_path": "artifacts\\frozen_policy\\policy\\exact_gradient_old_deployed_b3_seed73\\best.pt",
+      "best_checkpoint_sha256": "9d6b07b35a95cf3ca19f02c1c8e51383e7a2ed21f1b358939801e5f84eef059a",
+      "best_step": 1500,
+      "best_dev_ndcg10": 0.013070737989714478,
+      "best_dev_mass_weighted_kl": 0.0010429622144469295,
+      "seed": 73,
+      "beta": 3.0,
+      "objective": "exact_expected_reward",
+      "reward_model": "old_deployed"
+    }
+  },
+  "old_rm_rl": {
+    "17": {
+      "run_name": "sampled_loo_old_deployed_b3_seed17",
+      "run_dir": "artifacts\\frozen_policy\\policy\\sampled_loo_old_deployed_b3_seed17",
+      "best_checkpoint_path": "artifacts\\frozen_policy\\policy\\sampled_loo_old_deployed_b3_seed17\\best.pt",
+      "best_checkpoint_sha256": "a2cc87c58cfc27f601a90cb62fc9a7b74b9530b02c9af48708b16feff278f627",
+      "best_step": 1500,
+      "best_dev_ndcg10": 0.013114571366035688,
+      "best_dev_mass_weighted_kl": 0.0009973815304935554,
+      "seed": 17,
+      "beta": 3.0,
+      "objective": "sampled_loo",
+      "reward_model": "old_deployed"
+    }
+  },
+  "reporting_selection_rule": "selected RM and beta use development only; each seed uses its best trained checkpoint by dev NDCG@10 then lower KL"
+}

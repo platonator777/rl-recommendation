@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "predictor_sha256": "dbdad092e31809f7ffc1cc93fa4d24781c22fa8a8379a6651a38caf07fdcfa74",
+  "rows": [
+    {
+      "method": "analytic_selected_rm",
+      "frozen_external_predictor_path": "artifacts\\residual_support\\rm\\models\\external_audit_predictor.joblib",
+      "n_contexts": 4065,
+      "expected_predicted_raw_ratio_delta_vs_reference": 0.004471030555426437,
+      "scope": "fixed top-500 support; tail unchanged; conditional predictor diagnostic, not a causal or independent audit",
+      "mean_candidate_rm_prediction_under_policy": 0.6916422180729908
+    },
+    {
+      "method": "sampled_rl",
+      "frozen_external_predictor_path": "artifacts\\residual_support\\rm\\models\\external_audit_predictor.joblib",
+      "n_contexts": 4065,
+      "expected_predicted_raw_ratio_delta_vs_reference": 0.0010348361272730956,
+      "scope": "fixed top-500 support; tail unchanged; conditional predictor diagnostic, not a causal or independent audit",
+      "mean_candidate_rm_prediction_under_policy": 0.6818175001431392
+    },
+    {
+      "method": "exact_gradient",
+      "frozen_external_predictor_path": "artifacts\\residual_support\\rm\\models\\external_audit_predictor.joblib",
+      "n_contexts": 4065,
+      "expected_predicted_raw_ratio_delta_vs_reference": 0.0011250771607616286,
+      "scope": "fixed top-500 support; tail unchanged; conditional predictor diagnostic, not a causal or independent audit",
+      "mean_candidate_rm_prediction_under_policy": 0.6820663449476072
+    }
+  ]
+}

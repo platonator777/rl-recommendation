@@ -1,0 +1,18 @@
+{
+  "runtime_seconds": 73.23,
+  "train_contexts": 1024,
+  "development_contexts": 514,
+  "ridge_alpha_selected_on_train_only": 1.0,
+  "alpha_train_candidate_split_mean_r2": {
+    "0.1": 0.09200788385499901,
+    "1.0": 0.1426333164781905,
+    "10.0": 0.03420906860029282,
+    "100.0": -0.022311771796324344,
+    "1000.0": -0.03395170505659993
+  },
+  "per_context_ridge_rows": 9228,
+  "embedding_control_rows": 6152,
+  "shared_model_rows": 10,
+  "target": "centered z(RM proxy)/beta=.3, equivalently centered analytic logit correction",
+  "limitations": "all fit targets are the optimized RM proxy; this tests representability of the proxy, not reward truth; per-context ridge is an oracle for new users"
+}

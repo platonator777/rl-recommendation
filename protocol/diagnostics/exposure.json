@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-22T04:17:44.035052+00:00",
+  "global_status": "retrospective_exploratory_no_independent_test_remains",
+  "windows_previously_opened": [
+    {
+      "panel": "development",
+      "path": "artifacts/residual_support/panels/validation_development.jsonl",
+      "n": 514,
+      "previously_scored": true
+    },
+    {
+      "panel": "retrospective_final",
+      "path": "artifacts/residual_support/panels/test_retrospective.jsonl",
+      "n": 710,
+      "previously_scored": true
+    },
+    {
+      "panel": "common_open",
+      "path": "artifacts/panel_tools/evaluation/frozen_primary_validation_panel.jsonl",
+      "n": 6655,
+      "previously_scored": true
+    }
+  ],
+  "known_outcome_exposure": "panel_tools.1 final report disclosed NDCG values, selected model outcomes, SFT dev outcomes, and policy/audit results. These windows are descriptive only and cannot select branch, beta, checkpoint, or RM.",
+  "future_feature_validity": "Passed row-level ID and timestamp eligibility gate before scoring: all 514 dev, 710 retrospective-final, and 6,655 common-open targets were later than both actor and RM validation cutoffs, with zero ID/time mismatches; all 4,134 RL-train contexts predated the actor cutoff and were excluded from quality comparisons.",
+  "new_hash_split": "Will not be described as restoring independence."
+}

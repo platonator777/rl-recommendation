@@ -1,0 +1,6 @@
+{
+  "interaction_ridge_control": "Contains history-item cross features; not a strict additive baseline.",
+  "centered_sign_agreement": "Sign of candidate deviation from context mean; not candidate-pair agreement.",
+  "analytic_gap": "Use analytic_gap_by_seed_checkpoint.csv; combined historical beta/head rows were omitted.",
+  "expressivity": "The reference-logit ridge R2 at alpha=1 reflects shrinkage; this does not prove an architecture bottleneck. Candidate affinity/cross-feature comparisons are incomplete."
+}

@@ -1,0 +1,7 @@
+model,mae,rmse,n_rows,n_users
+history_only,0.286178149,0.358406417,4934,1066
+item_metadata_model,0.368663280,0.407857432,4934,1066
+item_smoothed_prior,0.354489842,0.409229695,4934,1066
+additive_history_plus_item,0.284141713,0.355244872,4934,1066
+optimized_history_candidate_rm,0.281112040,0.355906451,4934,1066
+external_audit_predictor,0.282285827,0.356546891,4934,1066

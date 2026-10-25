@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "protocol_id": "tlab_yambda_residual_support_exploratory_2026-10-22",
+  "program_mode_hours": 24,
+  "prior_recorded_runtime_seconds": 1797.994,
+  "prior_early_preparation_runtime": "Unknown and not imputed as zero; the recorded prior runtime is a lower bound.",
+  "new_computation_seconds_observed_at_plan_update": {
+    "baseline_comparison": 195.4234534,
+    "reward_model_feature_build_priors_and_fit": 60.274,
+    "policy_cache_train_development_final": 119.2122762,
+    "main_policy_head_series_21_runs": 7677.955861,
+    "exact_policy_diagnostic_continuation": 304.6884519,
+    "sft_preflight_terminated_at_saved_checkpoint": 157.0,
+    "sft_preflight_terminated_after_eval_mode_audit": 428.333,
+    "total_observed_new_seconds_lower_bound": 9146.711
+  },
+  "planned_remaining_main_fits": [
+    {
+      "name": "dense_sft",
+      "budget_seconds": 5700,
+      "actual_training_seconds": 5700.112370601972,
+      "status": "completed_time_budget",
+      "comparison_role": "primary dense-vs-last-target SFT comparison"
+    },
+    {
+      "name": "last_target_sft",
+      "budget_seconds": 5700,
+      "actual_training_seconds": 5700.078394197859,
+      "status": "completed_time_budget",
+      "resume_count": 1,
+      "resume_checkpoint_training_seconds": 2280.8783086992626,
+      "comparison_role": "same initialization, optimizer, panel and wall-time budget"
+    }
+  ],
+  "summed_runtime_lower_bound_including_prior_seconds": 22433.567818,
+  "projected_runtime_after_both_sft_budgets_seconds": 22433.567818,
+  "stop_new_long_fits_at_total_seconds": 61200,
+  "required_final_evaluation_and_reserve_seconds": 25200,
+  "decision": "All required long fits are complete. The known recorded-runtime lower bound including prior work is below the 17-hour stop threshold; prior early preparation remains unknown and is not imputed as zero. The final evaluation and report remain within the protected reserve. No additional long fit was started.",
+  "updated_at_utc": "2026-10-22T01:45:00Z",
+  "finalized_observed_new_seconds_lower_bound": {
+    "prior_observed_work": 9146.711,
+    "dense_sft_training_seconds": 5700.112370601972,
+    "last_target_sft_training_seconds": 5700.078394197859,
+    "final_policy_scoring_seconds": 88.67205330001889,
+    "sft_endpoint_comparison_total_seconds": 11400.19076479983
+  },
+  "total_observed_new_seconds_lower_bound": 20635.573818,
+  "remaining_to_17h_stop_threshold_seconds": 38766.432182,
+  "remaining_after_protected_7h_reserve_seconds": 13566.432182
+}

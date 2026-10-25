@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "role": "limited retrospective, outcome-blind user-held-out RM ablation; not independent test",
+  "split_manifest": "artifacts/policy_diagnostics/rm/C_split_manifest.json",
+  "compatibility_report": "artifacts/policy_diagnostics/rm/C_compatibility_report.json",
+  "row_counts": {
+    "selected": 26423,
+    "fit": 21290,
+    "heldout": 5133,
+    "fit_users": 4401,
+    "heldout_users": 1074
+  },
+  "models": {
+    "history_only": "history context columns only",
+    "item_only": "candidate metadata/prior columns only",
+    "strict_additive_linear": "separate context and item terms without history-item interactions",
+    "refit_residual_support_optimized_control": "panel_tools.1 optimized-HGB feature/parameter architecture refit on the same training users",
+    "prefix_safe_affinity_extension": "same optimized-HGB architecture and data with exactly nine prefix-derived history-item affinity/missingness columns"
+  },
+  "forbidden_target_features": ["target ratio in priors", "target ID in affinity", "events at or after earliest target timestamp"],
+  "primary_comparison": "prefix_safe_affinity_extension versus refit_residual_support_optimized_control on the same held-out users, paired user bootstrap",
+  "evaluation_outputs": [
+    "artifacts/policy_diagnostics/rm/C_metrics.csv",
+    "artifacts/policy_diagnostics/rm/C_paired_contrasts.csv",
+    "artifacts/policy_diagnostics/rm/C_calibration.csv",
+    "artifacts/policy_diagnostics/rm/C_rmdev_predictions.csv",
+    "artifacts/policy_diagnostics/rm/C_shuffle_history_sensitivity.csv"
+  ],
+  "measured_seconds": {
+    "timestamp_and_split": 17.707,
+    "prior_embedding_and_feature_preprocessing": 75.051,
+    "fit": 2.456,
+    "evaluation_and_bootstrap": 3.449
+  },
+  "interpretation_limit": "logged-ratio prediction improvement does not establish counterfactual ranking quality or policy/relevance improvement"
+}

@@ -1,0 +1,17 @@
+{
+  "status": "complete",
+  "runtime_seconds": 99.859,
+  "timestamp_index_and_split_seconds": 17.707,
+  "preprocessing_seconds": 75.051,
+  "fit_seconds": 2.456,
+  "evaluation_seconds": 3.449,
+  "selected_rows": 26423,
+  "train_rows": 21290,
+  "rmdev_rows": 5133,
+  "train_users": 4401,
+  "rmdev_users": 1074,
+  "embedding_events": 13505518,
+  "embedding_pairs": 134823008,
+  "rmdev_primary_metric": "user-macro MAE, paired user bootstrap 95% CI; RMSE and calibration separately",
+  "rows_metrics": 30
+}

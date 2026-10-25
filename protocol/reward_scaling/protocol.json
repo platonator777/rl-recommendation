@@ -1,0 +1,107 @@
+{
+  "protocol_id": "tlab_yambda_rm_scaling_2026-10-22",
+  "status": "frozen_before_v6_fits",
+  "role": "limited retrospective experiment on historically open development/reporting panels; not an independent test",
+  "preregistered_at_local": "2026-10-22 Asia/Yekaterinburg",
+  "data_and_splits": {
+    "policy_source": "artifacts/frozen_policy/cache/{train,common}; Frozen development/reporting user IDs reused unchanged",
+    "policy_train_contexts_expected": 4134,
+    "policy_development_contexts_expected": 2590,
+    "policy_reporting_contexts_expected": 4065,
+    "catalog_size": 20000,
+    "candidate_support_size": 500,
+    "rm_source": "data/processed_full_model_tminus14/sequence_index and data/processed_full_model_tminus14/listens.parquet",
+    "rm_fit_window_raw": [18501460.0, 21766405.0],
+    "rm_dev_users": "original C RM holdout: SHA256(hex-prefix 76345f323a433a726d6465763a + decimal uid) first 8 bytes big-endian modulo 5 equals 0",
+    "rm_fit_users": "original C fit users only; dev users never enter fit",
+    "small_fit_rows": 21290,
+    "small_rm_dev_rows": 5133,
+    "small_fit_user_count": 4401,
+    "rm_dev_user_count": 1074,
+    "large_fit_row_target": 100000,
+    "max_fit_rows_per_user": 40,
+    "large_rows_selection": "preserve all 21290 original fit rows; deduplicate by (uid, sequence position); per-user event order uses existing residual_support hash SHA256('residual_support:rm:17:{uid}:{position}'); added rows are dealt round-robin in ascending SHA256('rm_scaling:rm-expand:{uid}') order, to a cap of 40 fit rows per user; stop at 100000 or eligible exhaustion",
+    "pre_fit_selection_snapshot": {
+      "small_fit_rows": 21290,
+      "small_fit_users": 4401,
+      "rm_dev_rows": 5133,
+      "rm_dev_users": 1074,
+      "large_fit_rows": 100000,
+      "large_fit_users": 4401,
+      "max_rows_per_user": 26,
+      "small_fit_row_key_sha256": "9a4d1576d2841941e6a3fa5fd56c992edf23b16737d880094b7dc1c6c289c235",
+      "nested_row_key_sha256": "abf3a71314ad8fb922a3eee9aa4997f10cd013bd6a4245b1fbfbdcd1e0539379",
+      "dev_row_key_sha256": "864e7ed225e05d401dddc04151390662b60195bbc29fe4fb9378b15a7cb9a2db"
+    }
+  },
+  "reward_models": {
+    "small_base": "reuse artifacts/policy_diagnostics/rm/C_refit_residual_support_optimized_control.joblib, same original 21290 fit rows and 35 features",
+    "small_affinity": "reuse artifacts/policy_diagnostics/rm/C_prefix_safe_affinity_extension.joblib, same original 21290 fit rows and 44 features",
+    "large_base": "new HistGradientBoostingRegressor fit on expanded nested rows and same 35 features",
+    "large_affinity": "new HistGradientBoostingRegressor fit on the identical expanded nested rows and same 44 features",
+    "hgb": {"learning_rate": 0.05, "max_iter": 220, "max_leaf_nodes": 23, "min_samples_leaf": 35, "l2_regularization": 1.0, "early_stopping": false, "random_state": 19},
+    "prediction_clip": [0.0, 1.0],
+    "dev": "same untouched 5133 original C RM-dev rows; never fit these users/rows",
+    "prior_and_embedding_cutoff_exclusive_raw": 18501460.0
+  },
+  "policy": {
+    "beta": 3.0,
+    "reward_scale_source": "artifacts/frozen_policy/reward_scale.json",
+    "reward_scale_mean": 0.6826758018853311,
+    "reward_scale_std": 0.22662487462369968,
+    "reward_scale_std_floor": 0.001,
+    "feature_scaler_source": "artifacts/frozen_policy/scaler.json; frozen, no per-RM refit",
+    "architecture": "54->64->64->1 MLP with SiLU and zero-initialized output",
+    "optimizer": "AdamW(lr=0.001, weight_decay=0.0001)",
+    "batch_contexts": 32,
+    "sampled_actions_per_context": 16,
+    "updates_per_run": 3000,
+    "evaluation_interval": 500,
+    "kl": "exact conditional KL, weighted by fixed reference support mass",
+    "seeds": [17, 42, 73],
+    "paired_initialization": "same torch initialization per seed across all S/L/E/A branches",
+    "paired_batch_order": "separate batch RNG seeded identically by seed across branches; action RNG separated from context-batch RNG",
+    "checkpoint_selection": "trained step > 0 with highest policy-development next-item NDCG@10; ties by lower mass-weighted KL, then earlier step; reporting/24h not used",
+    "matrix": {
+      "S": {"rm": "small_affinity", "objective": "sampled_loo", "features": "all 54"},
+      "L": {"rm": "large_affinity", "objective": "sampled_loo", "features": "all 54"},
+      "E": {"rm": "large_affinity", "objective": "exact_expected_reward", "features": "all 54"},
+      "A": {"rm": "large_affinity", "objective": "sampled_loo", "features": "all 54; nine standardized affinity columns zeroed in train/dev/reporting"}
+    },
+    "v5_baselines": "reuse selected Frozen old_deployed sampled-LOO RL and exact-gradient checkpoint for each seed from artifacts/frozen_policy/reporting_selection.json"
+  },
+  "evaluation": {
+    "primary_v6_question": "large affinity RM policy L: 24h positive-nonorganic multi-target NDCG@10 versus S and strong reference",
+    "primary_v5_metric_remains": "next-item user-macro NDCG@10 on the Frozen reporting panel; Scaling does not rename or replace it",
+    "next_item": "user-macro next-item NDCG@10 and HR@10; OOV targets count as misses; same users and denominator",
+    "24h": "exact Frozen target construction: events after target.position (next-item target excluded), within complete 86400-second horizon and same split, recommendable nonorganic events with finite ratio >= 0.5, unique raw item IDs, OOV retained in denominator; empty target sets NA",
+    "24h_new_repeat": "classify each positive target ID using only whether that ID occurs in full available history before recommendation; future repeats do not change new classification; separate nonempty denominator for each slice",
+    "behavior": "top-10 history-repeat share, mean available past-history length, most frequent recommended item share of all top-10 slots, top-10 unique-catalog coverage, mass-weighted KL, normalized reward delta",
+    "uncertainty": "per-user metrics retained for each seed; first average within user over seeds, then paired user bootstrap, 2000 resamples, fixed seed 20261022; raw 95% and Bonferroni 97.5% intervals for L-S and L-strong 24h NDCG only",
+    "external_predictor": "one frozen predictor pass on common reporting support for strong/S/L/E and reference; diagnostic only",
+    "temporal_panel": "optional; skipped if core pipeline approaches budget or requires a new feature cache beyond the fixed protocol"
+  },
+  "budget": {
+    "new_compute_hard_limit_seconds": 14400,
+    "overall_work_target_seconds": 21600,
+    "policy_runs": 12,
+    "no_extensions_or_new_searches": true,
+    "no_200k_fit_no_new_seeds_no_beta_search": true
+  },
+  "outputs": {
+    "artifacts": "artifacts/rm_scaling/",
+    "source": "src/tlab/rm_scaling/",
+    "config": "configs/rm_scaling/",
+    "report": "final/rm_scaling/",
+    "protected": ["submission/", "historical result/artifact trees"]
+  },
+  "input_hashes": {
+    "v6_experiment_adapter_sha256": "d35375c7d3a7a75dea52a4768312951309318e70383417995140437af2245109",
+    "v6_matrix_config_sha256": "c8ef217817e3bb772a1787283d304f0c10ae9f8e58af083ce795c8d8ff5c9d20",
+    "c_rm_split_manifest_sha256": "c1aa2aab76182317f0b491ebbe9704d05190e91e8c4651c09bee364c9624af7c",
+    "v5_scaler_sha256": "76da3d00d0725ece5b43cbc3a62447ad54a3e4d72445dcf1068603ae2d4a162d",
+    "v5_reward_scale_sha256": "55f4af50d0e34cabd332bc0ef0d34575c5d4f57a05f8520ab2de194f7222d06a",
+    "v5_policy_split_sha256": "d6c1f18f96e80a297d682417ac1d1aa34b4891e88c04378b6b3278a6ce84aa79",
+    "v6_temporal_scoring_adapter_sha256": "1248cd475b12c2cbcaaf0c962269cabd2762d331889d0f6dd19706e6e9102cd5"
+  }
+}

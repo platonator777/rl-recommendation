@@ -1,0 +1,16 @@
+{
+  "started_at_utc": "2026-10-22T12:11:01.682188+00:00",
+  "stages": {
+    "rm_fit_and_features_seconds": 179.729,
+    "candidate_reward_cache_seconds": 60.038,
+    "policy_matrix_seconds": 1096.902,
+    "reporting_seconds": 271.346,
+    "candidate_reward_alignment_rebuild_seconds": 61.002,
+    "temporal_panel_seconds": 60.373
+  },
+  "elapsed_wall_seconds": 2211.903,
+  "new_compute_seconds": 1729.39,
+  "status": "complete",
+  "compute_hard_limit_seconds": 14400,
+  "compute_budget_used_fraction": 0.1201
+}

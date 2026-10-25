@@ -1,0 +1,71 @@
+project:
+  seed: 17
+  data_dir: data
+  artifacts_dir: artifacts
+
+dataset:
+  repo_id: yandex/yambda
+  revision: main
+  files:
+    listens: flat/50m/listens.parquet
+    likes: flat/50m/likes.parquet
+    unlikes: flat/50m/unlikes.parquet
+  timestamp_unit_seconds: 1
+  timestamp_bin_seconds: 5
+  timestamp_unit_evidence: "Yambda paper §3.3 and local EDA: rounded relative seconds; all values on the 5-second grid."
+  rm_user_split_seed: 17
+  rm_audit_fraction: 0.2
+  catalog_size: 20000
+  history_events: 200
+  history_length: 201 # BOS plus 200 preceding events for all reference evaluators
+  train_days: 21
+  validation_days: 14
+  test_days: 7
+  rm_validation_days: 7
+  rl_anchor_days: 7
+
+model:
+  n_layer: 4
+  n_embd: 256
+  n_head: 4
+  n_positions: 256
+  dropout: 0.1
+
+training:
+  precision: auto
+  sft_sampling_mode: per_target_exact_history
+  sft_microbatch: 32
+  sft_effective_batch: 64
+  sft_max_targets_per_epoch: 2000000
+  sft_epochs: 5
+  sft_additional_epochs: 10
+  sft_max_additional_epochs: 20
+  sft_learning_rate: 0.0001
+  sft_weak_learning_rate: 0.0003
+  sft_extension_learning_rate: 0.00005
+  sft_warmup_fraction: 0.05
+  sft_logit_chunk_size: 256
+  sft_gradient_clip: 1.0
+  sft_early_stopping_patience: 3
+  sft_minimum_additional_epochs: 5
+  sft_checkpoint_interval_steps: 1000
+  validation_seed: 17
+  validation_anchors_per_user: 10
+  validation_batch_size: 16
+  rm_learning_rate: 0.0001
+  rm_hidden_size: 128
+  rm_layers: 2
+  rm_heads: 4
+  rm_max_targets_per_epoch: 200000
+  rm_validation_targets: 40000
+  rm_batch_size: 64
+  rm_epochs: 8
+  rl_learning_rate: 0.00001
+  rl_group_size: 8
+  rl_clip_epsilon: 0.2
+
+data:
+  source_dir: data/raw
+  processed_dir: data/processed
+  num_workers: 0
+

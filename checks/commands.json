@@ -1,0 +1,285 @@
+{
+  "standalone": {
+    "passed": true,
+    "commands": [
+      {
+        "command": [
+          "python",
+          "-I",
+          "ISOLATED_BUNDLE\\scripts\\build_report.py"
+        ],
+        "cwd": "ISOLATED_BUNDLE",
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "python",
+          "-I",
+          "ISOLATED_BUNDLE\\scripts\\audit_statistics.py"
+        ],
+        "cwd": "ISOLATED_BUNDLE",
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "python",
+          "-I",
+          "ISOLATED_BUNDLE\\scripts\\full_model_audit_statistics.py"
+        ],
+        "cwd": "ISOLATED_BUNDLE",
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "python",
+          "-I",
+          "ISOLATED_BUNDLE\\scripts\\smoke_e2e.py"
+        ],
+        "cwd": "ISOLATED_BUNDLE",
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "python",
+          "-I",
+          "ISOLATED_BUNDLE\\scripts\\check_models.py"
+        ],
+        "cwd": "ISOLATED_BUNDLE",
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "python",
+          "-I",
+          "ISOLATED_BUNDLE\\scripts\\check_models.py",
+          "--workspace",
+          "ISOLATED_BUNDLE\\work\\missing",
+          "--require-external"
+        ],
+        "exit_code": 2,
+        "expected_exit_code": 2,
+        "missing_resources": 137
+      },
+      {
+        "command": [
+          "python",
+          "-I",
+          "ISOLATED_BUNDLE\\scripts\\reproduce.py",
+          "--help"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "python",
+          "-I",
+          "ISOLATED_BUNDLE\\scripts\\build_report.py",
+          "--help"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "python",
+          "-I",
+          "ISOLATED_BUNDLE\\scripts\\audit_statistics.py",
+          "--help"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "python",
+          "-I",
+          "ISOLATED_BUNDLE\\scripts\\verify_bundle.py",
+          "--help"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "python",
+          "-I",
+          "ISOLATED_BUNDLE\\scripts\\check_models.py",
+          "--help"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "python",
+          "-I",
+          "ISOLATED_BUNDLE\\scripts\\reproduce.py",
+          "--stage",
+          "all",
+          "--workspace",
+          "ISOLATED_BUNDLE\\work\\fresh"
+        ],
+        "exit_code": 0,
+        "stage_count": 19,
+        "dry_run_no_writes": true
+      }
+    ]
+  },
+  "cli": {
+    "passed": true,
+    "commands": [
+      {
+        "module": "tlab.residual_support.sft",
+        "command": [
+          "python",
+          "-I",
+          "-m",
+          "tlab.residual_support.sft",
+          "--help"
+        ],
+        "exit_code": 0,
+        "error": null
+      },
+      {
+        "module": "tlab.residual_support.rm",
+        "command": [
+          "python",
+          "-I",
+          "-m",
+          "tlab.residual_support.rm",
+          "--help"
+        ],
+        "exit_code": 0,
+        "error": null
+      },
+      {
+        "module": "tlab.residual_support.cache",
+        "command": [
+          "python",
+          "-I",
+          "-m",
+          "tlab.residual_support.cache",
+          "--help"
+        ],
+        "exit_code": 0,
+        "error": null
+      },
+      {
+        "module": "tlab.residual_support.train_policy",
+        "command": [
+          "python",
+          "-I",
+          "-m",
+          "tlab.residual_support.train_policy",
+          "--help"
+        ],
+        "exit_code": 0,
+        "error": null
+      },
+      {
+        "module": "tlab.policy_diagnostics.run_policy_branch",
+        "command": [
+          "python",
+          "-I",
+          "-m",
+          "tlab.policy_diagnostics.run_policy_branch",
+          "--help"
+        ],
+        "exit_code": 0,
+        "error": null
+      },
+      {
+        "module": "tlab.policy_diagnostics.cache_adapter",
+        "command": [
+          "python",
+          "-I",
+          "-m",
+          "tlab.policy_diagnostics.cache_adapter",
+          "--help"
+        ],
+        "exit_code": 0,
+        "error": null
+      },
+      {
+        "module": "tlab.rm_scaling.experiment",
+        "command": [
+          "python",
+          "-I",
+          "-m",
+          "tlab.rm_scaling.experiment",
+          "--help"
+        ],
+        "exit_code": 0,
+        "error": null
+      },
+      {
+        "module": "tlab.frozen_policy.experiment",
+        "command": [
+          "python",
+          "-I",
+          "-m",
+          "tlab.frozen_policy.experiment",
+          "--help"
+        ],
+        "exit_code": 0,
+        "error": null
+      },
+      {
+        "module": "tlab.experiments.full_model_temporal",
+        "command": [
+          "python",
+          "-I",
+          "-m",
+          "tlab.experiments.full_model_temporal",
+          "--help"
+        ],
+        "exit_code": 0,
+        "error": null
+      },
+      {
+        "module": "tlab.train.sft_reference",
+        "command": [
+          "python",
+          "-I",
+          "-m",
+          "tlab.train.sft_reference",
+          "--help"
+        ],
+        "exit_code": 0,
+        "error": null
+      },
+      {
+        "module": "tlab.train.reward_model",
+        "command": [
+          "python",
+          "-I",
+          "-m",
+          "tlab.train.reward_model",
+          "--help"
+        ],
+        "exit_code": 0,
+        "error": null
+      },
+      {
+        "module": "tlab.experiments.full_model_matrix",
+        "command": [
+          "python",
+          "-I",
+          "-m",
+          "tlab.experiments.full_model_matrix",
+          "--help"
+        ],
+        "exit_code": 0,
+        "error": null
+      },
+      {
+        "module": "tlab.evaluation.continuation",
+        "command": [
+          "python",
+          "-I",
+          "-m",
+          "tlab.evaluation.continuation",
+          "--help"
+        ],
+        "exit_code": 0,
+        "error": null
+      }
+    ]
+  }
+}

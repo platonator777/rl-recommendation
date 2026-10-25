@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "status": "registered_before_fit",
+  "registered_at_utc": "2026-10-22T05:46:18.004951+00:00",
+  "protocol_id": "tlab_yambda_policy_diagnostics_sample_count_matched_2026-10-22",
+  "parent_protocol_id": "tlab_yambda_policy_diagnostics_retrospective_2026-10-22",
+  "branch_id": "sample_count_4_vs_16_with_exact_control",
+  "selection_basis": "B4 parameter-gradient Monte Carlo diagnostic on eight fixed 32-context train minibatches; no final/common panel or external audit used.",
+  "diagnostic_evidence": {
+    "parameter_gradient_probe": "artifacts/policy_diagnostics/diagnostics/gradient_parameter_noise.csv",
+    "sampled_gradient_error_mean_by_draws": {
+      "samples_4_relative_error": 0.6257576147991184,
+      "samples_16_relative_error": 0.2600591761154985,
+      "samples_64_relative_error": 0.15134871924672133
+    },
+    "sampled_gradient_cosine_mean_by_draws": {
+      "samples_4": 0.8532736145534876,
+      "samples_16": 0.968774486016391,
+      "samples_64": 0.9890294365212727
+    },
+    "clipping": "No sampled probe gradient exceeded norm 1.0 in the measured batches; clipping does not explain this observed difference."
+  },
+  "hypothesis": "Increasing sampled reward draws per context reduces estimator noise and may improve exact objective optimization; relevance improvement is not assumed.",
+  "alternative_explanations": [
+    "Three training seeds remain a small algorithm-level sample.",
+    "Gradient probes cover eight fixed minibatches and two actor states, not the full train distribution.",
+    "Sampled and exact optimization can diverge through stochastic minibatch/sampling paths, finite updates, or proxy-relevance alignment."
+  ],
+  "controls": {
+    "factor_changed": "samples_per_context: 4 versus 16 for sampled_loo only.",
+    "fixed": [
+      "same residual head architecture (32 hidden), feature scaler, support K=500, full catalog 20k, same frozen actor and optimized RM/reward scale, beta=0.3, batch contexts=32, learning rate=0.001, seeds 17/42/73, exactly 6000 updates, same train/development caches, full feedback features."
+    ],
+    "exact_control": "exact_expected_reward at beta=0.3, same architecture, seeds, fixed 6000 updates and data; sample count is not used by exact objective.",
+    "checkpoint_rule": "last.pt at update 6000 is primary; best.pt from pre-registered development exact-objective and 2% guard rule reported separately. If best is step 0, mark identity fallback, not trained checkpoint."
+  },
+  "primary_outcomes": [
+    "Development user-macro NDCG@10; paired user bootstrap CI for mean-across-seed policy differences after averaging the three fixed-seed user scores.",
+    "Development support-weighted exact objective J, analytic gap, KL(q||q*) and KL(q||p), plus training wall time."
+  ],
+  "secondary_outcomes": [
+    "Retrospective final 710 and common open 6655 full-catalog NDCG/Recall as descriptive only after all branch checkpoints are frozen.",
+    "Train diagnostics and positive-new/repeat/support slices with n and user-bootstrap intervals.",
+    "Proxy expectation and KL versus NDCG plot; audit is descriptive only and not used for selection."
+  ],
+  "contrast_set": [
+    "sampled16 - sampled4",
+    "sampled4 - exact",
+    "sampled16 - exact"
+  ],
+  "statistical_rule": "Report per-seed values, seed mean/min/max/SD, paired user 95% bootstrap CIs (2000 draws) after user-level seed averaging; do not treat seeds as users. Report dev 2% guard separately; no multiplicity correction is claimed and all contrasts are exploratory.",
+  "fit_budget": {
+    "allocation_seconds": 10800,
+    "hard_stop": "No branch computation beyond remaining new-stage cap, remaining known total-stop threshold, or this branch allocation; include cache loading, preprocessing, inline dev evaluation, final evaluation, and plots.",
+    "expected_runs": 9,
+    "run_limit_updates_each": 6000,
+    "equal_update_primary": true,
+    "report_measured_runtime_each_run": true
+  },
+  "arms": [
+    {
+      "arm": "sampled4",
+      "objective": "sampled_loo",
+      "samples_per_context": 4,
+      "config": "configs/policy_diagnostics/sample_count_sampled4.yaml",
+      "run_root": "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/sampled4"
+    },
+    {
+      "arm": "sampled16",
+      "objective": "sampled_loo",
+      "samples_per_context": 16,
+      "config": "configs/policy_diagnostics/sample_count_sampled16.yaml",
+      "run_root": "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/sampled16"
+    },
+    {
+      "arm": "exact",
+      "objective": "exact_expected_reward",
+      "samples_per_context": null,
+      "config": "configs/policy_diagnostics/sample_count_exact.yaml",
+      "run_root": "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/exact"
+    }
+  ],
+  "frozen_input_identity": {
+    "train_cache_identity_sha256": null,
+    "actor_checkpoint_sha256": "51b6e2d6635c7ef4b08f9a345d6f08003d0ce2d3f98f63cba991ee8a4dea8381",
+    "optimized_rm_sha256": "a781df889b53a3d3ee426073fc7139c3e0f1d1794d950a6a1c1d94c11d5aec29",
+    "reward_scale_sha256": "cf5aba0e32328f4cc5d7603217f9b13846bbebfcf7343b099574bd24e349786b",
+    "support_size": 500,
+    "catalog_size": 20000
+  },
+  "explicitly_not_selected": "No RM/affinity branch is registered: C improved RM-dev user-macro MAE over same-split panel_tools.1 control by 0.003133 (95% user-bootstrap CI [0.001827, 0.004501]), but this is a modest proxy prediction result, without a policy/relevance comparison; B5 showed current head representability of the proxy correction (dev weighted R2 about 0.771). Do not infer it should improve relevance."
+}

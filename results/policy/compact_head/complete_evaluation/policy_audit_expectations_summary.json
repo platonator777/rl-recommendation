@@ -1,0 +1,12 @@
+{
+  "rows": 147,
+  "panels": [
+    "common_open_6655",
+    "development",
+    "retrospective_final"
+  ],
+  "recomposition": "sum over disjoint new/repeat \u00d7 RM-fit-support groups of mean policy mass share times conditional group expectation equals user-macro E_q over support",
+  "normalization": "frozen panel_tools.1 reward scale (mean 0.675908088684082, std 0.4220077097415924); raw ratio and z reported separately",
+  "full_policy_delta": "exact mass-weighted delta from A2 predictions, uses unchanged strong-reference tail; absolute tail expectation is not inferred",
+  "reference": "strong_gpt conditional on its support; dense/last-target/weak full-catalog expectations are reported separately by MC table"
+}

@@ -1,0 +1,212 @@
+{
+  "run_id": "sft_weak_seed17",
+  "run_dir": "artifacts\\full_model\\runs\\tminus14\\sft_weak_seed17",
+  "stage": "SFT_reference",
+  "phase": "tminus14_weak_full_model",
+  "seed": 17,
+  "config_path": "configs\\full_model_backtest_tminus14.yaml",
+  "config": {
+    "project": {
+      "seed": 17,
+      "data_dir": "data",
+      "artifacts_dir": "artifacts/full_model"
+    },
+    "dataset": {
+      "repo_id": "yandex/yambda",
+      "revision": "dd6f3a19eef5866e346c3270e098baa641a44948",
+      "files": {
+        "listens": "flat/50m/listens.parquet",
+        "likes": "flat/50m/likes.parquet",
+        "unlikes": "flat/50m/unlikes.parquet"
+      },
+      "timestamp_unit_seconds": 1,
+      "timestamp_bin_seconds": 5,
+      "cutoff_shift_days": 14,
+      "rm_user_split_seed": 17,
+      "rm_audit_fraction": 0.2,
+      "catalog_size": 20000,
+      "history_events": 200,
+      "history_length": 201,
+      "train_days": 21,
+      "validation_days": 14,
+      "test_days": 7,
+      "rm_validation_days": 7,
+      "rl_anchor_days": 7
+    },
+    "model": {
+      "n_layer": 4,
+      "n_embd": 256,
+      "n_head": 4,
+      "n_positions": 256,
+      "dropout": 0.1
+    },
+    "training": {
+      "precision": "auto",
+      "rl_learning_rate": 1e-05,
+      "rl_gradient_clip": 1.0,
+      "rl_group_size": 8,
+      "rl_updates": 1000,
+      "rl_long_cache_updates": 5000,
+      "rl_batch_contexts": 16,
+      "rl_checkpoint_interval": 100,
+      "rl_eval_interval": 500,
+      "rl_train_panel_users": 2048,
+      "rl_calibration_panel_users": 512,
+      "rl_eval_panel_users": 1024,
+      "rl_validation_seed": 17,
+      "rl_context_panel_seed": 30017,
+      "rl_panel_split_seed": 30018,
+      "rl_reward_scale_seed": 90017,
+      "rl_reward_catalog_chunk_size": 512,
+      "rm_learning_rate": 0.0001,
+      "rm_hidden_size": 128,
+      "rm_layers": 2,
+      "rm_heads": 4,
+      "rm_max_targets_per_epoch": 200000,
+      "rm_validation_targets": 40000,
+      "rm_validation_seed": 17,
+      "rm_batch_size": 64,
+      "rm_epochs": 8,
+      "rm_early_stopping_patience": 3,
+      "rm_checkpoint_interval_steps": 500,
+      "sft_sampling_mode": "per_target_exact_history",
+      "sft_collate_transfer": "cpu_staged",
+      "sft_microbatch": 64,
+      "sft_effective_batch": 64,
+      "sft_max_targets_per_epoch": 2000000,
+      "sft_epochs": 5,
+      "sft_weak_targets_per_pass": 100000,
+      "sft_temporal_targets_per_pass": 2000000,
+      "sft_temporal_additional_passes": 5,
+      "sft_temporal_schedule_passes": 10,
+      "sft_temporal_learning_rate": 0.0001,
+      "sft_additional_epochs": 10,
+      "sft_learning_rate": 0.0001,
+      "sft_warmup_fraction": 0.05,
+      "sft_logit_chunk_size": 256,
+      "sft_gradient_clip": 1.0,
+      "sft_early_stopping_patience": 3,
+      "sft_minimum_additional_epochs": 5,
+      "sft_checkpoint_interval_steps": 1000
+    },
+    "data": {
+      "source_dir": "data/raw",
+      "processed_dir": "data/processed_full_model_tminus14",
+      "num_workers": 0
+    }
+  },
+  "source_sha256": "721efbd48fbc8c76e31431534ab6b33bcafceb7af6651155743c4cd12a1166ae",
+  "dataset_sha256": "eed9cbd094af1e189507d2f8132a0dc9653b90e65480125c7cdccd601e0592d1",
+  "processed_listens_sha256": "d5238bed68632ac452943263454a236c3fd2559457f0dca240d601919991c49b",
+  "catalog_sha256": "4ad76fdc9bbc71369042920a96919f2d7944f210dc1318a13263b98d91bcd578",
+  "n_users": 9238,
+  "raw_listen_rows": 43490679,
+  "sequence_tie_blocks": 3876305,
+  "sequence_tied_events": 12148845,
+  "eligible_sft_targets": 10441413,
+  "target_budget_per_epoch": 100000,
+  "history_contract": "BOS + up to 200 preceding events; current target is never in input",
+  "sampling_version": "sft_target_index_reference",
+  "sampling_without_replacement_within_epoch": true,
+  "per_user_target_quotas": "largest remainder proportional to eligible target count",
+  "validation_seed": 17,
+  "validation_anchors_per_user": 10,
+  "epoch_start": 0,
+  "epoch_limit_absolute": 5,
+  "requested_additional_epochs": null,
+  "optimizer": {
+    "name": "AdamW",
+    "weight_decay": 0.01,
+    "peak_learning_rate": 0.0003
+  },
+  "scheduler": {
+    "name": "linear_warmup_decay",
+    "warmup_fraction": 0.05,
+    "planned_steps": 7815,
+    "horizon_passes": 5,
+    "restarted_on_resume": false
+  },
+  "early_stopping": {
+    "patience": 3,
+    "minimum_additional_epochs": 5
+  },
+  "resume_checkpoint": null,
+  "reference_validation_ndcg10": null,
+  "resume_checkpoint_sha256": null,
+  "restart_schedule": false,
+  "actual_effective_batch_targets": 64,
+  "microbatch_size": 64,
+  "collate_transfer_mode": "cpu_staged",
+  "accumulation_steps": 1,
+  "checkpoint_interval_steps": 1000,
+  "precision": "torch.bfloat16",
+  "catalog_size": 20000,
+  "actor_parameters": 8345856,
+  "environment": {
+    "captured_at_utc": "2026-10-14T12:30:32.377789+00:00",
+    "python": "3.11.9 (tags/full_model.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "processor": "Intel64 Family 6 Model 63 Stepping 2, GenuineIntel",
+    "logical_cpus": 24,
+    "packages": {
+      "torch": "2.7.0+cu128",
+      "transformers": "4.53.3",
+      "huggingface_hub": "0.33.4",
+      "pyarrow": "20.0.0",
+      "polars": "1.31.0",
+      "numpy": "2.2.6"
+    },
+    "memory_bytes": {
+      "total": 17077587968,
+      "available": 7326429184
+    },
+    "disk_bytes": {
+      "total": 1000186310656,
+      "free": 209263067136
+    },
+    "torch": {
+      "version": "2.7.0+cu128",
+      "cuda_available": true,
+      "cuda_runtime": "12.8",
+      "devices": [
+        {
+          "index": 0,
+          "name": "NVIDIA GeForce RTX 3060 Ti",
+          "total_vram_bytes": 8589279232,
+          "bf16_supported": true
+        }
+      ]
+    },
+    "nvidia_smi": [
+      "NVIDIA GeForce RTX 3060 Ti, 596.49, 8192 MiB, 7418 MiB"
+    ]
+  },
+  "status": "completed",
+  "started_at_utc": "2026-10-14T12:30:32.588794+00:00",
+  "resumed_at_utc": null,
+  "checkpoints": [],
+  "latest_epoch": 4,
+  "latest_target_cursor": 100000,
+  "cumulative_target_presentations": 500000,
+  "run_target_presentations": 500000,
+  "last_checkpoint": "artifacts\\full_model\\runs\\tminus14\\sft_weak_seed17\\last.pt",
+  "updated_at_utc": "2026-10-14T12:44:33.404571+00:00",
+  "last_validation_ndcg10": 0.0062378551658523575,
+  "best_validation_ndcg10": 0.0062378551658523575,
+  "best_epoch": 4,
+  "peak_allocated_vram_bytes": 1563873792,
+  "peak_reserved_vram_bytes": 1704984576,
+  "process_rss_bytes": null,
+  "stop_reason": "completed configured epoch budget",
+  "global_step": 7815,
+  "best_checkpoint_sha256": "c4b8f318323ce14b0b5fc90f5c3942c3a8ffdd33de6f7fe8976f02f92b2e3354",
+  "last_checkpoint_sha256": "90601ac4735c937c7a6806212712998435975c84b5b27a5176d9aaaae7329a7e",
+  "elapsed_seconds_this_invocation": 842.3237860999943,
+  "resource_time_totals_this_invocation": {
+    "training_seconds": 462.2855912009545,
+    "sampling_seconds": 0.6618546000099741,
+    "materialization_seconds": 110.58332680037711,
+    "validation_seconds": 256.71774569997797
+  },
+  "finished_at_utc": "2026-10-14T12:44:34.163047+00:00"
+}

@@ -1,0 +1,34 @@
+protocol_id: tlab_yambda_frozen_policy_2026-10-22
+seed_values: [17, 42, 73]
+catalog_size: 20000
+support_size: 500
+policy_features: ["residual_support candidate-action features with C-cutoff item priors", "9 prefix-safe affinity features"]
+development_hash: "int(SHA256(hex-prefix 76355f666173743a + decimal uid), 16) % 10 < 4"
+reward_models:
+  old_deployed: artifacts/residual_support/rm/models/optimized_rm.joblib
+  same_split_control: artifacts/policy_diagnostics/rm/C_refit_residual_support_optimized_control.joblib
+  prefix_affinity: artifacts/policy_diagnostics/rm/C_prefix_safe_affinity_extension.joblib
+betas: [3.0, 1.0, 0.3, 0.1]
+policy:
+  objective: sampled_loo
+  exact_control: exact_expected_reward
+  hidden_dims: [64, 64]
+  activation: SiLU
+  zero_init_output: true
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  batch_contexts: 32
+  actions_per_context: 16
+  updates: 3000
+  evaluate_every: 500
+  optimizer: AdamW
+selection:
+  rule: "highest dev NDCG@10; ties by lower mass-weighted KL; analytic RM ties by simpler ready model"
+  analytic_beta_search: [3.0, 1.0, 0.3, 0.1]
+  policy_beta_search: "best analytic beta and immediately softer beta, max two"
+  trained_checkpoints_only: true
+evaluation:
+  primary: user-macro next nonorganic NDCG@10
+  secondary: [HR@10, positive-new, positive-repeat, 24h positive nonorganic Recall@10 and NDCG@10]
+  bootstrap_draws: 1000
+  external_audit: frozen predictor on fixed reporting support

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "kind": "synthetic CPU smoke; not research retraining",
+  "prepared_rows": 1440,
+  "actor_steps": 2,
+  "head_steps": 8,
+  "zero_head_identity": true,
+  "fixed_support_mass": true,
+  "ndcg10": 0.3945324122905731,
+  "initial_objective": 0.020069517195224762,
+  "final_objective": 0.089164599776268
+}

@@ -1,0 +1,11 @@
+panel,model,endpoint,n_contexts,feature_dim,target,weighted_mse,weighted_r2,uniform_mse,uniform_r2,prediction_centered_with_reference_weights,labels_are_proxy_targets_not_observed_truth,candidate_weighting,mse,r2
+train,current_analytic_q_distillation_residual_MLP,last,1024,45,reference-centered normalized RM residual / beta=.3,0.03603076111516087,0.7714421706059196,0.03403193974450827,0.7736567049598094,True,True,,,
+development,current_analytic_q_distillation_residual_MLP,last,514,45,reference-centered normalized RM residual / beta=.3,0.03789056447805766,0.770804434170332,0.03546481654046952,0.7723522091714656,True,True,,,
+train,current_analytic_q_distillation_residual_MLP,best,1024,45,reference-centered normalized RM residual / beta=.3,0.03603076111516087,0.7714421706059196,0.03403193974450827,0.7736567049598094,True,True,,,
+development,current_analytic_q_distillation_residual_MLP,best,514,45,reference-centered normalized RM residual / beta=.3,0.03789056447805766,0.770804434170332,0.03546481654046952,0.7723522091714656,True,True,,,
+development,constant_zero,shared_train_to_dev,514,0,reference-centered normalized RM residual / beta=.3,,,,,,True,reference_conditional,0.16531979726962473,0.0
+development,constant_zero,shared_train_to_dev,514,0,reference-centered normalized RM residual / beta=.3,,,,,,True,uniform_candidates,0.1560780638059881,-0.001861277970615527
+development,item_only_linear,shared_train_to_dev,514,6,reference-centered normalized RM residual / beta=.3,,,,,,True,reference_conditional,0.13360387634558915,0.19184587356049798
+development,item_only_linear,shared_train_to_dev,514,6,reference-centered normalized RM residual / beta=.3,,,,,,True,uniform_candidates,0.1163019693825961,0.253460500246949
+development,strict_additive_linear,shared_train_to_dev,514,20,reference-centered normalized RM residual / beta=.3,,,,,,True,reference_conditional,0.1318692367980491,0.20233850406325005
+development,strict_additive_linear,shared_train_to_dev,514,20,reference-centered normalized RM residual / beta=.3,,,,,,True,uniform_candidates,0.11550842094266957,0.2585542682933327

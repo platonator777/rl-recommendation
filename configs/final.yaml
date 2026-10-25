@@ -1,0 +1,385 @@
+project:
+  seed: 17
+  data_dir: data
+  artifacts_dir: artifacts
+dataset:
+  repo_id: yandex/yambda
+  revision: main
+  files:
+    listens: flat/50m/listens.parquet
+    likes: flat/50m/likes.parquet
+    unlikes: flat/50m/unlikes.parquet
+  timestamp_unit_seconds: 1
+  timestamp_bin_seconds: 5
+  timestamp_unit_evidence: 'Yambda paper §3.3: T'' = floor((T-T_start)/5)*5; Parquet EDA found zero values
+    off the 5-second grid.'
+  rm_user_split_seed: 17
+  rm_audit_fraction: 0.2
+  catalog_size: 20000
+  history_length: 200
+  train_days: 21
+  validation_days: 14
+  test_days: 7
+  rm_validation_days: 7
+  rl_anchor_days: 7
+model:
+  n_layer: 4
+  n_embd: 256
+  n_head: 4
+  n_positions: 256
+  dropout: 0.1
+training:
+  precision: auto
+  sft_microbatch: 4
+  sft_effective_batch: 64
+  sft_max_targets_per_epoch: 100000
+  sft_epochs: 5
+  sft_learning_rate: 0.0003
+  rm_learning_rate: 0.0001
+  rm_hidden_size: 128
+  rm_layers: 2
+  rm_heads: 4
+  rm_max_targets_per_epoch: 100000
+  rm_validation_targets: 50000
+  rm_batch_size: 64
+  rm_epochs: 5
+  rl_learning_rate: 1.0e-05
+  rl_group_size: 8
+  rl_clip_epsilon: 0.2
+  beta_values:
+  - 0.0
+  - 0.01
+  - 0.03
+  - 0.1
+  - 0.3
+  - 1.0
+data:
+  source_dir: data/raw
+  processed_dir: data/processed
+  num_workers: 0
+final:
+  selection_id: b3_validation_seed17_42_73
+  selection_split: validation
+  selected_family: B3
+  selection_rule: Among B1 and candidate families that pass every project guardrail in each of seeds 17,
+    42, and 73, choose the family with the highest mean V_fit on the same 512-user validation panel. B1
+    is the fallback.
+  selection_rationale: 'B3 passes the ranking and serving guardrails for all three seeds and has mean
+    paired V_fit change +0.00001676 versus B1. B2 also passes but its mean V_fit change is -0.00003228.
+    Q1 beta=0 is excluded: seed 17 has a 3.17% NDCG@10 loss and seed 73 has an 11.22% relative Coverage@10
+    decline. B3 mean V_audit change is negative, so no audit-surrogate improvement is claimed.'
+  model_config: configs/base.yaml
+  output: artifacts/final_selection.json
+  test_protocol:
+    anchors_per_user: 10
+    anchor_seed: 17
+    batch_size: 16
+    top_k: 10
+    bootstrap_seed: 17
+  models:
+  - name: B1_seed17
+    family: B1
+    seed: 17
+    role: reference
+    checkpoint: artifacts/runs/sft_seed17_20261012T170456Z/best.pt
+    run_manifest: artifacts/runs/sft_seed17_20261012T170456Z/run_manifest.json
+    validation_evidence:
+    - artifacts/validation_selection_decision.json
+    - artifacts/validation_b1_three_seed_summary.json
+    validation_summary:
+      ndcg10: 0.004755730795608437
+      relative_ndcg10_change_vs_B1: 0.0
+      paired_delta_vs_B1: null
+      v_fit_delta_vs_B1: 0.0
+      v_audit_delta_vs_B1: 0.0
+      serving_guardrails:
+        coverage_pass: true
+        head_share_pass: true
+        repeat_pass: true
+  - name: B2_seed17
+    family: B2
+    seed: 17
+    role: diagnostic
+    checkpoint: artifacts/runs/sft_seed17_b2_continuation/best.pt
+    run_manifest: artifacts/runs/sft_seed17_b2_continuation/run_manifest.json
+    validation_evidence:
+    - artifacts/validation_selection_decision.json
+    - artifacts/validation_b2_three_seed_summary.json
+    reference_name: B1_seed17
+    validation_summary:
+      ndcg10: 0.005823300013525462
+      relative_ndcg10_change_vs_B1: 0.22448058222783462
+      paired_delta_vs_B1:
+        mean_difference: 0.001067569217917021
+        ci_95_low: 0.00044788027942190223
+        ci_95_high: 0.0017200156960966418
+        n_users: 7034
+        repetitions: 2000
+      v_fit_delta_vs_B1: -4.026922397315502e-05
+      v_audit_delta_vs_B1: 2.0710285753011703e-07
+      serving_guardrails:
+        coverage_pass: true
+        head_share_pass: true
+        repeat_pass: true
+  - name: B3_seed17
+    family: B3
+    seed: 17
+    role: selected
+    checkpoint: artifacts/runs/sft_seed17_b3_positive_only/best.pt
+    run_manifest: artifacts/runs/sft_seed17_b3_positive_only/run_manifest.json
+    validation_evidence:
+    - artifacts/validation_selection_decision.json
+    - artifacts/validation_b3_three_seed_summary.json
+    reference_name: B1_seed17
+    validation_summary:
+      ndcg10: 0.005867579397287961
+      relative_ndcg10_change_vs_B1: 0.23379132450184792
+      paired_delta_vs_B1:
+        mean_difference: 0.0011118486016795195
+        ci_95_low: 0.00044109518858939753
+        ci_95_high: 0.0018205335312695182
+        n_users: 7034
+        repetitions: 2000
+      v_fit_delta_vs_B1: -2.7720641810446978e-05
+      v_audit_delta_vs_B1: -9.441981092095375e-06
+      serving_guardrails:
+        coverage_pass: true
+        head_share_pass: true
+        repeat_pass: true
+    reward_panel:
+      sft_checkpoint: artifacts/runs/sft_seed17_20261012T170456Z/best.pt
+      rm_fit_checkpoint: artifacts/runs/rm_fit_seed17_20261012T181102Z/best.pt
+      rm_audit_checkpoint: artifacts/runs/rm_audit_seed17_20261012T181316Z/best.pt
+      reward_scale_path: artifacts/runs/grpo_q1_beta0_seed17_extended200/reward_scale.json
+      beta: 0.1
+      reward_head: ratio
+      repeat_penalty: 0.0
+  - name: Q1_seed17
+    family: Q1
+    seed: 17
+    role: diagnostic
+    checkpoint: artifacts/runs/grpo_q1_beta0_seed17_extended200/last.pt
+    run_manifest: artifacts/runs/grpo_q1_beta0_seed17_extended200/run_manifest.json
+    validation_evidence:
+    - artifacts/validation_selection_decision.json
+    - artifacts/validation_family_ranking_q1_seed17_42_73.json
+    reference_name: B1_seed17
+    validation_summary:
+      ndcg10: 0.004605003855569016
+      relative_ndcg10_change_vs_B1: -0.031693749397801674
+      paired_delta_vs_B1:
+        mean_difference: -0.00015072694003943286
+        ci_95_low: -0.000336069037512382
+        ci_95_high: 3.0024848234670385e-05
+        n_users: 7034
+        repetitions: 2000
+      v_fit_delta_vs_B1: 8.53691017255187e-05
+      v_audit_delta_vs_B1: -4.223932046443224e-05
+      serving_guardrails:
+        coverage_pass: true
+        head_share_pass: true
+        repeat_pass: true
+  - name: B1_seed42
+    family: B1
+    seed: 42
+    role: reference
+    checkpoint: artifacts/runs/sft_seed42_final/best.pt
+    run_manifest: artifacts/runs/sft_seed42_final/run_manifest.json
+    validation_evidence:
+    - artifacts/validation_selection_decision.json
+    - artifacts/validation_b1_three_seed_summary.json
+    validation_summary:
+      ndcg10: 0.005356886620147857
+      relative_ndcg10_change_vs_B1: 0.0
+      paired_delta_vs_B1: null
+      v_fit_delta_vs_B1: 0.0
+      v_audit_delta_vs_B1: 0.0
+      serving_guardrails:
+        coverage_pass: true
+        head_share_pass: true
+        repeat_pass: true
+  - name: B2_seed42
+    family: B2
+    seed: 42
+    role: diagnostic
+    checkpoint: artifacts/runs/sft_seed42_b2_continuation/best.pt
+    run_manifest: artifacts/runs/sft_seed42_b2_continuation/run_manifest.json
+    validation_evidence:
+    - artifacts/validation_selection_decision.json
+    - artifacts/validation_b2_three_seed_summary.json
+    reference_name: B1_seed42
+    validation_summary:
+      ndcg10: 0.006088213125884983
+      relative_ndcg10_change_vs_B1: 0.13652081098497115
+      paired_delta_vs_B1:
+        mean_difference: 0.0007313265057371233
+        ci_95_low: 0.00017395741665895205
+        ci_95_high: 0.0013407779586883158
+        n_users: 7034
+        repetitions: 2000
+      v_fit_delta_vs_B1: -5.682156188413501e-05
+      v_audit_delta_vs_B1: 6.618362385779619e-05
+      serving_guardrails:
+        coverage_pass: true
+        head_share_pass: true
+        repeat_pass: true
+  - name: B3_seed42
+    family: B3
+    seed: 42
+    role: selected
+    checkpoint: artifacts/runs/sft_seed42_b3_positive_only/best.pt
+    run_manifest: artifacts/runs/sft_seed42_b3_positive_only/run_manifest.json
+    validation_evidence:
+    - artifacts/validation_selection_decision.json
+    - artifacts/validation_b3_three_seed_summary.json
+    reference_name: B1_seed42
+    validation_summary:
+      ndcg10: 0.006208782804227204
+      relative_ndcg10_change_vs_B1: 0.15902822749230294
+      paired_delta_vs_B1:
+        mean_difference: 0.0008518961840793485
+        ci_95_low: 0.00023080602394656444
+        ci_95_high: 0.0014893310268877023
+        n_users: 7034
+        repetitions: 2000
+      v_fit_delta_vs_B1: 1.3537530321627855e-05
+      v_audit_delta_vs_B1: -8.492229972034693e-05
+      serving_guardrails:
+        coverage_pass: true
+        head_share_pass: true
+        repeat_pass: true
+    reward_panel:
+      sft_checkpoint: artifacts/runs/sft_seed42_final/best.pt
+      rm_fit_checkpoint: artifacts/runs/rm_fit_seed17_20261012T181102Z/best.pt
+      rm_audit_checkpoint: artifacts/runs/rm_audit_seed17_20261012T181316Z/best.pt
+      reward_scale_path: artifacts/runs/grpo_q1_beta0_seed42_selected200/reward_scale.json
+      beta: 0.1
+      reward_head: ratio
+      repeat_penalty: 0.0
+  - name: Q1_seed42
+    family: Q1
+    seed: 42
+    role: diagnostic
+    checkpoint: artifacts/runs/grpo_q1_beta0_seed42_selected200/last.pt
+    run_manifest: artifacts/runs/grpo_q1_beta0_seed42_selected200/run_manifest.json
+    validation_evidence:
+    - artifacts/validation_selection_decision.json
+    - artifacts/validation_family_ranking_q1_seed17_42_73.json
+    reference_name: B1_seed42
+    validation_summary:
+      ndcg10: 0.005509676397295462
+      relative_ndcg10_change_vs_B1: 0.02852212263984555
+      paired_delta_vs_B1:
+        mean_difference: 0.00015278977714760952
+        ci_95_low: -7.82441075818591e-05
+        ci_95_high: 0.0003969224021369078
+        n_users: 7034
+        repetitions: 2000
+      v_fit_delta_vs_B1: 8.91535310074687e-05
+      v_audit_delta_vs_B1: -1.8876628018915653e-05
+      serving_guardrails:
+        coverage_pass: true
+        head_share_pass: true
+        repeat_pass: true
+  - name: B1_seed73
+    family: B1
+    seed: 73
+    role: reference
+    checkpoint: artifacts/runs/sft_seed73_b1/best.pt
+    run_manifest: artifacts/runs/sft_seed73_b1/run_manifest.json
+    validation_evidence:
+    - artifacts/validation_selection_decision.json
+    - artifacts/validation_b1_three_seed_summary.json
+    validation_summary:
+      ndcg10: 0.005752643475781223
+      relative_ndcg10_change_vs_B1: 0.0
+      paired_delta_vs_B1: null
+      v_fit_delta_vs_B1: 0.0
+      v_audit_delta_vs_B1: 0.0
+      serving_guardrails:
+        coverage_pass: true
+        head_share_pass: true
+        repeat_pass: true
+  - name: B2_seed73
+    family: B2
+    seed: 73
+    role: diagnostic
+    checkpoint: artifacts/runs/sft_seed73_b2_continuation/best.pt
+    run_manifest: artifacts/runs/sft_seed73_b2_continuation/run_manifest.json
+    validation_evidence:
+    - artifacts/validation_selection_decision.json
+    - artifacts/validation_b2_three_seed_summary.json
+    reference_name: B1_seed73
+    validation_summary:
+      ndcg10: 0.006420260139242358
+      relative_ndcg10_change_vs_B1: 0.11605389179284598
+      paired_delta_vs_B1:
+        mean_difference: 0.0006676166634611407
+        ci_95_low: 2.135247812767288e-05
+        ci_95_high: 0.001280673257684785
+        n_users: 7034
+        repetitions: 2000
+      v_fit_delta_vs_B1: 2.5995541363954544e-07
+      v_audit_delta_vs_B1: 8.132890798151493e-06
+      serving_guardrails:
+        coverage_pass: true
+        head_share_pass: true
+        repeat_pass: true
+  - name: B3_seed73
+    family: B3
+    seed: 73
+    role: selected
+    checkpoint: artifacts/runs/sft_seed73_b3_positive_only/best.pt
+    run_manifest: artifacts/runs/sft_seed73_b3_positive_only/run_manifest.json
+    validation_evidence:
+    - artifacts/validation_selection_decision.json
+    - artifacts/validation_b3_three_seed_summary.json
+    reference_name: B1_seed73
+    validation_summary:
+      ndcg10: 0.006277991212812397
+      relative_ndcg10_change_vs_B1: 0.09132283953332099
+      paired_delta_vs_B1:
+        mean_difference: 0.0005253477370311712
+        ci_95_low: -0.00011278045237207986
+        ci_95_high: 0.0011666372251126903
+        n_users: 7034
+        repetitions: 2000
+      v_fit_delta_vs_B1: 6.445433245971799e-05
+      v_audit_delta_vs_B1: -5.9223268181085587e-05
+      serving_guardrails:
+        coverage_pass: true
+        head_share_pass: true
+        repeat_pass: true
+    reward_panel:
+      sft_checkpoint: artifacts/runs/sft_seed73_b1/best.pt
+      rm_fit_checkpoint: artifacts/runs/rm_fit_seed17_20261012T181102Z/best.pt
+      rm_audit_checkpoint: artifacts/runs/rm_audit_seed17_20261012T181316Z/best.pt
+      reward_scale_path: artifacts/runs/grpo_q1_beta0_seed73_selected200/reward_scale.json
+      beta: 0.1
+      reward_head: ratio
+      repeat_penalty: 0.0
+  - name: Q1_seed73
+    family: Q1
+    seed: 73
+    role: diagnostic
+    checkpoint: artifacts/runs/grpo_q1_beta0_seed73_selected200/last.pt
+    run_manifest: artifacts/runs/grpo_q1_beta0_seed73_selected200/run_manifest.json
+    validation_evidence:
+    - artifacts/validation_selection_decision.json
+    - artifacts/validation_family_ranking_q1_seed17_42_73.json
+    reference_name: B1_seed73
+    validation_summary:
+      ndcg10: 0.005752451523582824
+      relative_ndcg10_change_vs_B1: -3.336765075157011e-05
+      paired_delta_vs_B1:
+        mean_difference: -1.919521984026954e-07
+        ci_95_low: -0.00020007364082827236
+        ci_95_high: 0.0002060715826221321
+        n_users: 7034
+        repetitions: 2000
+      v_fit_delta_vs_B1: 8.212437387555838e-05
+      v_audit_delta_vs_B1: -1.0630348697304726e-05
+      serving_guardrails:
+        coverage_pass: false
+        head_share_pass: true
+        repeat_pass: true

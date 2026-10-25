@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=65"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tlab-submission-final"
+version = "0.1.0"
+description = "Reproducible offline RL experiments for sequential recommendation"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "scipy==1.17.1",
+  "joblib==1.6.0",
+  "torch==2.7.0",
+  "transformers==4.53.3",
+  "huggingface_hub==0.33.4",
+  "pyarrow==20.0.0",
+  "polars==1.31.0",
+  "numpy==2.2.6",
+  "scikit-learn==1.7.0",
+  "matplotlib==3.10.3",
+  "PyYAML==6.0.2",
+  "tensorboard==2.19.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==8.4.1"]
+
+[project.scripts]
+tlab-environment = "tlab.runtime:main"
+tlab-download = "tlab.data.download:main"
+tlab-prepare = "tlab.data.prepare:main"
+tlab-smoke = "tlab.experiments.smoke:main"
+tlab-sft = "tlab.train.sft:main"
+tlab-rm = "tlab.train.reward_model:main"
+tlab-like-index = "tlab.data.like_index:main"
+tlab-rm-diagnostics = "tlab.evaluation.rm_diagnostics:main"
+tlab-grpo = "tlab.train.policy:main"
+tlab-policy-panel = "tlab.evaluation.policy_panel:main"
+tlab-continuation = "tlab.evaluation.continuation:main"
+tlab-baselines = "tlab.evaluation.baselines:main"
+tlab-b4-rerank = "tlab.evaluation.rerank:main"
+tlab-horizon-diagnostics = "tlab.evaluation.horizon:main"
+tlab-seconds-diagnostics = "tlab.evaluation.seconds_diagnostics:main"
+tlab-like-window-sensitivity = "tlab.evaluation.like_window_sensitivity:main"
+tlab-freeze-selection = "tlab.experiments.freeze_selection:main"
+tlab-final-evaluation = "tlab.evaluation.final:main"
+tlab-case-studies = "tlab.evaluation.case_studies:main"
+tlab-report-figures = "tlab.evaluation.report_figures:main"
+tlab-observed-dashboard = "tlab.evaluation.observed_dashboard:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --import-mode=importlib"

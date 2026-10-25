@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "status": "evaluated",
+  "branch_id": "sample_count_4_vs_16_with_exact_control",
+  "panels": {
+    "train": 4134,
+    "development": 514,
+    "retrospective_final": 710,
+    "common_open_6655": 6655
+  },
+  "quality_rows": 54,
+  "support_rows": 72,
+  "audit_rows": 54,
+  "seed_summary_rows": 18,
+  "contrast_rows": 9,
+  "best_checkpoint_steps": {
+    "exact_seed17": 5500,
+    "exact_seed42": 1000,
+    "exact_seed73": 1500,
+    "sampled16_seed17": 0,
+    "sampled16_seed42": 2000,
+    "sampled16_seed73": 6000,
+    "sampled4_seed17": 2500,
+    "sampled4_seed42": 2000,
+    "sampled4_seed73": 5500
+  },
+  "paired_user_bootstrap_draws": 2000,
+  "user_level_seed_averaging": true,
+  "full_catalog_tail": "unchanged reference tail; branch audit reports conditional-support expectations and mass-weighted deltas only",
+  "audit_role": "descriptive only; never used for branch selection",
+  "runtime_seconds": 321.25,
+  "registered_contrasts": [
+    "sampled16 - sampled4",
+    "sampled4 - exact",
+    "sampled16 - exact"
+  ]
+}

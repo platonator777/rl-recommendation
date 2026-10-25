@@ -1,0 +1,29 @@
+protocol_id: tlab_yambda_policy_diagnostics026-10-21_r1
+seed: 17
+data:
+  processed_dir: data/processed_full_model_tminus14
+  split: train
+  catalog_size: 20000
+model:
+  n_positions: 256
+  n_layer: 4
+  n_embd: 256
+  n_head: 4
+  dropout: 0.1
+sampler:
+  version: dense_window_v1
+  window_events: 64
+  context_tokens_including_bos: 138
+  maximum_preceding_events: 200
+  supervise_only_known_nonorganic_train_targets: true
+  seed: 17
+training:
+  microbatch_windows: 2
+  accumulation_windows: 8
+  logit_chunk_size: 128
+  gradient_clip: 1.0
+  precision: fp16
+  pilot_updates: 20
+  full_fit_budget: null
+artifacts:
+  root: artifacts/panel_tools

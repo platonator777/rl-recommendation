@@ -1,0 +1,82 @@
+{
+  "run_id": "rm_audit_seed17",
+  "run_dir": "artifacts\\full_model\\runs\\tminus14\\rm_audit_seed17",
+  "status": "completed",
+  "stage": "RM_audit",
+  "variant": "audit",
+  "seed": 17,
+  "encoder": "gru",
+  "source_sha256": "86ca2c084002fc1ac957f2d5fcd894fc8841d30cbca2762e7d1c6468d6f2e669",
+  "processed_listens_sha256": "d5238bed68632ac452943263454a236c3fd2559457f0dca240d601919991c49b",
+  "catalog_sha256": "4ad76fdc9bbc71369042920a96919f2d7944f210dc1318a13263b98d91bcd578",
+  "rm_item_features_sha256": "7481d1c287bad5cd27bc4814a1cbeb69e9a983084222b0d359ce85074aa2aecb",
+  "rm_user_partition": "audit",
+  "n_users": 1752,
+  "train_examples": 200000,
+  "validation_examples": 40000,
+  "validation_sampling_seed": 17,
+  "seconds_cap": 420.0,
+  "seconds_scale": 275.0,
+  "like_label_index_sha256": null,
+  "like_label_status": "inactive_no_label_index",
+  "epochs": 8,
+  "early_stopping_patience": 99,
+  "checkpoint_interval_steps": 500,
+  "batch_size": 64,
+  "model_parameters": 2792067,
+  "environment": {
+    "captured_at_utc": "2026-10-14T17:09:47.833570+00:00",
+    "python": "3.11.9 (tags/full_model.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "processor": "Intel64 Family 6 Model 63 Stepping 2, GenuineIntel",
+    "logical_cpus": 24,
+    "packages": {
+      "torch": "2.7.0+cu128",
+      "transformers": "4.53.3",
+      "huggingface_hub": "0.33.4",
+      "pyarrow": "20.0.0",
+      "polars": "1.31.0",
+      "numpy": "2.2.6"
+    },
+    "memory_bytes": {
+      "total": 17077587968,
+      "available": 5189529600
+    },
+    "disk_bytes": {
+      "total": 1000186310656,
+      "free": 208471175168
+    },
+    "torch": {
+      "version": "2.7.0+cu128",
+      "cuda_available": true,
+      "cuda_runtime": "12.8",
+      "devices": [
+        {
+          "index": 0,
+          "name": "NVIDIA GeForce RTX 3060 Ti",
+          "total_vram_bytes": 8589279232,
+          "bf16_supported": true
+        }
+      ]
+    },
+    "nvidia_smi": [
+      "NVIDIA GeForce RTX 3060 Ti, 596.49, 8192 MiB, 6737 MiB"
+    ]
+  },
+  "started_at_utc": "2026-10-14T17:09:47.950565+00:00",
+  "latest_epoch": 7,
+  "latest_batch_cursor": 168000,
+  "global_step": 25000,
+  "completed_target_presentations": 1600000,
+  "last_checkpoint": "artifacts\\full_model\\runs\\tminus14\\rm_audit_seed17\\last.pt",
+  "peak_allocated_vram_bytes": 207417856,
+  "peak_reserved_vram_bytes": 719323136,
+  "unique_train_targets": 1148083,
+  "updated_at_utc": "2026-10-14T17:34:06.133107+00:00",
+  "best_checkpoint": "artifacts\\full_model\\runs\\tminus14\\rm_audit_seed17\\best.pt",
+  "best_ratio_rmse": 0.3706372380256653,
+  "best_epoch": 6,
+  "elapsed_seconds": 1458.1758733000024,
+  "stop_reason": "completed configured epoch budget",
+  "finished_at_utc": "2026-10-14T17:34:06.151106+00:00"
+}

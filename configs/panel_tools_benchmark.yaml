@@ -1,0 +1,20 @@
+protocol_id: tlab_yambda_policy_diagnostics026-10-21_r1
+workload:
+  catalog_vocab_size: 20003
+  actor:
+    n_layer: 4
+    n_embd: 256
+    n_head: 4
+    dropout: 0.0
+  batch_windows: 2
+  sequence_length: 256
+  valid_targets_per_window: 64
+  logit_chunk_size: 32
+  warmup_steps: 1
+  timed_repeats: 3
+  precision: fp32
+  seed: 17
+methods:
+  - repeated_encoder_backward
+  - one_encoder_backward
+output: artifacts/panel_tools/benchmark/dense_backward.json

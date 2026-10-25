@@ -1,0 +1,21 @@
+{
+  "runtime_seconds": 121.208,
+  "rows": 24,
+  "contexts_per_minibatch": 32,
+  "minibatches": 8,
+  "draws_per_sample_size_and_minibatch": 64,
+  "gradient_space": "actual ResidualPolicyHead parameters",
+  "clip_threshold": 1.0,
+  "checkpoint_step": 10000,
+  "checkpoint_training_seconds": 408.0966741000011,
+  "parameter_l2_norm": 10.069724022251956,
+  "tanh_saturation_fraction_abs_activation_over_0_99": 0.06880633544921876,
+  "preactivation_abs_q99": 5.135893888473509,
+  "residual_rms": 1.8012491058711853,
+  "residual_within_std_q10_median_q90": [
+    0.11013689297817465,
+    0.3265140821283884,
+    0.6244693505986881
+  ],
+  "learning_rate_source": "panel_tools.1 run manifest configuration; see run_manifest.json"
+}

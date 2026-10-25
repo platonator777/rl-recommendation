@@ -1,0 +1,29 @@
+{
+  "repository": "https://github.com/platonator777/rl-recommendation",
+  "date": "2026-10-25",
+  "new_checkpoints": 98,
+  "new_checkpoint_bytes": 8758002565,
+  "new_resources": 129,
+  "new_resource_bytes": 9465676598,
+  "source_bundle_files_copied": 645,
+  "raw_data_uploaded": false,
+  "new_training_or_GPT_inference": false,
+  "remaining_external_by_role": {
+    "actor": 3,
+    "cache": 46,
+    "full_model_weight": 17,
+    "prepared_data": 18,
+    "raw_dataset": 3
+  },
+  "tests": {
+    "passed": 143,
+    "skipped": 1
+  },
+  "small_model_check": {
+    "heads": 100,
+    "reward_models": 12,
+    "masked_heads": 6
+  },
+  "weights_storage": "Git LFS",
+  "checkpoint_files": 198
+}

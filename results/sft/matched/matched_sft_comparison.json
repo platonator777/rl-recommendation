@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "status": "matched_sft_comparison",
+  "comparison_basis": "same initialization, development panel, optimizer and fixed training wall-time budget",
+  "training_wall_time_budget_seconds_each": 5700,
+  "initial_actor_sha256": "cb52365379f678da39c5fb099d16e8c625ddd1fb8f7bd738467b13bfa7500afe",
+  "runs": {
+    "dense": {
+      "updates": 46001,
+      "training_seconds": 5700.112370601972,
+      "unique_target_events": 10441413,
+      "supervised_target_presentations": 10877579,
+      "repeat_target_presentations_after_first_sampler_pass": 436166,
+      "unique_sampler_indices": 353334,
+      "sampler_length": 353334,
+      "initial_evaluation": {
+        "train_sample": {
+          "cross_entropy": 9.942221409641206,
+          "targets": 1024.0
+        },
+        "development_ce": {
+          "cross_entropy": 9.931509406370957,
+          "known_catalog_targets": 329.0,
+          "oov_targets": 185.0
+        },
+        "development_ranking": {
+          "ndcg@10": 0.0027834174281583524,
+          "recall@10": 0.0038910505836575876,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "development_panel_events": 514,
+        "evaluation_seconds": 0.9854387000086717
+      },
+      "final_evaluation": {
+        "train_sample": {
+          "cross_entropy": 7.560815400443971,
+          "targets": 1024.0
+        },
+        "development_ce": {
+          "cross_entropy": 7.663782438608651,
+          "known_catalog_targets": 329.0,
+          "oov_targets": 185.0
+        },
+        "development_ranking": {
+          "ndcg@10": 0.016576297192198622,
+          "recall@10": 0.0311284046692607,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "development_panel_events": 514,
+        "evaluation_seconds": 1.0853158000099938
+      },
+      "amp_skipped_updates": 0
+    },
+    "last_target": {
+      "updates": 48943,
+      "training_seconds": 5700.078394197859,
+      "unique_target_events": 391544,
+      "supervised_target_presentations": 391544,
+      "repeat_target_presentations_after_first_sampler_pass": 0,
+      "unique_sampler_indices": 391544,
+      "sampler_length": 10441413,
+      "initial_evaluation": {
+        "train_sample": {
+          "cross_entropy": 9.95072353631258,
+          "targets": 1024.0
+        },
+        "development_ce": {
+          "cross_entropy": 9.931509406370957,
+          "known_catalog_targets": 329.0,
+          "oov_targets": 185.0
+        },
+        "development_ranking": {
+          "ndcg@10": 0.0027834174281583524,
+          "recall@10": 0.0038910505836575876,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "development_panel_events": 514,
+        "evaluation_seconds": 0.986731899989536
+      },
+      "final_evaluation": {
+        "train_sample": {
+          "cross_entropy": 9.014232000336051,
+          "targets": 1024.0
+        },
+        "development_ce": {
+          "cross_entropy": 9.201035258980145,
+          "known_catalog_targets": 329.0,
+          "oov_targets": 185.0
+        },
+        "development_ranking": {
+          "ndcg@10": 0.0032686985146822803,
+          "recall@10": 0.009727626459143969,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "development_panel_events": 514,
+        "evaluation_seconds": 0.9944875000219326
+      },
+      "amp_skipped_updates": 0
+    }
+  },
+  "interpretation": "Dense and last-target see different target presentations per update; comparisons are equal wall time. Report target throughput, coverage, CE and ranking together.",
+  "created_at_utc": "2026-10-22T01:37:45.503765+00:00"
+}

@@ -1,0 +1,58 @@
+project:
+  seed: 17
+  data_dir: data
+  artifacts_dir: artifacts/reference
+
+dataset:
+  repo_id: yandex/yambda
+  revision: main
+  files:
+    listens: flat/50m/listens.parquet
+    likes: flat/50m/likes.parquet
+    unlikes: flat/50m/unlikes.parquet
+  timestamp_unit_seconds: 1
+  timestamp_bin_seconds: 5
+  rm_user_split_seed: 17
+  rm_audit_fraction: 0.2
+  catalog_size: 20000
+  history_events: 200
+  history_length: 201
+  train_days: 21
+  validation_days: 14
+  test_days: 7
+  rm_validation_days: 7
+  rl_anchor_days: 7
+
+model:
+  n_layer: 4
+  n_embd: 256
+  n_head: 4
+  n_positions: 256
+  dropout: 0.1
+
+training:
+  precision: auto
+  rl_learning_rate: 0.00001
+  rl_group_size: 8
+  rl_clip_epsilon: 0.2
+  validation_seed: 17
+  rl_validation_seed: 17
+  rl_anchor_seed: 17
+  rl_reward_scale_seed: 90017
+  rl_validation_anchors_per_user: 10
+  rl_reward_cache_contexts: 512
+  rl_rollout_batch_contexts: 16
+  rl_minibatch_contexts: 16
+  rl_rollout_batches: 5000
+  rl_update_epochs: [1, 4]
+  rl_old_policy_kl_stop: 0.02
+  rl_max_rollout_batches: 10000
+  rl_checkpoint_interval: 100
+  rl_validation_interval_batches: 500
+  rl_reward_scale_contexts: 512
+  rl_reward_catalog_chunk_size: 512
+
+data:
+  source_dir: data/raw
+  processed_dir: data/processed
+  num_workers: 0

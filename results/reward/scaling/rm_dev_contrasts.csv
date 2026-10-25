@@ -1,0 +1,3 @@
+contrast,metric,mean_difference,n_users,bootstrap_draws,seed,ci95_low,ci95_high,interpretation
+large_affinity - small_affinity,user_macro_mae,-0.001615100457617643,1074,2000,63017,-0.003142375905424547,-0.00010728053199332327,negative favors left model
+large_affinity - large_base,user_macro_mae,-0.001982788214639469,1074,2000,63019,-0.003048095122418,-0.00098223013943576,negative favors left model

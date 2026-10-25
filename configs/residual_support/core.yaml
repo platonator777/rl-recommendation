@@ -1,0 +1,26 @@
+protocol_id: tlab_yambda_residual_support_exploratory_2026-10-22
+source_protocol: artifacts/panel_tools/protocol.json
+processed_dir: data/processed_full_model_tminus14
+sequence_index: data/processed_full_model_tminus14/sequence_index
+catalog: data/processed_full_model_tminus14/catalog.parquet
+baseline_panel: artifacts/panel_tools/evaluation/frozen_primary_validation_panel.jsonl
+checkpoints:
+  weak: models/actor/weak.pt
+  strong: models/actor/strong.pt
+reference: strong
+evaluation:
+  history_events: 200
+  batch_size: 32
+  top_k: 10
+  bootstrap_draws: 2000
+  retrospective: true
+outputs:
+  comparison_json: artifacts/residual_support/baseline/baseline_comparison.json
+  comparison_csv: artifacts/residual_support/baseline/baseline_comparison.csv
+  role_manifest: artifacts/residual_support/protocol/panel_roles.json
+  training_panel: artifacts/residual_support/panels/a_rl_train.jsonl
+  development_panel: artifacts/residual_support/panels/validation_development.jsonl
+  final_panel: artifacts/residual_support/panels/test_retrospective.jsonl
+  training_panel_manifest: artifacts/residual_support/panels/a_rl_train_manifest.json
+  development_panel_manifest: artifacts/residual_support/panels/validation_development_manifest.json
+  final_panel_manifest: artifacts/residual_support/panels/test_retrospective_manifest.json

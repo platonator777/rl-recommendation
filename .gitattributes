@@ -1,0 +1,10 @@
+# Preserve exact file bytes for the SHA256 manifest.
+* -text
+*.pt filter=lfs diff=lfs merge=lfs -text
+*.joblib filter=lfs diff=lfs merge=lfs -text
+*.npy filter=lfs diff=lfs merge=lfs -text
+*.npz filter=lfs diff=lfs merge=lfs -text
+results/policy/compact_head/complete_evaluation/per_user.csv filter=lfs diff=lfs merge=lfs -text
+results/policy/compact_head/complete_evaluation/top10_recommendations.csv filter=lfs diff=lfs merge=lfs -text
+results/policy/compact_head/complete_evaluation/top10_action_predictions.csv filter=lfs diff=lfs merge=lfs -text
+results/diagnostics/sample_count/branch_top10.csv filter=lfs diff=lfs merge=lfs -text

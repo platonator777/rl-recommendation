@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "status": "prepared",
+  "protocol_id": "tlab_yambda_residual_support_exploratory_2026-10-22",
+  "source_protocol_sha256": "a088593b3db2d6e201fcf965977019b8d22254c60a07f03bb3fa3d885b248c80",
+  "catalog_sha256": "684322d6b1f91c18ba90d085d212464f424debc6425cc65b011539d33b969970",
+  "config_sha256": "4208dc631b07281b7774645269833a24d4d0c674e4ccc27765a4a3ed21a9d320",
+  "initial_actor_path": "artifacts\\residual_support\\sft\\initial_actor.pt",
+  "initial_actor_sha256": "cb52365379f678da39c5fb099d16e8c625ddd1fb8f7bd738467b13bfa7500afe",
+  "catalog_items": 20000,
+  "train_target_events": 10441413,
+  "dense_windows": 353334,
+  "dense_targets_by_window": 29.551113111107338,
+  "train_users": 9238,
+  "model_shape": {
+    "vocab_size": 20003,
+    "n_positions": 256,
+    "n_layer": 4,
+    "n_embd": 256,
+    "n_head": 4,
+    "dropout": 0.1
+  },
+  "development_panel_path": "artifacts\\residual_support\\panels\\validation_development.jsonl",
+  "prepared_at_utc": "2026-10-21T22:09:25.085770+00:00"
+}

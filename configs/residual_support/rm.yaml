@@ -1,0 +1,13 @@
+protocol_id: tlab_yambda_residual_support_exploratory_2026-10-22
+processed_dir: data/processed_full_model_tminus14
+sequence_index: data/processed_full_model_tminus14/sequence_index
+catalog: data/processed_full_model_tminus14/catalog.parquet
+model:
+  prior_fraction_of_f_rm: 0.85
+  max_train_events_per_user: 5
+  max_audit_events_per_user: 5
+  seed: 17
+  minimum_fit_rows: 10000
+  minimum_audit_rows: 1000
+outputs:
+  root: artifacts/residual_support/rm

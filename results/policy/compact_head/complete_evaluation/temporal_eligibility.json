@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "role": "pre-outcome row-level temporal eligibility; no target outcomes used for selection",
+  "started_at_utc": "2026-10-22T04:25:20.335545+00:00",
+  "completed_at_utc": "2026-10-22T04:25:34.884330+00:00",
+  "runtime_seconds": 14.507,
+  "source_hashes": {
+    "processed_listens_sha256": "d5238bed68632ac452943263454a236c3fd2559457f0dca240d601919991c49b",
+    "actor_checkpoint_sha256": "51b6e2d6635c7ef4b08f9a345d6f08003d0ce2d3f98f63cba991ee8a4dea8381",
+    "rm_diagnostics_prior_cutoffs": {
+      "fit_targets_time_start": 18501444.25,
+      "fit_targets_time_end_exclusive": 21766405.0,
+      "fit_feature_cutoff_exclusive": 18501444.25,
+      "fit_prior_source": "all known, non-organic, unambiguous F_RM events strictly earlier than every selected RM fit target",
+      "policy_prior_cutoff_exclusive": 21766405.0,
+      "policy_prior_source": "all known, non-organic, unambiguous F_RM events, before V_RM and A_RL",
+      "target_ratio_in_prior": false,
+      "prior_change_test": "feature priors are computed on rows with timestamp < cutoff; later targets cannot enter the aggregation query",
+      "embedding_source": "not used by RM fit; frozen full_model strong actor embeddings are used only for the separate policy candidate-history interaction feature"
+    }
+  },
+  "cutoffs": {
+    "actor_training_targets_exclusive": 22976005.0,
+    "optimized_rm_fit_targets_end_exclusive": 21766405.0,
+    "policy_item_priors_exclusive": 21766405.0,
+    "all_method_common_minimum_target_time_inclusive": 22976005.0,
+    "common_panel_selection_rule": "all fixed panel rows whose target timestamp is at or after every fitted actor/RM/prior cutoff; no filtering by target hit, ratio, support, or outcome"
+  },
+  "panels": {
+    "a_rl_train": {
+      "path": "artifacts/residual_support/panels/a_rl_train.jsonl",
+      "n_rows": 4134,
+      "n_users": 4134,
+      "unmatched_position_rows": 0,
+      "target_raw_id_mismatch_rows": 0,
+      "timestamp_tie_rows": 0,
+      "actor_cutoff_eligible_rows": 0,
+      "common_eligible_rows": 0,
+      "common_eligible_users": 0,
+      "excluded_before_common_cutoff": 4134,
+      "timestamp_min": 22371615,
+      "timestamp_max": 22975525,
+      "eligible_timestamp_min": null,
+      "eligible_timestamp_max": null
+    },
+    "development": {
+      "path": "artifacts/residual_support/panels/validation_development.jsonl",
+      "n_rows": 514,
+      "n_users": 514,
+      "unmatched_position_rows": 0,
+      "target_raw_id_mismatch_rows": 0,
+      "timestamp_tie_rows": 0,
+      "actor_cutoff_eligible_rows": 514,
+      "common_eligible_rows": 514,
+      "common_eligible_users": 514,
+      "excluded_before_common_cutoff": 0,
+      "timestamp_min": 22976940,
+      "timestamp_max": 24185300,
+      "eligible_timestamp_min": 22976940,
+      "eligible_timestamp_max": 24185300
+    },
+    "retrospective_final": {
+      "path": "artifacts/residual_support/panels/test_retrospective.jsonl",
+      "n_rows": 710,
+      "n_users": 710,
+      "unmatched_position_rows": 0,
+      "target_raw_id_mismatch_rows": 0,
+      "timestamp_tie_rows": 0,
+      "actor_cutoff_eligible_rows": 710,
+      "common_eligible_rows": 710,
+      "common_eligible_users": 710,
+      "excluded_before_common_cutoff": 0,
+      "timestamp_min": 24188005,
+      "timestamp_max": 24790390,
+      "eligible_timestamp_min": 24188005,
+      "eligible_timestamp_max": 24790390
+    },
+    "common_open_6655": {
+      "path": "artifacts/panel_tools/evaluation/frozen_primary_validation_panel.jsonl",
+      "n_rows": 6655,
+      "n_users": 6655,
+      "unmatched_position_rows": 0,
+      "target_raw_id_mismatch_rows": 0,
+      "timestamp_tie_rows": 0,
+      "actor_cutoff_eligible_rows": 6655,
+      "common_eligible_rows": 6655,
+      "common_eligible_users": 6655,
+      "excluded_before_common_cutoff": 0,
+      "timestamp_min": 22976340,
+      "timestamp_max": 24185160,
+      "eligible_timestamp_min": 22976340,
+      "eligible_timestamp_max": 24185160
+    }
+  },
+  "diagnostic": {
+    "all_rows_unmatched_position": 0,
+    "common_panel_temporally_valid_for_all_registered_methods": true,
+    "eligibility_uses_future_features_as_test": false,
+    "historical_outcome_exposure_remains": true
+  },
+  "row_output": "artifacts/policy_diagnostics/evaluation/temporal_eligibility_rows.csv"
+}

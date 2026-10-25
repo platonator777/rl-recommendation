@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "exact_output_hash_matches": 112,
+  "heads": 100,
+  "reward_models": 12,
+  "masked_heads": 6,
+  "input": "Two contexts, 500 candidates; original and migrated implementations in separate processes; single-thread RF accumulation.",
+  "full_GPT_inference": false
+}

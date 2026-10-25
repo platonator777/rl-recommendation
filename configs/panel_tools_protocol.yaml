@@ -1,0 +1,20 @@
+protocol_id: tlab_yambda_policy_diagnostics026-10-21_r1
+seed: 17
+dataset:
+  repository: yandex/yambda
+  revision: dd6f3a19eef5866e346c3270e098baa641a44948
+  source_manifest: data/data_manifest.json
+  processed_dir: data/processed_full_model_tminus14
+  processed_hash: d5238bed68632ac452943263454a236c3fd2559457f0dca240d601919991c49b
+  artist_mapping: data/raw/artist_item_mapping.parquet
+  artist_mapping_required_for_artist_features: true
+evaluation:
+  split: validation
+  targets_per_user: 3
+  event_hash_seed: 17
+  history_events: 200
+  top_k: 10
+  primary: user_macro_ndcg_at_10
+  target_filter_independent_of_ratio_and_catalog: true
+  oov_as_miss: true
+  retrospective: true

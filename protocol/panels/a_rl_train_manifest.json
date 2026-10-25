@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "split": "train",
+  "source_sha256": "d5238bed68632ac452943263454a236c3fd2559457f0dca240d601919991c49b",
+  "selection_seed": 401,
+  "selection_rule": "stable SHA256(seed,event_id), selected before scoring; no ratio/catalog filter",
+  "targets_per_user_max": 3,
+  "n_events": 4134,
+  "n_users": 4134,
+  "event_ids_sha256": "aa11e1c2307c8b994dddf0a54b9deb4afb6484d0a3f3718f1033acf59762e1dc",
+  "oov_targets": 1364,
+  "role": "training",
+  "not_independent_test": true,
+  "panel_sha256": "5d8a86cb4e1c0139c80ea893d2418dfae9e21da1c8b10243f9c9327aa5a7eadb"
+}

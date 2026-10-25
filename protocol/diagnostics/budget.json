@@ -1,0 +1,482 @@
+{
+  "schema_version": 1,
+  "protocol_id": "tlab_yambda_policy_diagnostics_retrospective_2026-10-22",
+  "mode": "previously_authorized_24h_total_with_base_10h_additional_cap",
+  "historical_recorded_lower_bound_seconds": 22433.568,
+  "historical_early_preparation": "unknown, not imputed as zero",
+  "total_fit_stop_threshold_seconds": 61200,
+  "remaining_to_stop_threshold_seconds_from_lower_bound": 38766.432,
+  "new_stage_cap_seconds": 36000,
+  "new_stage_allocation_seconds": {
+    "A": 5400,
+    "B": 7200,
+    "C": 5400,
+    "conditional_branches": 10800,
+    "final_evaluation_and_report": 5400,
+    "protected_new_stage_reserve": 1800
+  },
+  "reserve_rule": "The historical 7h reserve is already inside the 17h stop threshold; do not subtract it a second time. The new 0.5h reserve is included within the 10h new-stage cap.",
+  "measured_work": [
+    {
+      "name": "protocol_registration_input_hash_and_83_8GB_protection_baseline",
+      "seconds": 328.0,
+      "bucket": "A",
+      "category": "preprocessing_and_integrity",
+      "recorded_at_utc": "2026-10-22T04:24:19.438109+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/protocol/registration.json",
+        "artifacts/policy_diagnostics/protocol/input_manifest.json",
+        "artifacts/policy_diagnostics/protection/before.json"
+      ],
+      "note": "Protection SHA-256 pass 315.012 seconds over 3,102 historical files / 83,843,062,806 bytes; registration and exact input-manifest construction account for remaining wall time."
+    },
+    {
+      "name": "row_level_temporal_eligibility_gate",
+      "seconds": 14.507,
+      "bucket": "A",
+      "category": "preprocessing",
+      "recorded_at_utc": "2026-10-22T04:25:34.952197+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/evaluation/temporal_eligibility.json",
+        "artifacts/policy_diagnostics/evaluation/temporal_eligibility_rows.csv"
+      ]
+    },
+    {
+      "name": "build_common_6655_policy_cache",
+      "seconds": 131.578,
+      "bucket": "A",
+      "category": "preprocessing",
+      "recorded_at_utc": "2026-10-22T04:30:12.202547+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/cache/common_open_6655/manifest.json"
+      ]
+    },
+    {
+      "name": "A1_checkpoint_schema_adapter_failure_and_repair",
+      "seconds": 13.489,
+      "bucket": "A",
+      "category": "correctness_diagnostic",
+      "recorded_at_utc": "2026-10-22T04:35:32.091804+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/logs/A1_attempt1.json"
+      ],
+      "note": "Failed at first development head checkpoint before any A1 output was finalized; immutable old checkpoints were read-only."
+    },
+    {
+      "name": "A1_top10_summary_adapter_bug_and_repair",
+      "seconds": 43.3,
+      "bucket": "A",
+      "category": "correctness_diagnostic",
+      "recorded_at_utc": "2026-10-22T04:36:46.942682+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/logs/A1_attempt2.json"
+      ],
+      "note": "Development policy scores were computed; run stopped while preparing in-memory output tables before any result file was finalized."
+    },
+    {
+      "name": "A1_legacy_full_catalog_scoring_and_2000_draw_user_bootstrap",
+      "seconds": 662.623,
+      "bucket": "A",
+      "category": "evaluation",
+      "recorded_at_utc": "2026-10-22T04:48:00.870086+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/evaluation/legacy_completion.csv",
+        "artifacts/policy_diagnostics/evaluation/per_user.csv",
+        "artifacts/policy_diagnostics/evaluation/top10_recommendations.csv",
+        "artifacts/policy_diagnostics/evaluation/seed_contrasts.csv",
+        "artifacts/policy_diagnostics/evaluation/legacy_completion_slices.csv",
+        "artifacts/policy_diagnostics/evaluation/legacy_completion.json"
+      ]
+    },
+    {
+      "name": "A2_external_audit_and_B1_B5_diagnostics",
+      "seconds": 39.237,
+      "bucket": "B",
+      "category": "evaluation_and_diagnostics",
+      "recorded_at_utc": "2026-10-22T05:04:55.212436+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/diagnostics/external_audit_expectations.csv",
+        "artifacts/policy_diagnostics/diagnostics/reward_variance_alignment_beta.csv",
+        "artifacts/policy_diagnostics/diagnostics/gradient_noise.csv",
+        "artifacts/policy_diagnostics/diagnostics/representability_embedding_ridge.csv",
+        "artifacts/policy_diagnostics/diagnostics/support_coverage.csv",
+        "artifacts/policy_diagnostics/diagnostics/diagnostics_summary.json"
+      ]
+    },
+    {
+      "name": "A2_B1_B5_first_panel_pass_stopped_at_B4_schema_adapter",
+      "seconds": 224.0,
+      "bucket": "B",
+      "category": "correctness_diagnostic",
+      "recorded_at_utc": "2026-10-22T05:07:26.336515+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/diagnostics/panel_cache"
+      ],
+      "note": "Conservative observed runtime lower bound from yielded tool waits; repeated A2/B1-B5 panel scoring was stopped after B4 exposed checkpoint feature-column metadata in run_manifest.json. The interval is a floor, not a claim of exact total wall time."
+    },
+    {
+      "name": "A2_B1_B5_complete_panel_scoring_before_B4_probability_check",
+      "seconds": 280.0,
+      "bucket": "B",
+      "category": "evaluation_and_diagnostics",
+      "recorded_at_utc": "2026-10-22T05:07:31.212691+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/diagnostics/panel_cache"
+      ],
+      "note": "Measured from the first panel-cache file timestamp 2026-10-22 09:58:51 to the final common-open panel cache timestamp 2026-10-22 10:03:31; subsequent B4 sampling caught a float32 probability-sum validation issue before final tables were written."
+    },
+    {
+      "name": "B4_probability_sampler_validation_rerun",
+      "seconds": 39.237,
+      "bucket": "B",
+      "category": "diagnostic_completion",
+      "recorded_at_utc": "2026-10-22T05:07:37.185987+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/diagnostics/gradient_noise.csv"
+      ]
+    },
+    {
+      "name": "A2_full_support_slices_and_all_actual_top10_action_predictions",
+      "seconds": 915.802,
+      "bucket": "A",
+      "category": "evaluation_and_preprocessing",
+      "recorded_at_utc": "2026-10-22T05:23:06.021605+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/evaluation/policy_audit_slices.csv",
+        "artifacts/policy_diagnostics/evaluation/policy_audit_top10.csv",
+        "artifacts/policy_diagnostics/evaluation/top10_action_predictions.csv"
+      ]
+    },
+    {
+      "name": "A2_full_catalog_actor_policy_MC_audit",
+      "seconds": 682.795,
+      "bucket": "A",
+      "category": "preprocessing_and_evaluation",
+      "recorded_at_utc": "2026-10-22T05:35:47.035636+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/evaluation/policy_audit_actor_full_catalog_mc.csv",
+        "artifacts/policy_diagnostics/evaluation/policy_audit_actor_mc_slices.csv"
+      ]
+    },
+    {
+      "name": "B1_B2_B3_B5_strata_collision_pairs_and_train_checkpoint_gaps",
+      "seconds": 64.173,
+      "bucket": "B",
+      "category": "diagnostics",
+      "recorded_at_utc": "2026-10-22T05:37:17.316084+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/diagnostics/variance_by_novelty_support.csv",
+        "artifacts/policy_diagnostics/diagnostics/rm_input_reward_collisions.csv",
+        "artifacts/policy_diagnostics/diagnostics/proxy_audit_deterministic_pairs.csv",
+        "artifacts/policy_diagnostics/diagnostics/analytic_gap_by_seed_checkpoint.csv"
+      ]
+    },
+    {
+      "name": "B4_parameter_gradient_noise_firstpass",
+      "seconds": 120.772,
+      "bucket": "B",
+      "category": "gradient_diagnostics",
+      "recorded_at_utc": "2026-10-22T05:39:32.014868+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/diagnostics/gradient_parameter_noise.csv"
+      ],
+      "note": "First completed pass produced the same primary error/cosine contrasts; a later reproducibility pass added draw-level cosine, noise-ratio, and correct checkpoint-step metadata."
+    },
+    {
+      "name": "B5_shared_crossfeature_and_percontext_embedding_expressivity",
+      "seconds": 73.23,
+      "bucket": "B",
+      "category": "representability_diagnostics",
+      "recorded_at_utc": "2026-10-22T05:41:02.736624+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/diagnostics/expressivity_cross_user.csv",
+        "artifacts/policy_diagnostics/diagnostics/expressivity_per_context_ridge.csv",
+        "artifacts/policy_diagnostics/diagnostics/expressivity_embedding_controls.csv"
+      ]
+    },
+    {
+      "name": "C_timestamp_index_and_user_hash_split",
+      "seconds": 17.707,
+      "bucket": "C",
+      "category": "preprocessing",
+      "recorded_at_utc": "2026-10-22T05:41:33.986399+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/rm/C_split_manifest.json"
+      ]
+    },
+    {
+      "name": "C_temporal_priors_affinity_embeddings_and_feature_preprocessing",
+      "seconds": 75.051,
+      "bucket": "C",
+      "category": "preprocessing",
+      "recorded_at_utc": "2026-10-22T05:42:49.049640+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/rm/prefix_affinity_embeddings.npy"
+      ]
+    },
+    {
+      "name": "C_RM_control_affinity_model_fit",
+      "seconds": 2.456,
+      "bucket": "C",
+      "category": "model_fit",
+      "recorded_at_utc": "2026-10-22T05:42:55.517517+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/rm/C_metrics.csv"
+      ]
+    },
+    {
+      "name": "C_user_disjoint_RMdev_predictions_metrics_bootstrap_and_shuffle",
+      "seconds": 3.449,
+      "bucket": "C",
+      "category": "evaluation",
+      "recorded_at_utc": "2026-10-22T05:42:55.534517+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/rm/C_paired_contrasts.csv",
+        "artifacts/policy_diagnostics/rm/C_shuffle_history_sensitivity.csv"
+      ]
+    },
+    {
+      "name": "policy_branch_sample_count_sampled4",
+      "seconds": 740.381,
+      "bucket": "conditional_branches",
+      "category": "training_preprocessing_and_inline_evaluation",
+      "recorded_at_utc": "2026-10-22T05:59:21.691332+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/sampled4/main_fit_summary.json"
+      ],
+      "note": "Includes cache loading, scaler/baseline setup, training and all inline development checkpoint evaluations."
+    },
+    {
+      "name": "policy_branch_sample_count_sampled16",
+      "seconds": 721.113,
+      "bucket": "conditional_branches",
+      "category": "training_preprocessing_and_inline_evaluation",
+      "recorded_at_utc": "2026-10-22T06:11:22.816539+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/sampled16/main_fit_summary.json"
+      ],
+      "note": "Includes cache loading, scaler/baseline setup, training and all inline development checkpoint evaluations."
+    },
+    {
+      "name": "policy_branch_sample_count_exact",
+      "seconds": 749.353,
+      "bucket": "conditional_branches",
+      "category": "training_preprocessing_and_inline_evaluation",
+      "recorded_at_utc": "2026-10-22T06:23:52.189786+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/exact/main_fit_summary.json"
+      ],
+      "note": "Includes cache loading, scaler/baseline setup, training and all inline development checkpoint evaluations."
+    },
+    {
+      "name": "policy_branch_sample_count_full_catalog_evaluation_and_paired_bootstrap",
+      "seconds": 321.255,
+      "bucket": "final_evaluation_and_report",
+      "category": "full_catalog_evaluation_audit_statistics",
+      "recorded_at_utc": "2026-10-22T06:29:45.572061+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/branch_policy_quality.csv",
+        "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/branch_contrasts.csv",
+        "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/branch_policy_audit.csv"
+      ],
+      "note": "Includes cache loading, external-audit support prediction, full-catalog ranking, exact J/KL summaries and user-bootstrap contrasts."
+    },
+    {
+      "name": "policy_diagnostics_reproducible_figures",
+      "seconds": 2.883,
+      "bucket": "final_evaluation_and_report",
+      "category": "reporting_visualization",
+      "recorded_at_utc": "2026-10-22T06:31:56.445369+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/figures/variance_decomposition.png",
+        "artifacts/policy_diagnostics/figures/centered_proxy_audit_alignment.png",
+        "artifacts/policy_diagnostics/figures/analytic_gap_by_updates.png",
+        "artifacts/policy_diagnostics/figures/gradient_error_by_sample_count.png",
+        "artifacts/policy_diagnostics/figures/heldout_proxy_approximation.png",
+        "artifacts/policy_diagnostics/figures/support_by_novelty_variance.png",
+        "artifacts/policy_diagnostics/figures/overall_method_user_ci.png",
+        "artifacts/policy_diagnostics/figures/branch_quality_reward_vs_kl.png",
+        "artifacts/policy_diagnostics/figures/branch_contrasts_user_ci.png",
+        "artifacts/policy_diagnostics/figures/figures_manifest.json"
+      ]
+    },
+    {
+      "name": "A2_reaggregate_fixed_support_expectations",
+      "seconds": 0.052,
+      "bucket": "A",
+      "category": "evaluation_recomposition",
+      "recorded_at_utc": "2026-10-22T06:34:32.024426+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/evaluation/policy_audit_expectations.csv",
+        "artifacts/policy_diagnostics/evaluation/policy_audit_expectations_summary.json"
+      ],
+      "note": "Recomputed all-policy expectations from exhaustive disjoint novelty × RM-support slices; all_candidates diagnostic row is excluded from the partition sum."
+    },
+    {
+      "name": "A2_full_support_slices_and_all_actual_top10_action_predictions",
+      "seconds": 967.093,
+      "bucket": "A",
+      "category": "evaluation_and_preprocessing",
+      "recorded_at_utc": "2026-10-22T06:51:52.752091+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/evaluation/policy_audit_slices.csv",
+        "artifacts/policy_diagnostics/evaluation/policy_audit_top10.csv",
+        "artifacts/policy_diagnostics/evaluation/top10_action_predictions.csv"
+      ]
+    },
+    {
+      "name": "A2_reaggregate_after_postfix_rerun",
+      "seconds": 0.06,
+      "bucket": "A",
+      "category": "evaluation_recomposition",
+      "recorded_at_utc": "2026-10-22T06:52:07.571858+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/evaluation/policy_audit_expectations.csv",
+        "artifacts/policy_diagnostics/evaluation/policy_audit_expectations_summary.json"
+      ]
+    },
+    {
+      "name": "policy_diagnostics_reproducible_figures",
+      "seconds": 2.688,
+      "bucket": "final_evaluation_and_report",
+      "category": "reporting_visualization",
+      "recorded_at_utc": "2026-10-22T06:52:22.376664+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/figures/variance_decomposition.png",
+        "artifacts/policy_diagnostics/figures/centered_proxy_audit_alignment.png",
+        "artifacts/policy_diagnostics/figures/analytic_gap_by_updates.png",
+        "artifacts/policy_diagnostics/figures/gradient_error_by_sample_count.png",
+        "artifacts/policy_diagnostics/figures/heldout_proxy_approximation.png",
+        "artifacts/policy_diagnostics/figures/support_by_novelty_variance.png",
+        "artifacts/policy_diagnostics/figures/overall_method_user_ci.png",
+        "artifacts/policy_diagnostics/figures/branch_quality_reward_vs_kl.png",
+        "artifacts/policy_diagnostics/figures/branch_contrasts_user_ci.png",
+        "artifacts/policy_diagnostics/figures/figures_manifest.json"
+      ]
+    },
+    {
+      "name": "A2_external_audit_and_B1_B5_diagnostics",
+      "seconds": 321.363,
+      "bucket": "B",
+      "category": "evaluation_and_diagnostics",
+      "recorded_at_utc": "2026-10-22T07:01:16.602269+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/diagnostics/external_audit_expectations.csv",
+        "artifacts/policy_diagnostics/diagnostics/reward_variance_alignment_beta.csv",
+        "artifacts/policy_diagnostics/diagnostics/proxy_audit_alignment_users.csv",
+        "artifacts/policy_diagnostics/diagnostics/proxy_audit_alignment_user_ci.csv",
+        "artifacts/policy_diagnostics/diagnostics/gradient_noise.csv",
+        "artifacts/policy_diagnostics/diagnostics/representability_embedding_ridge.csv",
+        "artifacts/policy_diagnostics/diagnostics/support_coverage.csv",
+        "artifacts/policy_diagnostics/diagnostics/diagnostics_summary.json"
+      ]
+    },
+    {
+      "name": "B4_parameter_gradient_noise_rich_reproducibility_rerun",
+      "seconds": 121.346,
+      "bucket": "B",
+      "category": "gradient_diagnostics",
+      "recorded_at_utc": "2026-10-22T07:03:58.958844+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/diagnostics/gradient_parameter_noise.csv"
+      ],
+      "note": "Reran the same 8 fixed batches/64 draws after adding bias, negative cosine, RMS-noise ratio, tanh saturation, residual spread, and checkpoint provenance fields."
+    },
+    {
+      "name": "B4_parameter_gradient_noise_and_actual_clip_probe",
+      "seconds": 121.208,
+      "bucket": "B",
+      "category": "gradient_diagnostics",
+      "recorded_at_utc": "2026-10-22T07:07:14.485641+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/diagnostics/gradient_parameter_noise.csv"
+      ]
+    },
+    {
+      "name": "policy_diagnostics_reproducible_figures",
+      "seconds": 2.704,
+      "bucket": "final_evaluation_and_report",
+      "category": "reporting_visualization",
+      "recorded_at_utc": "2026-10-22T07:08:06.899586+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/figures/variance_decomposition.png",
+        "artifacts/policy_diagnostics/figures/centered_proxy_audit_alignment.png",
+        "artifacts/policy_diagnostics/figures/analytic_gap_by_updates.png",
+        "artifacts/policy_diagnostics/figures/gradient_error_by_sample_count.png",
+        "artifacts/policy_diagnostics/figures/heldout_proxy_approximation.png",
+        "artifacts/policy_diagnostics/figures/support_by_novelty_variance.png",
+        "artifacts/policy_diagnostics/figures/overall_method_user_ci.png",
+        "artifacts/policy_diagnostics/figures/branch_quality_reward_vs_kl.png",
+        "artifacts/policy_diagnostics/figures/branch_contrasts_user_ci.png",
+        "artifacts/policy_diagnostics/figures/figures_manifest.json"
+      ]
+    },
+    {
+      "name": "policy_diagnostics_final_invariant_regression",
+      "seconds": 9.85,
+      "bucket": "final_evaluation_and_report",
+      "category": "implementation_verification",
+      "recorded_at_utc": "2026-10-22T07:10:09.121829+00:00",
+      "evidence": [
+        "tests/policy_diagnostics/test_research_invariants.py",
+        "tests/residual_support/test_cache_metrics.py",
+        "tests/residual_support/test_resume.py"
+      ],
+      "note": "13 passed; pytest cache and bytecode disabled."
+    },
+    {
+      "name": "policy_diagnostics_supported_cli_help_checks",
+      "seconds": 13.4,
+      "bucket": "final_evaluation_and_report",
+      "category": "reproducibility_check",
+      "recorded_at_utc": "2026-10-22T07:10:09.134829+00:00",
+      "evidence": [
+        "src/tlab/policy_diagnostics/temporal.py",
+        "src/tlab/policy_diagnostics/complete_evaluation.py",
+        "src/tlab/policy_diagnostics/cache_adapter.py",
+        "src/tlab/policy_diagnostics/run_policy_branch.py",
+        "src/tlab/policy_diagnostics/evaluate_policy_branch.py",
+        "src/tlab/policy_diagnostics/plot_results.py"
+      ],
+      "note": "Checked --help only for entrypoints that expose argparse; no experiment was run by the help checks."
+    },
+    {
+      "name": "final_protected_sha256_verification",
+      "seconds": 322.634,
+      "bucket": "final_evaluation_and_report",
+      "category": "integrity_check",
+      "recorded_at_utc": "2026-10-22T07:18:16.186901+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/protection/before.json",
+        "artifacts/policy_diagnostics/protection/verify-after.json"
+      ],
+      "note": "Passed: 3,102 files / 83,843,062,806 bytes; changed=0, missing=0, added=0. Runtime recorded as conservative upper bound from process start and manifest completion timestamps."
+    },
+    {
+      "name": "policy_diagnostics_implementation_manifest_hashing",
+      "seconds": 7.971,
+      "bucket": "final_evaluation_and_report",
+      "category": "integrity_and_reproducibility",
+      "recorded_at_utc": "2026-10-22T07:18:54.455590+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/protocol/implementation_manifest.json"
+      ],
+      "note": "The manifest excludes itself and the two mutable closeout ledgers; it covers every other panel_tools.2 file."
+    },
+    {
+      "name": "policy_diagnostics_implementation_manifest_hashing",
+      "seconds": 7.487,
+      "bucket": "final_evaluation_and_report",
+      "category": "integrity_and_reproducibility",
+      "recorded_at_utc": "2026-10-22T07:19:35.360644+00:00",
+      "evidence": [
+        "artifacts/policy_diagnostics/protocol/implementation_manifest.json"
+      ],
+      "note": "The manifest excludes itself and the two mutable closeout ledgers; it covers every other panel_tools.2 file."
+    }
+  ],
+  "wall_time_seconds": 8164.247,
+  "decision": "Use only existing weights except registered conditional branches. Include preprocessing and evaluation in measured new-stage use. Stop all new compute at the earliest applicable cap.",
+  "remaining_new_stage_seconds": 27835.753,
+  "remaining_to_total_stop_from_known_lower_bound_seconds": 30602.185
+}

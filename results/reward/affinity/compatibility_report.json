@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "status": "historical_model_not_used_as_heldout_control_due_to_fit_overlap",
+  "question": "Can the saved panel_tools.1 optimized RM be compared directly against the panel_tools.2 user-held-out RM-dev scores?",
+  "historical_model": {
+    "path": "artifacts/residual_support/rm/models/optimized_rm.joblib",
+    "sha256": "a781df889b53a3d3ee426073fc7139c3e0f1d1794d950a6a1c1d94c11d5aec29",
+    "schema_version": "residual_support_candidate_action_features_v1",
+    "input_columns": 35,
+    "fit_rows": 26423,
+    "fit_users": 5475,
+    "fit_role": "all sampled users/targets from the historical F_RM fit partition"
+  },
+  "policy_diagnostics_rmdev": {
+    "selected_rows": 26423,
+    "train_rows": 21290,
+    "heldout_rows": 5133,
+    "train_users": 4401,
+    "heldout_users": 1074,
+    "heldout_role": "outcome-blind user-hash bucket drawn from the same historical F_RM fit user pool",
+    "processed_listens_sha256": "d5238bed68632ac452943263454a236c3fd2559457f0dca240d601919991c49b",
+    "catalog_size": 20000
+  },
+  "compatibility_findings": [
+    "The historical 35-column RM input schema can be reconstructed; the panel_tools.2 same-split optimized control uses that feature/parameter architecture.",
+    "The historical optimized model was fitted on all 5,475 users and 26,423 targets from this F_RM fit pool. The panel_tools.2 held-out 1,074 users are sampled from that same pool, so scoring them with the historical fitted model would reuse its training universe and would not be a held-out comparison.",
+    "panel_tools.2 therefore refits the 35-column optimized-HGB control on the identical outcome-blind 80/20 user partition and compares one extension that adds nine prefix-derived affinity/missingness columns.",
+    "The historical panel_tools.1 RM audit sample is a later V_RM block with 4,934 rows and 1,066 disjoint users; it is not the same target rows or the same held-out split as C and cannot serve as a paired C baseline."
+  ],
+  "decision": "Use refit_residual_support_optimized_control as the primary same-split control. Do not report the historical all-fit model as an out-of-sample C score.",
+  "evidence": [
+    "artifacts/residual_support/rm/rm_diagnostics.json",
+    "artifacts/policy_diagnostics/rm/C_split_manifest.json",
+    "artifacts/policy_diagnostics/rm/C_metrics.csv",
+    "src/tlab/residual_support/features.py",
+    "src/tlab/policy_diagnostics/c_rm.py"
+  ]
+}

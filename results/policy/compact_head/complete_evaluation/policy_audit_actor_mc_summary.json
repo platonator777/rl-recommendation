@@ -1,0 +1,18 @@
+{
+  "runtime_seconds": 682.795,
+  "samples_per_user_per_policy": 128,
+  "policies": [
+    "strong_gpt",
+    "dense_sft",
+    "last_target_sft",
+    "weak_actor"
+  ],
+  "panels": {
+    "development": 514,
+    "retrospective_final": 710,
+    "common_open_6655": 6655
+  },
+  "expectations": "full 20k-catalog Monte Carlo action expectations; no fixed-tail cancellation for dense/last-target/weak",
+  "metric_uncertainty": "reports user-level normal intervals and Monte Carlo standard error separately",
+  "audit_role": "diagnostic only, no selection"
+}

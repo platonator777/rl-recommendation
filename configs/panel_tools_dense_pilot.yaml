@@ -1,0 +1,35 @@
+protocol_id: tlab_yambda_policy_diagnostics026-10-21_r1
+run_name: s1_s2_seed17_20steps
+seed: 17
+steps: 20
+data:
+  processed_dir: data/processed_full_model_tminus14
+  processed_listens_sha256: d5238bed68632ac452943263454a236c3fd2559457f0dca240d601919991c49b
+  catalog_size: 20000
+  train_split: retrospective_full_model_train
+  validation_panel: artifacts/panel_tools/evaluation/full_model_sft_weak_seed17_validation_panel.jsonl
+model:
+  vocab_size: 20003
+  n_positions: 256
+  n_layer: 4
+  n_embd: 256
+  n_head: 4
+sampler:
+  dense_version: dense_window_v1
+  dense_window_events: 64
+  context_tokens_including_bos: 138
+  max_preceding_events: 200
+  legacy_version: sft_target_index_reference
+training:
+  microbatch_windows: 2
+  effective_windows: 8
+  learning_rate: 0.0003
+  optimizer: AdamW
+  weight_decay: 0.1
+  precision: fp16_with_GradScaler
+  logit_chunk_size: 32
+  validation_steps: [0, 10, 20]
+budget:
+  planning_ceiling_gpu_hours: 24
+  full_fit: null
+output: artifacts/panel_tools/runs/s1_s2_seed17_20steps

@@ -1,0 +1,60 @@
+{
+  "protocol_id": "tlab_yambda_policy_diagnostics026-10-21_r1",
+  "status": "frozen_before_panel_tools_comparisons",
+  "frozen_date": "2026-10-21",
+  "dataset": {
+    "repository": "yandex/yambda",
+    "revision": "dd6f3a19eef5866e346c3270e098baa641a44948",
+    "raw_listens_sha256": "eed9cbd094af1e189507d2f8132a0dc9653b90e65480125c7cdccd601e0592d1",
+    "processed_full_model_tminus14_listens_sha256": "d5238bed68632ac452943263454a236c3fd2559457f0dca240d601919991c49b",
+    "reuse_status": "retrospective_reanalysis; this revision and its temporal panels were used in V1-V3",
+    "artist_item_mapping": "not present in the local raw data; artist-derived V4 comparisons remain unavailable until a same-revision mapping is obtained and verified"
+  },
+  "split_and_claims": {
+    "untouched_test_exists": false,
+    "final_label": "frozen retrospective evaluation",
+    "no_independent_test_claim": true,
+    "existing_full_model_cutoff": "tminus14; retain as the main bridge to V3",
+    "model_selection": "development/validation only; after frozen_selection.json is written, no tuning on the retrospective final panel",
+    "future_feedback": "only feedback strictly before the target decision may enter features; label-time semantics remain an explicit limitation"
+  },
+  "primary_endpoint": {
+    "name": "user_macro_ndcg_at_10",
+    "target": "next non-organic event",
+    "oov_target": "unconditional miss retained in denominator",
+    "aggregation": "mean event metric within user, then mean across users",
+    "selection": "stable event-ID hash before model scoring; at most 3 targets per user; independent of ratio and catalog membership"
+  },
+  "secondary_endpoints": [
+    "user_macro_recall_at_10",
+    "positive_nonorganic_ratio_ge_0.5",
+    "new_positive_nonorganic",
+    "repeat_vs_new_raw_item_id",
+    "known_catalog_vs_oov",
+    "target_coverage"
+  ],
+  "guard": {
+    "relative_tolerance": 0.02,
+    "per_user_quantity": "metric_new - 0.98 * metric_baseline",
+    "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+    "interpretation": "an inconclusive interval does not establish non-inferiority"
+  },
+  "seeds": {
+    "split": 17,
+    "sampler": 17,
+    "training": [17, 42, 73],
+    "rollout": [17, 42, 73],
+    "bootstrap": 17017
+  },
+  "comparisons": {
+    "primary": "selected new policy versus its own SFT base",
+    "registered_controls": ["repeat-reranker", "train-popularity", "recent-popularity", "smoothed-Markov", "exact analytical policy", "sampled policy"],
+    "multiple_confirmatory_contrasts": "Holm adjustment; all others exploratory",
+    "objective_normalization": "one frozen train/calibration mean and standard deviation shared by sampled and exact paths; std floor 1e-3; objective_version=frozen_reward_scale_v1"
+  },
+  "catalog": {
+    "full_model_bridge_size": 20000,
+    "planned_panel_tools_size": 50000,
+    "panel_tools_50000_status": "not yet built; requires separate V4 artifacts and must not overwrite V1-V3"
+  }
+}

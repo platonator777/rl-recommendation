@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "protocol_id": "tlab_yambda_residual_support_exploratory_2026-10-22",
+  "assessment": "Retrospective exploratory continuation; no untouched outcome holdout exists.",
+  "known_exposure": [
+    {
+      "scope": "Yambda revision dd6f3a19eef5866e346c3270e098baa641a44948",
+      "periods": "train, validation, and test windows inspected in V1-full_model",
+      "status": "previously inspected and reported"
+    },
+    {
+      "scope": "panel_tools artifacts, frozen validation panel, policy caches, RM diagnostics, and audit dated 2026-10-22",
+      "periods": "validation and train-derived outcomes",
+      "status": "opened before panel_tools.1; all reuse is retrospective"
+    },
+    {
+      "scope": "panel_tools.1 A_RL training users and validation development users",
+      "periods": "train A_RL and validation",
+      "status": "used for policy fitting and development selection in this continuation"
+    },
+    {
+      "scope": "panel_tools.1 test-period user-disjoint panel",
+      "periods": "test",
+      "status": "outcomes held until selection freeze in this continuation, but the source test period was previously inspected in V1-full_model; not an independent test"
+    }
+  ],
+  "user_role_policy": "Assign eligible A_RL users by a fixed hash before scoring to policy train, development, and final retrospective roles; user IDs are disjoint across those roles.",
+  "actor_exposure": "The strong/weak full_model checkpoints are historical pretrained actors. Their train cutoff and user/event overlap with A_RL anchors are recorded and treated as possible exposure, not as an untouched actor fit.",
+  "limitations": [
+    "The complete mapping from all prior V1-full_model model selection decisions to users and events is unavailable.",
+    "A new hash-selected cohort cannot restore independence of previously explored outcome periods."
+  ]
+}

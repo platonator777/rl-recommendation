@@ -1,0 +1,17 @@
+contrast,metric,mean_difference,n_users,bootstrap_draws,seed,ci95_low,ci95_high,role
+L - A,next_item,-3.414142619344344e-05,4065,2000,20461022,-0.0002771241775458781,0.00021309815598462902,secondary descriptive contrast; not part of Scaling primary two-test family
+L - A,24h_overall,4.7166945560642014e-05,3024,2000,20461023,-0.00022322281209972102,0.00030713179772398765,secondary descriptive contrast; not part of Scaling primary two-test family
+L - A,24h_new,0.00021088920838110677,2646,2000,20461024,-3.046954530642253e-06,0.000424568121980882,secondary descriptive contrast; not part of Scaling primary two-test family
+L - A,24h_repeat,-0.0002753720328848666,2404,2000,20461025,-0.0005938359433611222,2.1808271453352833e-05,secondary descriptive contrast; not part of Scaling primary two-test family
+L - E,next_item,-9.516460351224747e-05,4065,2000,20461026,-0.000291888713763578,0.00010409203728388844,secondary descriptive contrast; not part of Scaling primary two-test family
+L - E,24h_overall,-0.00014009874193367667,3024,2000,20461027,-0.000358391495421769,6.898526510756209e-05,secondary descriptive contrast; not part of Scaling primary two-test family
+L - E,24h_new,-2.5062480516231894e-06,2646,2000,20461028,-0.0001425072055263455,0.00015883444915295978,secondary descriptive contrast; not part of Scaling primary two-test family
+L - E,24h_repeat,-0.00016066977387661706,2404,2000,20461029,-0.0003992554981893353,8.391502362418021e-05,secondary descriptive contrast; not part of Scaling primary two-test family
+L - tabular_rl,next_item,0.00025910732322266707,4065,2000,20461030,-0.00010194169437262081,0.0006548186748799899,secondary descriptive contrast; not part of Scaling primary two-test family
+L - tabular_rl,24h_overall,-0.00014012521396276995,3024,2000,20461031,-0.0005200985278157167,0.0002249250587219481,secondary descriptive contrast; not part of Scaling primary two-test family
+L - tabular_rl,24h_new,0.00014043999114474604,2646,2000,20461032,-0.00025316805563958025,0.0005048326723154815,secondary descriptive contrast; not part of Scaling primary two-test family
+L - tabular_rl,24h_repeat,-0.0005913460515224964,2404,2000,20461033,-0.0010313409176445577,-0.00020742438616511673,secondary descriptive contrast; not part of Scaling primary two-test family
+L - tabular_exact,next_item,0.0002480951615917488,4065,2000,20461034,-7.314040994546505e-05,0.0006550509351927809,secondary descriptive contrast; not part of Scaling primary two-test family
+L - tabular_exact,24h_overall,-6.25263066799039e-05,3024,2000,20461035,-0.0004624870167206745,0.00035342038094792486,secondary descriptive contrast; not part of Scaling primary two-test family
+L - tabular_exact,24h_new,0.0004243233481763803,2646,2000,20461036,6.11647749231302e-05,0.0008028910251380755,secondary descriptive contrast; not part of Scaling primary two-test family
+L - tabular_exact,24h_repeat,-0.0006993754753025903,2404,2000,20461037,-0.001152197657190736,-0.0002258376219478185,secondary descriptive contrast; not part of Scaling primary two-test family

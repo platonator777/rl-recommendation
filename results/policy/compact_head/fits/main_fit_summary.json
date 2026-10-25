@@ -1,0 +1,3153 @@
+{
+  "schema_version": 1,
+  "protocol_id": "tlab_yambda_residual_support_exploratory_2026-10-22",
+  "status": "main_fit_completed",
+  "run_count": 21,
+  "planned_run_count": 21,
+  "runs": [
+    {
+      "run_name": "sampled_loo_b1_seed17_full",
+      "objective": "sampled_loo",
+      "beta": 1.0,
+      "seed": 17,
+      "variant": "full",
+      "updates_completed": 7500,
+      "stop_reason": "development_exact_objective_plateau",
+      "elapsed_training_and_evaluation_seconds": 300.5559639999992,
+      "best_checkpoint_step": 3500,
+      "best_dev_support_objective": 0.018050916145051964,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.015481810565712411,
+          "recall@10": 0.029182879377431907,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.002593942731591999,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.015882109404318355,
+            "recall@10": 0.031609195402298854,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.004096946451762711,
+            "recall@10": 0.006493506493506494,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.02523734185119242,
+            "recall@10": 0.05154639175257732,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.006576329651497813,
+            "recall@10": 0.012096774193548387,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.02378466495189745,
+            "recall@10": 0.045112781954887216,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.013640967816730683,
+            "recall@10": 0.036585365853658534,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.027413574036639736,
+            "recall@10": 0.046948356807511735,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.029411764705882353,
+            "recall@10": 0.058823529411764705,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.011683884325397362,
+            "recall@10": 0.018518518518518517,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.01910785563607008,
+            "recall@10": 0.05555555555555555,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.04120179462480896,
+            "recall@10": 0.07777777777777778,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.03571428571428571,
+            "recall@10": 0.07142857142857142,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.0022942538293355763,
+        "n_users": 514,
+        "mean_adjusted_difference": 6.454862612619303e-05,
+        "ci_lower": -0.002806045136321517,
+        "ci_upper": 0.0024732132376433544,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19818
+      },
+      "best_checkpoint_sha256": "2ff7ecc7f62bd22c82a6a5d2fee46f4e3ef60e9a0cbd0c10a60a825799c1a214"
+    },
+    {
+      "run_name": "sampled_loo_b1_seed42_full",
+      "objective": "sampled_loo",
+      "beta": 1.0,
+      "seed": 42,
+      "variant": "full",
+      "updates_completed": 9000,
+      "stop_reason": "development_exact_objective_plateau",
+      "elapsed_training_and_evaluation_seconds": 357.85472370000207,
+      "best_checkpoint_step": 6500,
+      "best_dev_support_objective": 0.018151066240633507,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.015759816252322433,
+          "recall@10": 0.029182879377431907,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.002581258523742089,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.01609352170601647,
+            "recall@10": 0.031609195402298854,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.004096946451762711,
+            "recall@10": 0.006493506493506494,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.02561657628929007,
+            "recall@10": 0.05154639175257732,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.006576329651497813,
+            "recall@10": 0.012096774193548387,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.02432186391023411,
+            "recall@10": 0.045112781954887216,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.014486375645103938,
+            "recall@10": 0.036585365853658534,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.02714428637194249,
+            "recall@10": 0.046948356807511735,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.03326263981092522,
+            "recall@10": 0.058823529411764705,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.011683884325397362,
+            "recall@10": 0.018518518518518517,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.01910785563607008,
+            "recall@10": 0.05555555555555555,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.04056448048502548,
+            "recall@10": 0.07777777777777778,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.04506641096938983,
+            "recall@10": 0.07142857142857142,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.0016121759832493825,
+        "n_users": 514,
+        "mean_adjusted_difference": 0.0003425543127362141,
+        "ci_lower": -0.0020325075277667407,
+        "ci_upper": 0.0025022080663059994,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19843
+      },
+      "best_checkpoint_sha256": "6d126bfb591aeb76a891e5fc5df82f9c5fdbab50fe94e943341c4c0299433a18"
+    },
+    {
+      "run_name": "sampled_loo_b1_seed73_full",
+      "objective": "sampled_loo",
+      "beta": 1.0,
+      "seed": 73,
+      "variant": "full",
+      "updates_completed": 7500,
+      "stop_reason": "development_exact_objective_plateau",
+      "elapsed_training_and_evaluation_seconds": 299.27367180000874,
+      "best_checkpoint_step": 4500,
+      "best_dev_support_objective": 0.018043868475618993,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.015592794360643075,
+          "recall@10": 0.029182879377431907,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.002569603620187646,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.016046033745106745,
+            "recall@10": 0.031609195402298854,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.004096946451762711,
+            "recall@10": 0.006493506493506494,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.02553139169961696,
+            "recall@10": 0.05154639175257732,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.006576329651497813,
+            "recall@10": 0.012096774193548387,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.023999122360146927,
+            "recall@10": 0.045112781954887216,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.013640967816730683,
+            "recall@10": 0.036585365853658534,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.027681394086378517,
+            "recall@10": 0.046948356807511735,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.029411764705882353,
+            "recall@10": 0.058823529411764705,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.011683884325397362,
+            "recall@10": 0.018518518518518517,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.01910785563607008,
+            "recall@10": 0.05555555555555555,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.04183563540919075,
+            "recall@10": 0.07777777777777778,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.03571428571428571,
+            "recall@10": 0.07142857142857142,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.002161444689693249,
+        "n_users": 514,
+        "mean_adjusted_difference": 0.00017553242105685515,
+        "ci_lower": -0.002629714332324343,
+        "ci_upper": 0.0028248789179030355,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19874
+      },
+      "best_checkpoint_sha256": "b35276a87e8e2964ba7dd39c760872a697f4ec5144073020d1eed2f5012d89b1"
+    },
+    {
+      "run_name": "sampled_loo_b0.3_seed17_full",
+      "objective": "sampled_loo",
+      "beta": 0.3,
+      "seed": 17,
+      "variant": "full",
+      "updates_completed": 10000,
+      "stop_reason": "max_updates",
+      "elapsed_training_and_evaluation_seconds": 397.65605069999583,
+      "best_checkpoint_step": 2500,
+      "best_dev_support_objective": 0.02469358233742213,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.015861199236903,
+          "recall@10": 0.029182879377431907,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.0028794002495342707,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.01705487386354406,
+            "recall@10": 0.031609195402298854,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.004096946451762711,
+            "recall@10": 0.006493506493506494,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.027341063664648845,
+            "recall@10": 0.05154639175257732,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.0060172696359606604,
+            "recall@10": 0.012096774193548387,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.025038998263345484,
+            "recall@10": 0.045112781954887216,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.018135816349749753,
+            "recall@10": 0.036585365853658534,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.027914451092475968,
+            "recall@10": 0.046948356807511735,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.021168864246802383,
+            "recall@10": 0.058823529411764705,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.011683884325397362,
+            "recall@10": 0.018518518518518517,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.03141471537698493,
+            "recall@10": 0.05555555555555555,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.0431574641228059,
+            "recall@10": 0.07777777777777778,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.020647487594134848,
+            "recall@10": 0.07142857142857142,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.0031918700999970413,
+        "n_users": 514,
+        "mean_adjusted_difference": 0.00044393729731678115,
+        "ci_lower": -0.004021605745962328,
+        "ci_upper": 0.004454707828944051,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19818
+      },
+      "best_checkpoint_sha256": "dd663996999253628d1a3832286ed0bb7003d4c2951fa1e1afcf5131ae977cf8"
+    },
+    {
+      "run_name": "sampled_loo_b0.3_seed42_full",
+      "objective": "sampled_loo",
+      "beta": 0.3,
+      "seed": 42,
+      "variant": "full",
+      "updates_completed": 10000,
+      "stop_reason": "max_updates",
+      "elapsed_training_and_evaluation_seconds": 395.6931179999956,
+      "best_checkpoint_step": 2000,
+      "best_dev_support_objective": 0.024709368320290682,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.015947324736933048,
+          "recall@10": 0.029182879377431907,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.002840731339534566,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.01709402009023638,
+            "recall@10": 0.031609195402298854,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.004096946451762711,
+            "recall@10": 0.006493506493506494,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.027411284731086605,
+            "recall@10": 0.05154639175257732,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.0060172696359606604,
+            "recall@10": 0.012096774193548387,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.025205421222050165,
+            "recall@10": 0.045112781954887216,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.020106247736310447,
+            "recall@10": 0.036585365853658534,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.02723977073026765,
+            "recall@10": 0.046948356807511735,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.021945336319385934,
+            "recall@10": 0.058823529411764705,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.011683884325397362,
+            "recall@10": 0.018518518518518517,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.03505165297619209,
+            "recall@10": 0.05555555555555555,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.04156072059891287,
+            "recall@10": 0.07777777777777778,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.022533205484694913,
+            "recall@10": 0.07142857142857142,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.003179621153122941,
+        "n_users": 514,
+        "mean_adjusted_difference": 0.0005300627973468308,
+        "ci_lower": -0.003806529043933963,
+        "ci_upper": 0.004782416270670999,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19843
+      },
+      "best_checkpoint_sha256": "f8a0239e5651c60cff354348415209386046a9930ff988fc2bb817be73600e9a"
+    },
+    {
+      "run_name": "sampled_loo_b0.3_seed73_full",
+      "objective": "sampled_loo",
+      "beta": 0.3,
+      "seed": 73,
+      "variant": "full",
+      "updates_completed": 10000,
+      "stop_reason": "max_updates",
+      "elapsed_training_and_evaluation_seconds": 397.15837530000135,
+      "best_checkpoint_step": 5500,
+      "best_dev_support_objective": 0.02522680769286731,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.016371685927683382,
+          "recall@10": 0.029182879377431907,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.00291858614266153,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.017801323063969487,
+            "recall@10": 0.031609195402298854,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.004096946451762711,
+            "recall@10": 0.006493506493506494,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.02868005501386559,
+            "recall@10": 0.05154639175257732,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.006120090970991932,
+            "recall@10": 0.012096774193548387,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.02592956393241826,
+            "recall@10": 0.045112781954887216,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.019453571225320102,
+            "recall@10": 0.036585365853658534,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.028105729544693307,
+            "recall@10": 0.046948356807511735,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.024509803921568624,
+            "recall@10": 0.058823529411764705,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.011683884325397362,
+            "recall@10": 0.018518518518518517,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.03505165297619209,
+            "recall@10": 0.05555555555555555,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.044097087024596394,
+            "recall@10": 0.07777777777777778,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.023809523809523808,
+            "recall@10": 0.07142857142857142,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.0026107571509498785,
+        "n_users": 514,
+        "mean_adjusted_difference": 0.0009544239880971594,
+        "ci_lower": -0.0034841682187993555,
+        "ci_upper": 0.005562751932955321,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19874
+      },
+      "best_checkpoint_sha256": "9d3503d29d5805de074fc69072bca8cd3ddd2df03aeb2ec726f1235489f0ecf6"
+    },
+    {
+      "run_name": "exact_expected_reward_b1_seed17_full",
+      "objective": "exact_expected_reward",
+      "beta": 1.0,
+      "seed": 17,
+      "variant": "full",
+      "updates_completed": 6500,
+      "stop_reason": "development_exact_objective_plateau",
+      "elapsed_training_and_evaluation_seconds": 267.97525760001736,
+      "best_checkpoint_step": 6000,
+      "best_dev_support_objective": 0.01830514903082458,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.015505089105296252,
+          "recall@10": 0.029182879377431907,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.002582406119852059,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.015916492074853104,
+            "recall@10": 0.031609195402298854,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.004096946451762711,
+            "recall@10": 0.006493506493506494,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.025299017981842385,
+            "recall@10": 0.05154639175257732,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.006576329651497813,
+            "recall@10": 0.012096774193548387,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.02382964679154442,
+            "recall@10": 0.045112781954887216,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.013640967816730683,
+            "recall@10": 0.036585365853658534,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.027469748540612005,
+            "recall@10": 0.046948356807511735,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.029411764705882353,
+            "recall@10": 0.058823529411764705,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.011683884325397362,
+            "recall@10": 0.018518518518518517,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.01910785563607008,
+            "recall@10": 0.05555555555555555,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.041334740950876664,
+            "recall@10": 0.07777777777777778,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.03571428571428571,
+            "recall@10": 0.07142857142857142,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.0022553019737968933,
+        "n_users": 514,
+        "mean_adjusted_difference": 8.782716571003217e-05,
+        "ci_lower": -0.002793917641172628,
+        "ci_upper": 0.002503465999152258,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19818
+      },
+      "best_checkpoint_sha256": "312c8fdddc33ee5d42ac3bb3b5d24c1bc59e40fec3bdf91ea31e0139be8503f4"
+    },
+    {
+      "run_name": "exact_expected_reward_b1_seed42_full",
+      "objective": "exact_expected_reward",
+      "beta": 1.0,
+      "seed": 42,
+      "variant": "full",
+      "updates_completed": 6500,
+      "stop_reason": "development_exact_objective_plateau",
+      "elapsed_training_and_evaluation_seconds": 268.331313600007,
+      "best_checkpoint_step": 6000,
+      "best_dev_support_objective": 0.018329192199363784,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.015435562037017635,
+          "recall@10": 0.029182879377431907,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.002568851176917378,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.015813799795843884,
+            "recall@10": 0.031609195402298854,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.004096946451762711,
+            "recall@10": 0.006493506493506494,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.02511480708959904,
+            "recall@10": 0.05154639175257732,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.006576329651497813,
+            "recall@10": 0.012096774193548387,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.02369529749419401,
+            "recall@10": 0.045112781954887216,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.013640967816730683,
+            "recall@10": 0.036585365853658534,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.02668727592715348,
+            "recall@10": 0.046948356807511735,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.03326263981092522,
+            "recall@10": 0.058823529411764705,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.011683884325397362,
+            "recall@10": 0.018518518518518517,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.01910785563607008,
+            "recall@10": 0.05555555555555555,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.03948288909902481,
+            "recall@10": 0.07777777777777778,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.04506641096938983,
+            "recall@10": 0.07142857142857142,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.0018620933187817174,
+        "n_users": 514,
+        "mean_adjusted_difference": 1.8300097431415137e-05,
+        "ci_lower": -0.002229860198372093,
+        "ci_upper": 0.0020505033836082116,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19843
+      },
+      "best_checkpoint_sha256": "bd22f2705f7cc2cefbc9ab978093f0a67ff33f363a05d5be0e6c4f0109fe2484"
+    },
+    {
+      "run_name": "exact_expected_reward_b1_seed73_full",
+      "objective": "exact_expected_reward",
+      "beta": 1.0,
+      "seed": 73,
+      "variant": "full",
+      "updates_completed": 10000,
+      "stop_reason": "max_updates",
+      "elapsed_training_and_evaluation_seconds": 408.94283460002043,
+      "best_checkpoint_step": 6000,
+      "best_dev_support_objective": 0.01832792678927633,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.015759816252322433,
+          "recall@10": 0.029182879377431907,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.0025599692458336864,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.016292726998909015,
+            "recall@10": 0.031609195402298854,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.004096946451762711,
+            "recall@10": 0.006493506493506494,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.025973913618808662,
+            "recall@10": 0.05154639175257732,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.006576329651497813,
+            "recall@10": 0.012096774193548387,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.02432186391023411,
+            "recall@10": 0.045112781954887216,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.013640967816730683,
+            "recall@10": 0.036585365853658534,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.027469748540612005,
+            "recall@10": 0.046948356807511735,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.03326263981092522,
+            "recall@10": 0.058823529411764705,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.011683884325397362,
+            "recall@10": 0.018518518518518517,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.01910785563607008,
+            "recall@10": 0.05555555555555555,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.041334740950876664,
+            "recall@10": 0.07777777777777778,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.04506641096938983,
+            "recall@10": 0.07142857142857142,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.0015848785218211434,
+        "n_users": 514,
+        "mean_adjusted_difference": 0.0003425543127362141,
+        "ci_lower": -0.0020018302611496783,
+        "ci_upper": 0.0027490857783828556,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19874
+      },
+      "best_checkpoint_sha256": "57d8f9af1aecb4a5b3ee4f5d4933df162b86db8bf766cda9873323c8694264b9"
+    },
+    {
+      "run_name": "exact_expected_reward_b0.3_seed17_full",
+      "objective": "exact_expected_reward",
+      "beta": 0.3,
+      "seed": 17,
+      "variant": "full",
+      "updates_completed": 10000,
+      "stop_reason": "max_updates",
+      "elapsed_training_and_evaluation_seconds": 408.0966741000011,
+      "best_checkpoint_step": 5500,
+      "best_dev_support_objective": 0.026070319521983774,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.015698592610367094,
+          "recall@10": 0.02529182879377432,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.0029877641216928073,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.017838285878108914,
+            "recall@10": 0.028735632183908046,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.004096946451762711,
+            "recall@10": 0.006493506493506494,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.02874635944335281,
+            "recall@10": 0.04639175257731959,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.0060172696359606604,
+            "recall@10": 0.012096774193548387,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.02472478846620468,
+            "recall@10": 0.03759398496240601,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.015388530574913599,
+            "recall@10": 0.024390243902439025,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.02993681003057455,
+            "recall@10": 0.046948356807511735,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.012666957590393914,
+            "recall@10": 0.029411764705882353,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.011683884325397362,
+            "recall@10": 0.018518518518518517,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.03505165297619209,
+            "recall@10": 0.05555555555555555,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.04794371360963921,
+            "recall@10": 0.07777777777777778,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.004695595165011123,
+        "n_users": 514,
+        "mean_adjusted_difference": 0.0002813306707808784,
+        "ci_lower": -0.005810095331052344,
+        "ci_upper": 0.005701013500931631,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19818
+      },
+      "best_checkpoint_sha256": "b095db454a84af036b4dce7c45758fbe3d20f7f25e7ea12c9fd0d5a53038df43"
+    },
+    {
+      "run_name": "exact_expected_reward_b0.3_seed42_full",
+      "objective": "exact_expected_reward",
+      "beta": 0.3,
+      "seed": 42,
+      "variant": "full",
+      "updates_completed": 10000,
+      "stop_reason": "max_updates",
+      "elapsed_training_and_evaluation_seconds": 407.5223312000162,
+      "best_checkpoint_step": 1000,
+      "best_dev_support_objective": 0.025042827143279496,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.015542940042058431,
+          "recall@10": 0.027237354085603113,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.0028991229929459066,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.01677773919296942,
+            "recall@10": 0.028735632183908046,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.004096946451762711,
+            "recall@10": 0.006493506493506494,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.026843935492690214,
+            "recall@10": 0.04639175257731959,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.0060172696359606604,
+            "recall@10": 0.012096774193548387,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.024424016210149585,
+            "recall@10": 0.041353383458646614,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.01891371138366833,
+            "recall@10": 0.036585365853658534,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.026846974008290843,
+            "recall@10": 0.04225352112676056,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.021168864246802383,
+            "recall@10": 0.058823529411764705,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.011683884325397362,
+            "recall@10": 0.018518518518518517,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.03505165297619209,
+            "recall@10": 0.05555555555555555,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.040631101690234435,
+            "recall@10": 0.06666666666666667,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.020647487594134848,
+            "recall@10": 0.07142857142857142,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.004689893515690734,
+        "n_users": 514,
+        "mean_adjusted_difference": 0.00012567810247221187,
+        "ci_lower": -0.005732775185043409,
+        "ci_upper": 0.005040819583878139,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19843
+      },
+      "best_checkpoint_sha256": "5fc8cbcf063352cc4e15f11d5e8cee04a7a449121ce8aab58829fac54038138f"
+    },
+    {
+      "run_name": "exact_expected_reward_b0.3_seed73_full",
+      "objective": "exact_expected_reward",
+      "beta": 0.3,
+      "seed": 73,
+      "variant": "full",
+      "updates_completed": 10000,
+      "stop_reason": "max_updates",
+      "elapsed_training_and_evaluation_seconds": 408.5015330000024,
+      "best_checkpoint_step": 1500,
+      "best_dev_support_objective": 0.02541732532968781,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.015542940042058431,
+          "recall@10": 0.027237354085603113,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.0029236867825621665,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.017608385245607035,
+            "recall@10": 0.031609195402298854,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.004096946451762711,
+            "recall@10": 0.006493506493506494,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.028333960370617473,
+            "recall@10": 0.05154639175257732,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.0060172696359606604,
+            "recall@10": 0.012096774193548387,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.024424016210149585,
+            "recall@10": 0.041353383458646614,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.01891371138366833,
+            "recall@10": 0.036585365853658534,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.028204085868938203,
+            "recall@10": 0.046948356807511735,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.012666957590393914,
+            "recall@10": 0.029411764705882353,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.011683884325397362,
+            "recall@10": 0.018518518518518517,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.043081231485022305,
+            "recall@10": 0.08333333333333333,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.04384293309376652,
+            "recall@10": 0.07777777777777778,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.00466449273540758,
+        "n_users": 514,
+        "mean_adjusted_difference": 0.00012567810247221168,
+        "ci_lower": -0.005640380688612891,
+        "ci_upper": 0.005573837251023487,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19874
+      },
+      "best_checkpoint_sha256": "390879444c4414dd777051685a6d9acedb21f686829fd26d08dca60d34ebf1ad"
+    },
+    {
+      "run_name": "analytic_q_distillation_b1_seed17_full",
+      "objective": "analytic_q_distillation",
+      "beta": 1.0,
+      "seed": 17,
+      "variant": "full",
+      "updates_completed": 6500,
+      "stop_reason": "development_exact_objective_plateau",
+      "elapsed_training_and_evaluation_seconds": 268.47380300000077,
+      "best_checkpoint_step": 6000,
+      "best_dev_support_objective": 0.018319497544477887,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.015505089105296252,
+          "recall@10": 0.029182879377431907,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.0025817150926065358,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.015916492074853104,
+            "recall@10": 0.031609195402298854,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.004096946451762711,
+            "recall@10": 0.006493506493506494,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.025299017981842385,
+            "recall@10": 0.05154639175257732,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.006576329651497813,
+            "recall@10": 0.012096774193548387,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.02382964679154442,
+            "recall@10": 0.045112781954887216,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.013640967816730683,
+            "recall@10": 0.036585365853658534,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.027469748540612005,
+            "recall@10": 0.046948356807511735,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.029411764705882353,
+            "recall@10": 0.058823529411764705,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.011683884325397362,
+            "recall@10": 0.018518518518518517,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.01910785563607008,
+            "recall@10": 0.05555555555555555,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.041334740950876664,
+            "recall@10": 0.07777777777777778,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.03571428571428571,
+            "recall@10": 0.07142857142857142,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.0022553019737968933,
+        "n_users": 514,
+        "mean_adjusted_difference": 8.782716571003217e-05,
+        "ci_lower": -0.002793917641172628,
+        "ci_upper": 0.002503465999152258,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19818
+      },
+      "best_checkpoint_sha256": "2d445a3d4c516e3e1ba6cbee432a49e244c2e4798d402a257d8c82ef37e99024"
+    },
+    {
+      "run_name": "analytic_q_distillation_b1_seed42_full",
+      "objective": "analytic_q_distillation",
+      "beta": 1.0,
+      "seed": 42,
+      "variant": "full",
+      "updates_completed": 10000,
+      "stop_reason": "development_exact_objective_plateau",
+      "elapsed_training_and_evaluation_seconds": 408.95200019999174,
+      "best_checkpoint_step": 10000,
+      "best_dev_support_objective": 0.018355497851214056,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.015505089105296252,
+          "recall@10": 0.029182879377431907,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.0025786809047225684,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.015916492074853104,
+            "recall@10": 0.031609195402298854,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.004096946451762711,
+            "recall@10": 0.006493506493506494,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.025299017981842385,
+            "recall@10": 0.05154639175257732,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.006576329651497813,
+            "recall@10": 0.012096774193548387,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.02382964679154442,
+            "recall@10": 0.045112781954887216,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.013640967816730683,
+            "recall@10": 0.036585365853658534,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.027469748540612005,
+            "recall@10": 0.046948356807511735,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.029411764705882353,
+            "recall@10": 0.058823529411764705,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.011683884325397362,
+            "recall@10": 0.018518518518518517,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.01910785563607008,
+            "recall@10": 0.05555555555555555,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.041334740950876664,
+            "recall@10": 0.07777777777777778,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.03571428571428571,
+            "recall@10": 0.07142857142857142,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.0022815367614599878,
+        "n_users": 514,
+        "mean_adjusted_difference": 8.782716571003217e-05,
+        "ci_lower": -0.0027368611180292267,
+        "ci_upper": 0.0025645566153046184,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19843
+      },
+      "best_checkpoint_sha256": "0ae42538a11787bf4ca53bc80dd85288a014045a920c8f8ab92759a93a9c90ff"
+    },
+    {
+      "run_name": "analytic_q_distillation_b1_seed73_full",
+      "objective": "analytic_q_distillation",
+      "beta": 1.0,
+      "seed": 73,
+      "variant": "full",
+      "updates_completed": 10000,
+      "stop_reason": "max_updates",
+      "elapsed_training_and_evaluation_seconds": 411.8660469999886,
+      "best_checkpoint_step": 9000,
+      "best_dev_support_objective": 0.018379498548544797,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.015505089105296252,
+          "recall@10": 0.029182879377431907,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.002575186787729862,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.015916492074853104,
+            "recall@10": 0.031609195402298854,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.004096946451762711,
+            "recall@10": 0.006493506493506494,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.025299017981842385,
+            "recall@10": 0.05154639175257732,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.006576329651497813,
+            "recall@10": 0.012096774193548387,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.02382964679154442,
+            "recall@10": 0.045112781954887216,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.013640967816730683,
+            "recall@10": 0.036585365853658534,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.027469748540612005,
+            "recall@10": 0.046948356807511735,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.029411764705882353,
+            "recall@10": 0.058823529411764705,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.011683884325397362,
+            "recall@10": 0.018518518518518517,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.01910785563607008,
+            "recall@10": 0.05555555555555555,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.041334740950876664,
+            "recall@10": 0.07777777777777778,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.03571428571428571,
+            "recall@10": 0.07142857142857142,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.0022515213727998173,
+        "n_users": 514,
+        "mean_adjusted_difference": 8.782716571003217e-05,
+        "ci_lower": -0.002682453601984869,
+        "ci_upper": 0.0027205628876330566,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19874
+      },
+      "best_checkpoint_sha256": "838794a3a37f9e8379971c57ede26d5ce84fe9522e0237ee6328d25e63646b49"
+    },
+    {
+      "run_name": "analytic_q_distillation_b0.3_seed17_full",
+      "objective": "analytic_q_distillation",
+      "beta": 0.3,
+      "seed": 17,
+      "variant": "full",
+      "updates_completed": 10000,
+      "stop_reason": "max_updates",
+      "elapsed_training_and_evaluation_seconds": 411.74007309999433,
+      "best_checkpoint_step": 10000,
+      "best_dev_support_objective": 0.026471834267391768,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.016130940256072677,
+          "recall@10": 0.027237354085603113,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.002808608781194571,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.017661009420101858,
+            "recall@10": 0.028735632183908046,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.004096946451762711,
+            "recall@10": 0.006493506493506494,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.028428358374350454,
+            "recall@10": 0.04639175257731959,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.005996519922094676,
+            "recall@10": 0.012096774193548387,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.02557957274790179,
+            "recall@10": 0.041353383458646614,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.01891371138366833,
+            "recall@10": 0.036585365853658534,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.028615525562134474,
+            "recall@10": 0.04225352112676056,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.018978588630173824,
+            "recall@10": 0.058823529411764705,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.011683884325397362,
+            "recall@10": 0.018518518518518517,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.03505165297619209,
+            "recall@10": 0.05555555555555555,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.04404641323514651,
+            "recall@10": 0.06666666666666667,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.020647487594134848,
+            "recall@10": 0.07142857142857142,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.004138606909144053,
+        "n_users": 514,
+        "mean_adjusted_difference": 0.0007136783164864575,
+        "ci_lower": -0.005278475112579112,
+        "ci_upper": 0.006262481353417624,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19818
+      },
+      "best_checkpoint_sha256": "eb178cadeda9d744363200ea207fdd1c8e10548a6f675f8d00ff04516cf01093"
+    },
+    {
+      "run_name": "analytic_q_distillation_b0.3_seed42_full",
+      "objective": "analytic_q_distillation",
+      "beta": 0.3,
+      "seed": 42,
+      "variant": "full",
+      "updates_completed": 10000,
+      "stop_reason": "max_updates",
+      "elapsed_training_and_evaluation_seconds": 411.7684608999989,
+      "best_checkpoint_step": 4500,
+      "best_dev_support_objective": 0.026111165808100644,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.015456965355492128,
+          "recall@10": 0.02529182879377432,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.003012432829811977,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.016956293685966697,
+            "recall@10": 0.02586206896551724,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.004096946451762711,
+            "recall@10": 0.006493506493506494,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.027164229119303877,
+            "recall@10": 0.041237113402061855,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.005540281241588795,
+            "recall@10": 0.012096774193548387,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.02470259565717644,
+            "recall@10": 0.03759398496240601,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.01905962808301093,
+            "recall@10": 0.036585365853658534,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.028290063393464956,
+            "recall@10": 0.04225352112676056,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.010476681973765358,
+            "recall@10": 0.029411764705882353,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.011683884325397362,
+            "recall@10": 0.018518518518518517,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.03505165297619209,
+            "recall@10": 0.05555555555555555,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.044533343800022634,
+            "recall@10": 0.06666666666666667,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.004928365568797177,
+        "n_users": 514,
+        "mean_adjusted_difference": 3.970341590591011e-05,
+        "ci_lower": -0.006014493192592512,
+        "ci_upper": 0.0056319212154638115,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19843
+      },
+      "best_checkpoint_sha256": "1dcf8fb7f76d761ece9cfcb5a848fd6db6ce56eeae5a64c841f3427f200e34e4"
+    },
+    {
+      "run_name": "analytic_q_distillation_b0.3_seed73_full",
+      "objective": "analytic_q_distillation",
+      "beta": 0.3,
+      "seed": 73,
+      "variant": "full",
+      "updates_completed": 10000,
+      "stop_reason": "max_updates",
+      "elapsed_training_and_evaluation_seconds": 410.5737866999989,
+      "best_checkpoint_step": 500,
+      "best_dev_support_objective": 0.02419360857529399,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.0157969527181581,
+          "recall@10": 0.027237354085603113,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.002827574865003255,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.01617054835464086,
+            "recall@10": 0.028735632183908046,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.004096946451762711,
+            "recall@10": 0.006493506493506494,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.02575474780331733,
+            "recall@10": 0.04639175257731959,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.0060172696359606604,
+            "recall@10": 0.012096774193548387,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.02491485273464293,
+            "recall@10": 0.041353383458646614,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.021486091550523355,
+            "recall@10": 0.036585365853658534,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.026413463080999882,
+            "recall@10": 0.04225352112676056,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.021520780992275713,
+            "recall@10": 0.058823529411764705,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.011683884325397362,
+            "recall@10": 0.018518518518518517,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.03141471537698493,
+            "recall@10": 0.05555555555555555,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.039605125828979154,
+            "recall@10": 0.06666666666666667,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.021502142547427227,
+            "recall@10": 0.07142857142857142,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.0029814349796739993,
+        "n_users": 514,
+        "mean_adjusted_difference": 0.0003796907785718813,
+        "ci_lower": -0.0037383922329973394,
+        "ci_upper": 0.004491523890281305,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19874
+      },
+      "best_checkpoint_sha256": "9b8ed4a37f533060724d8ff364aba46cbd6c63e3c3f3c0e4b54d5014b66b86ae"
+    },
+    {
+      "run_name": "exact_expected_reward_b0.3_seed17_no_feedback",
+      "objective": "exact_expected_reward",
+      "beta": 0.3,
+      "seed": 17,
+      "variant": "no_feedback",
+      "updates_completed": 9000,
+      "stop_reason": "development_exact_objective_plateau",
+      "elapsed_training_and_evaluation_seconds": 322.6632978999987,
+      "best_checkpoint_step": 0,
+      "best_dev_support_objective": 0.015256563629157812,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.015731899938353288,
+          "recall@10": 0.029182879377431907,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.002498956974888287,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.01625149428229941,
+            "recall@10": 0.031609195402298854,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.00520149347833754,
+            "recall@10": 0.012987012987012988,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.025023144405032033,
+            "recall@10": 0.04639175257731959,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.0072622177244515375,
+            "recall@10": 0.016129032258064516,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.023628445761840627,
+            "recall@10": 0.041353383458646614,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.009317193797643005,
+            "recall@10": 0.024390243902439025,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.027334209750736443,
+            "recall@10": 0.051643192488262914,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.04411764705882353,
+            "recall@10": 0.058823529411764705,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.014833888808592245,
+            "recall@10": 0.037037037037037035,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.009259259259259259,
+            "recall@10": 0.027777777777777776,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.039123963124920905,
+            "recall@10": 0.07777777777777778,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.07142857142857142,
+            "recall@10": 0.07142857142857142,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": true,
+        "lower_bound": 0.00017773889110599228,
+        "n_users": 514,
+        "mean_adjusted_difference": 0.00031463799876706595,
+        "ci_lower": 0.0001569241117095259,
+        "ci_upper": 0.000511753054593042,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19818
+      },
+      "best_checkpoint_sha256": "77d6891995739a89dcd77e8dfc87071e13e26a55afb60b10945976d9c9056a96"
+    },
+    {
+      "run_name": "exact_expected_reward_b0.3_seed42_no_feedback",
+      "objective": "exact_expected_reward",
+      "beta": 0.3,
+      "seed": 42,
+      "variant": "no_feedback",
+      "updates_completed": 10000,
+      "stop_reason": "max_updates",
+      "elapsed_training_and_evaluation_seconds": 357.17834330000915,
+      "best_checkpoint_step": 0,
+      "best_dev_support_objective": 0.015256563629157812,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.015731899938353288,
+          "recall@10": 0.029182879377431907,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.002498956974888287,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.01625149428229941,
+            "recall@10": 0.031609195402298854,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.00520149347833754,
+            "recall@10": 0.012987012987012988,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.025023144405032033,
+            "recall@10": 0.04639175257731959,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.0072622177244515375,
+            "recall@10": 0.016129032258064516,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.023628445761840627,
+            "recall@10": 0.041353383458646614,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.009317193797643005,
+            "recall@10": 0.024390243902439025,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.027334209750736443,
+            "recall@10": 0.051643192488262914,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.04411764705882353,
+            "recall@10": 0.058823529411764705,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.014833888808592245,
+            "recall@10": 0.037037037037037035,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.009259259259259259,
+            "recall@10": 0.027777777777777776,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.039123963124920905,
+            "recall@10": 0.07777777777777778,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.07142857142857142,
+            "recall@10": 0.07142857142857142,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": true,
+        "lower_bound": 0.00017504647387601549,
+        "n_users": 514,
+        "mean_adjusted_difference": 0.00031463799876706595,
+        "ci_lower": 0.00014916836366043174,
+        "ci_upper": 0.000500760909825583,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19843
+      },
+      "best_checkpoint_sha256": "67437721d614fbc176953ab6a76893de5b2394b403337a2a43ce618d81c2e9d4"
+    },
+    {
+      "run_name": "exact_expected_reward_b0.3_seed73_no_feedback",
+      "objective": "exact_expected_reward",
+      "beta": 0.3,
+      "seed": 73,
+      "variant": "no_feedback",
+      "updates_completed": 10000,
+      "stop_reason": "development_exact_objective_plateau",
+      "elapsed_training_and_evaluation_seconds": 357.1782015999779,
+      "best_checkpoint_step": 0,
+      "best_dev_support_objective": 0.015256563629157812,
+      "best_dev_relevance": {
+        "primary_user_macro": {
+          "ndcg@10": 0.015731899938353288,
+          "recall@10": 0.029182879377431907,
+          "n_users": 514,
+          "n_events": 514
+        },
+        "panel_events": 514,
+        "panel_users": 514,
+        "target_catalog_coverage": 0.6400778210116731,
+        "target_in_optimized_support_fraction": 0.35019455252918286,
+        "mean_recommended_target_probability_if_supported": 0.002498956974888287,
+        "support_size": 500,
+        "top_k": 10,
+        "oov_targets": 185,
+        "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+        "tie_break": "probability descending, raw item ID ascending",
+        "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+        "slices": {
+          "positive_nonorganic": {
+            "ndcg@10": 0.01625149428229941,
+            "recall@10": 0.031609195402298854,
+            "n_users": 348,
+            "n_events": 348
+          },
+          "positive_new": {
+            "ndcg@10": 0.00520149347833754,
+            "recall@10": 0.012987012987012988,
+            "n_users": 154,
+            "n_events": 154
+          },
+          "positive_repeat": {
+            "ndcg@10": 0.025023144405032033,
+            "recall@10": 0.04639175257731959,
+            "n_users": 194,
+            "n_events": 194
+          },
+          "new": {
+            "ndcg@10": 0.0072622177244515375,
+            "recall@10": 0.016129032258064516,
+            "n_users": 248,
+            "n_events": 248
+          },
+          "repeat": {
+            "ndcg@10": 0.023628445761840627,
+            "recall@10": 0.041353383458646614,
+            "n_users": 266,
+            "n_events": 266
+          },
+          "rm_fit_support_unsupported": {
+            "ndcg@10": 0.009317193797643005,
+            "recall@10": 0.024390243902439025,
+            "n_users": 82,
+            "n_events": 82
+          },
+          "rm_fit_support_rare_1_9": {
+            "ndcg@10": 0.027334209750736443,
+            "recall@10": 0.051643192488262914,
+            "n_users": 213,
+            "n_events": 213
+          },
+          "rm_fit_support_rare_10_99": {
+            "ndcg@10": 0.04411764705882353,
+            "recall@10": 0.058823529411764705,
+            "n_users": 34,
+            "n_events": 34
+          },
+          "rm_fit_support_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_new_x_unsupported": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 18,
+            "n_events": 18
+          },
+          "positive_new_x_rare_1_9": {
+            "ndcg@10": 0.014833888808592245,
+            "recall@10": 0.037037037037037035,
+            "n_users": 54,
+            "n_events": 54
+          },
+          "positive_new_x_rare_10_99": {
+            "ndcg@10": 0.0,
+            "recall@10": 0.0,
+            "n_users": 11,
+            "n_events": 11
+          },
+          "positive_new_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          },
+          "positive_repeat_x_unsupported": {
+            "ndcg@10": 0.009259259259259259,
+            "recall@10": 0.027777777777777776,
+            "n_users": 36,
+            "n_events": 36
+          },
+          "positive_repeat_x_rare_1_9": {
+            "ndcg@10": 0.039123963124920905,
+            "recall@10": 0.07777777777777778,
+            "n_users": 90,
+            "n_events": 90
+          },
+          "positive_repeat_x_rare_10_99": {
+            "ndcg@10": 0.07142857142857142,
+            "recall@10": 0.07142857142857142,
+            "n_users": 14,
+            "n_events": 14
+          },
+          "positive_repeat_x_supported_100_plus": {
+            "ndcg@10": null,
+            "recall@10": null,
+            "n_users": 0,
+            "n_events": 0
+          }
+        }
+      },
+      "best_checkpoint_paired_2_percent_guard_vs_strong": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": true,
+        "lower_bound": 0.0001806573691057221,
+        "n_users": 514,
+        "mean_adjusted_difference": 0.00031463799876706595,
+        "ci_lower": 0.00015910271767285219,
+        "ci_upper": 0.0004996737991846865,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 19874
+      },
+      "best_checkpoint_sha256": "009ec9395c0fab9337ce98185ed4b81886b86eadff9f907d306151d8217dc440"
+    }
+  ],
+  "actor_checkpoint_sha256_unchanged": "51b6e2d6635c7ef4b08f9a345d6f08003d0ce2d3f98f63cba991ee8a4dea8381",
+  "optimized_rm_sha256_unchanged": "a781df889b53a3d3ee426073fc7139c3e0f1d1794d950a6a1c1d94c11d5aec29",
+  "train_only_scaler_sha256": "2cf42891df8e0637eff7dc241d7cf2cf28ac2ce1b4a959e2a76a3f92c0835b95",
+  "training_contexts": 4134,
+  "development_contexts": 514,
+  "max_updates": 10000,
+  "minimum_updates": 1000,
+  "checkpoint_rule": "Among registered candidates, select by highest development support-constrained exact objective subject to the paired 2% NDCG guard versus strong; if no trained method passes, retain strong as primary and report all methods.",
+  "all_methods_use_same_support_reference_reward_scale": true,
+  "evaluation_roles": {
+    "train": "A_RL, one context per user",
+    "development": "validation, disjoint users",
+    "final": "test, disjoint users, retrospective only"
+  },
+  "completed_at_utc": "2026-10-21T21:53:22.299710+00:00"
+}

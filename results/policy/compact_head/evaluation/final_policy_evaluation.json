@@ -1,0 +1,5055 @@
+{
+  "schema_version": 1,
+  "protocol_id": "tlab_yambda_residual_support_exploratory_2026-10-22",
+  "status": "completed_retrospective_final_scoring",
+  "evaluation_role": "held until selection freeze; retrospective, not independent due V1-full_model exposure",
+  "selection_path": "artifacts\\residual_support\\protocol\\frozen_selection.json",
+  "selection_sha256": "4dcab5e4eb27bec005d2f3398a2c35a88f27fe8cc9cc7eae223501d14990466c",
+  "selected_policy": "strong_gpt",
+  "selected_policy_final_metrics": {
+    "primary_user_macro": {
+      "ndcg@10": 0.011436667243080208,
+      "recall@10": 0.02535211267605634,
+      "n_users": 710,
+      "n_events": 710
+    },
+    "panel_events": 710,
+    "panel_users": 710,
+    "target_catalog_coverage": 0.5929577464788732,
+    "target_in_optimized_support_fraction": 0.3380281690140845,
+    "mean_recommended_target_probability_if_supported": 0.0019515939179467756,
+    "support_size": 500,
+    "top_k": 10,
+    "oov_targets": 289,
+    "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+    "tie_break": "probability descending, raw item ID ascending",
+    "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+    "slices": {
+      "positive_nonorganic": {
+        "ndcg@10": 0.01656364822177147,
+        "recall@10": 0.036281179138321996,
+        "n_users": 441,
+        "n_events": 441
+      },
+      "positive_new": {
+        "ndcg@10": 0.010029261572461041,
+        "recall@10": 0.02631578947368421,
+        "n_users": 190,
+        "n_events": 190
+      },
+      "positive_repeat": {
+        "ndcg@10": 0.021509996681408846,
+        "recall@10": 0.043824701195219126,
+        "n_users": 251,
+        "n_events": 251
+      },
+      "new": {
+        "ndcg@10": 0.005756977941896065,
+        "recall@10": 0.015105740181268883,
+        "n_users": 331,
+        "n_events": 331
+      },
+      "repeat": {
+        "ndcg@10": 0.016397029139365037,
+        "recall@10": 0.03430079155672823,
+        "n_users": 379,
+        "n_events": 379
+      },
+      "rm_fit_support_unsupported": {
+        "ndcg@10": 0.010710491771629343,
+        "recall@10": 0.02608695652173913,
+        "n_users": 115,
+        "n_events": 115
+      },
+      "rm_fit_support_rare_1_9": {
+        "ndcg@10": 0.012701204456311083,
+        "recall@10": 0.027450980392156862,
+        "n_users": 255,
+        "n_events": 255
+      },
+      "rm_fit_support_rare_10_99": {
+        "ndcg@10": 0.07155921671549505,
+        "recall@10": 0.1568627450980392,
+        "n_users": 51,
+        "n_events": 51
+      },
+      "rm_fit_support_supported_100_plus": {
+        "ndcg@10": null,
+        "recall@10": null,
+        "n_users": 0,
+        "n_events": 0
+      },
+      "positive_new_x_unsupported": {
+        "ndcg@10": 0.0,
+        "recall@10": 0.0,
+        "n_users": 21,
+        "n_events": 21
+      },
+      "positive_new_x_rare_1_9": {
+        "ndcg@10": 0.011435722120549099,
+        "recall@10": 0.028985507246376812,
+        "n_users": 69,
+        "n_events": 69
+      },
+      "positive_new_x_rare_10_99": {
+        "ndcg@10": 0.08588422095767,
+        "recall@10": 0.23076923076923078,
+        "n_users": 13,
+        "n_events": 13
+      },
+      "positive_new_x_supported_100_plus": {
+        "ndcg@10": null,
+        "recall@10": null,
+        "n_users": 0,
+        "n_events": 0
+      },
+      "positive_repeat_x_unsupported": {
+        "ndcg@10": 0.014071279879564889,
+        "recall@10": 0.038461538461538464,
+        "n_users": 52,
+        "n_events": 52
+      },
+      "positive_repeat_x_rare_1_9": {
+        "ndcg@10": 0.024997370510626917,
+        "recall@10": 0.05102040816326531,
+        "n_users": 98,
+        "n_events": 98
+      },
+      "positive_repeat_x_rare_10_99": {
+        "ndcg@10": 0.11671370017130571,
+        "recall@10": 0.21052631578947367,
+        "n_users": 19,
+        "n_events": 19
+      },
+      "positive_repeat_x_supported_100_plus": {
+        "ndcg@10": null,
+        "recall@10": null,
+        "n_users": 0,
+        "n_events": 0
+      }
+    }
+  },
+  "panel": {
+    "path": "artifacts\\residual_support\\cache\\final\\panel_rows.jsonl",
+    "event_ids_sha256": "154bb172513a44b7c93b251fe7192f956c014d3fc533ca7d2309ccbc422929ca",
+    "n_users": 710,
+    "n_events": 710,
+    "oov_targets": 289,
+    "user_disjoint_from_train_and_development": true,
+    "not_independent_test": true
+  },
+  "catalog": {
+    "size": 20000,
+    "raw_token_mapping_sha256": "dc5be14f731b3e41f1782c355fddb70e398277363e97ef55cfdcaf028b217c36"
+  },
+  "reward_model": {
+    "optimized_rm_sha256": "a781df889b53a3d3ee426073fc7139c3e0f1d1794d950a6a1c1d94c11d5aec29",
+    "audit_predictor_used_for_selection": false,
+    "normalization": {
+      "mean": 0.675908088684082,
+      "std": 0.4220077097415924,
+      "std_floor": 0.001,
+      "version": "residual_support_f_rm_fit_sample_ratio_z_v1"
+    }
+  },
+  "models": {
+    "strong_gpt": {
+      "primary_user_macro": {
+        "ndcg@10": 0.011436667243080208,
+        "recall@10": 0.02535211267605634,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.0019515939179467756,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.01656364822177147,
+          "recall@10": 0.036281179138321996,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.010029261572461041,
+          "recall@10": 0.02631578947368421,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.021509996681408846,
+          "recall@10": 0.043824701195219126,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.005756977941896065,
+          "recall@10": 0.015105740181268883,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.016397029139365037,
+          "recall@10": 0.03430079155672823,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.010710491771629343,
+          "recall@10": 0.02608695652173913,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.012701204456311083,
+          "recall@10": 0.027450980392156862,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.07155921671549505,
+          "recall@10": 0.1568627450980392,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.011435722120549099,
+          "recall@10": 0.028985507246376812,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.08588422095767,
+          "recall@10": 0.23076923076923078,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.014071279879564889,
+          "recall@10": 0.038461538461538464,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.024997370510626917,
+          "recall@10": 0.05102040816326531,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.11671370017130571,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "analytic_q_distillation_b0.3_seed17_full": {
+      "primary_user_macro": {
+        "ndcg@10": 0.010036289860710024,
+        "recall@10": 0.02535211267605634,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.002006205526278142,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.011858584095762318,
+          "recall@10": 0.027210884353741496,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.005681446148381343,
+          "recall@10": 0.015789473684210527,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.01653450525115031,
+          "recall@10": 0.035856573705179286,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.003261253076110137,
+          "recall@10": 0.00906344410876133,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.015953274493170612,
+          "recall@10": 0.0395778364116095,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.006362665684672819,
+          "recall@10": 0.017391304347826087,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.011595678790322876,
+          "recall@10": 0.03137254901960784,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.06739531678106685,
+          "recall@10": 0.1568627450980392,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.0062416892474404795,
+          "recall@10": 0.014492753623188406,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.04990755462454324,
+          "recall@10": 0.15384615384615385,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.008282241501411405,
+          "recall@10": 0.019230769230769232,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.016085646200774458,
+          "recall@10": 0.04081632653061224,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.11279425959418092,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "analytic_q_distillation_b0.3_seed42_full": {
+      "primary_user_macro": {
+        "ndcg@10": 0.010510212401056079,
+        "recall@10": 0.023943661971830985,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.002009258011151251,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.01301581345783924,
+          "recall@10": 0.027210884353741496,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.004215947345599901,
+          "recall@10": 0.010526315789473684,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.019677066690211648,
+          "recall@10": 0.0398406374501992,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.002420030198380608,
+          "recall@10": 0.006042296072507553,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.017575780498907217,
+          "recall@10": 0.0395778364116095,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.0054863456832300655,
+          "recall@10": 0.008695652173913044,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.015904017676213487,
+          "recall@10": 0.0392156862745098,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.05442738321066508,
+          "recall@10": 0.11764705882352941,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.007246376811594203,
+          "recall@10": 0.014492753623188406,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.02315615351261394,
+          "recall@10": 0.07692307692307693,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.012133264491758798,
+          "recall@10": 0.019230769230769232,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.0217783411556705,
+          "recall@10": 0.05102040816326531,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.11440718696926089,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "analytic_q_distillation_b0.3_seed73_full": {
+      "primary_user_macro": {
+        "ndcg@10": 0.010393967588045479,
+        "recall@10": 0.022535211267605635,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.0020331082604225985,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.012606001617912648,
+          "recall@10": 0.027210884353741496,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.0038510871249335487,
+          "recall@10": 0.010526315789473684,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.01923322772813587,
+          "recall@10": 0.0398406374501992,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.0022105938179376866,
+          "recall@10": 0.006042296072507553,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.017540924627374447,
+          "recall@10": 0.036939313984168866,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.009834171770186587,
+          "recall@10": 0.017391304347826087,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.014738104775825473,
+          "recall@10": 0.03529411764705882,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.048834716002065424,
+          "recall@10": 0.09803921568627451,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.0062416892474404795,
+          "recall@10": 0.014492753623188406,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.02315615351261394,
+          "recall@10": 0.07692307692307693,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.012133264491758798,
+          "recall@10": 0.019230769230769232,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.020480304956625412,
+          "recall@10": 0.05102040816326531,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.11523897476007133,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "analytic_q_distillation_b1_seed17_full": {
+      "primary_user_macro": {
+        "ndcg@10": 0.010048379664350378,
+        "recall@10": 0.022535211267605635,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.0019471186270069176,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.014485732713899429,
+          "recall@10": 0.031746031746031744,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.006419691496796216,
+          "recall@10": 0.015789473684210527,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.020591500965889905,
+          "recall@10": 0.043824701195219126,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.0036850192881911813,
+          "recall@10": 0.00906344410876133,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.015605826325323188,
+          "recall@10": 0.03430079155672823,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.010107679233137106,
+          "recall@10": 0.02608695652173913,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.011183667714136702,
+          "recall@10": 0.027450980392156862,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.06117904279947339,
+          "recall@10": 0.11764705882352941,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.011435722120549099,
+          "recall@10": 0.028985507246376812,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.03312896600564562,
+          "recall@10": 0.07692307692307693,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.014071279879564889,
+          "recall@10": 0.038461538461538464,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.021048677967213988,
+          "recall@10": 0.05102040816326531,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.12494682883758007,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "analytic_q_distillation_b1_seed42_full": {
+      "primary_user_macro": {
+        "ndcg@10": 0.010130434075562491,
+        "recall@10": 0.022535211267605635,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.0019474436822965906,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.014617838455306682,
+          "recall@10": 0.031746031746031744,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.006419691496796216,
+          "recall@10": 0.015789473684210527,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.020823607069318587,
+          "recall@10": 0.043824701195219126,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.0036850192881911813,
+          "recall@10": 0.00906344410876133,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.01575954303234324,
+          "recall@10": 0.03430079155672823,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.010836012477035842,
+          "recall@10": 0.02608695652173913,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.01108366892555727,
+          "recall@10": 0.027450980392156862,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.06117904279947339,
+          "recall@10": 0.11764705882352941,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.011435722120549099,
+          "recall@10": 0.028985507246376812,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.03312896600564562,
+          "recall@10": 0.07692307692307693,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.015682016861264015,
+          "recall@10": 0.038461538461538464,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.0207884770377471,
+          "recall@10": 0.05102040816326531,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.12494682883758007,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "analytic_q_distillation_b1_seed73_full": {
+      "primary_user_macro": {
+        "ndcg@10": 0.010032795424961638,
+        "recall@10": 0.022535211267605635,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.0019487947446037122,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.014460642441867663,
+          "recall@10": 0.031746031746031744,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.006419691496796216,
+          "recall@10": 0.015789473684210527,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.0205474180576588,
+          "recall@10": 0.043824701195219126,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.0036850192881911813,
+          "recall@10": 0.00906344410876133,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.015576631576072506,
+          "recall@10": 0.03430079155672823,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.010233199938543608,
+          "recall@10": 0.02608695652173913,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.01108366892555727,
+          "recall@10": 0.027450980392156862,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.06117904279947339,
+          "recall@10": 0.11764705882352941,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.011435722120549099,
+          "recall@10": 0.028985507246376812,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.03312896600564562,
+          "recall@10": 0.07692307692307693,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.014348873747290804,
+          "recall@10": 0.038461538461538464,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.0207884770377471,
+          "recall@10": 0.05102040816326531,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.12494682883758007,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "exact_expected_reward_b0.3_seed17_full": {
+      "primary_user_macro": {
+        "ndcg@10": 0.01031436218298201,
+        "recall@10": 0.022535211267605635,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.001970044793506685,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.013802208230367237,
+          "recall@10": 0.027210884353741496,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.005195457582523577,
+          "recall@10": 0.010526315789473684,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.020317278441882358,
+          "recall@10": 0.0398406374501992,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.0029822868298473707,
+          "recall@10": 0.006042296072507553,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.01671783696368799,
+          "recall@10": 0.036939313984168866,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.0054863456832300655,
+          "recall@10": 0.008695652173913044,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.015262506985428744,
+          "recall@10": 0.03529411764705882,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.05490839441296943,
+          "recall@10": 0.11764705882352941,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.00914390947205011,
+          "recall@10": 0.014492753623188406,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.027400552854463245,
+          "recall@10": 0.07692307692307693,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.012133264491758798,
+          "recall@10": 0.019230769230769232,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.023730777582158944,
+          "recall@10": 0.05102040816326531,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.11279425959418092,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "exact_expected_reward_b0.3_seed17_no_feedback": {
+      "primary_user_macro": {
+        "ndcg@10": 0.011436667243080208,
+        "recall@10": 0.02535211267605634,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.0019515939103677252,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.01656364822177147,
+          "recall@10": 0.036281179138321996,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.010029261572461041,
+          "recall@10": 0.02631578947368421,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.021509996681408846,
+          "recall@10": 0.043824701195219126,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.005756977941896065,
+          "recall@10": 0.015105740181268883,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.016397029139365037,
+          "recall@10": 0.03430079155672823,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.010710491771629343,
+          "recall@10": 0.02608695652173913,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.012701204456311083,
+          "recall@10": 0.027450980392156862,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.07155921671549505,
+          "recall@10": 0.1568627450980392,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.011435722120549099,
+          "recall@10": 0.028985507246376812,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.08588422095767,
+          "recall@10": 0.23076923076923078,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.014071279879564889,
+          "recall@10": 0.038461538461538464,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.024997370510626917,
+          "recall@10": 0.05102040816326531,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.11671370017130571,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "exact_expected_reward_b0.3_seed42_full": {
+      "primary_user_macro": {
+        "ndcg@10": 0.010051654204975651,
+        "recall@10": 0.023943661971830985,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.0020130014852649796,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.012400291651546743,
+          "recall@10": 0.027210884353741496,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.0038510871249335487,
+          "recall@10": 0.010526315789473684,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.018871801054162307,
+          "recall@10": 0.0398406374501992,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.0022105938179376866,
+          "recall@10": 0.006042296072507553,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.016899651535080048,
+          "recall@10": 0.0395778364116095,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.007999952868603003,
+          "recall@10": 0.017391304347826087,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.012353571835445993,
+          "recall@10": 0.03137254901960784,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.0601278252471498,
+          "recall@10": 0.13725490196078433,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.0062416892474404795,
+          "recall@10": 0.014492753623188406,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.02315615351261394,
+          "recall@10": 0.07692307692307693,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.01769220345941049,
+          "recall@10": 0.038461538461538464,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.017078944412407725,
+          "recall@10": 0.04081632653061224,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.11279425959418092,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "exact_expected_reward_b0.3_seed42_no_feedback": {
+      "primary_user_macro": {
+        "ndcg@10": 0.011436667243080208,
+        "recall@10": 0.02535211267605634,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.0019515939103677252,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.01656364822177147,
+          "recall@10": 0.036281179138321996,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.010029261572461041,
+          "recall@10": 0.02631578947368421,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.021509996681408846,
+          "recall@10": 0.043824701195219126,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.005756977941896065,
+          "recall@10": 0.015105740181268883,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.016397029139365037,
+          "recall@10": 0.03430079155672823,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.010710491771629343,
+          "recall@10": 0.02608695652173913,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.012701204456311083,
+          "recall@10": 0.027450980392156862,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.07155921671549505,
+          "recall@10": 0.1568627450980392,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.011435722120549099,
+          "recall@10": 0.028985507246376812,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.08588422095767,
+          "recall@10": 0.23076923076923078,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.014071279879564889,
+          "recall@10": 0.038461538461538464,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.024997370510626917,
+          "recall@10": 0.05102040816326531,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.11671370017130571,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "exact_expected_reward_b0.3_seed73_full": {
+      "primary_user_macro": {
+        "ndcg@10": 0.010435741341573407,
+        "recall@10": 0.023943661971830985,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.0019797258991799413,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.012561345956564015,
+          "recall@10": 0.027210884353741496,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.004291920404135415,
+          "recall@10": 0.010526315789473684,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.018821070478322717,
+          "recall@10": 0.0398406374501992,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.0024636401111351324,
+          "recall@10": 0.006042296072507553,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.017398183313275438,
+          "recall@10": 0.0395778364116095,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.0054863456832300655,
+          "recall@10": 0.008695652173913044,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.015535304006376472,
+          "recall@10": 0.0392156862745098,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.055234197594503154,
+          "recall@10": 0.11764705882352941,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.007246376811594203,
+          "recall@10": 0.014492753623188406,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.024266528983517596,
+          "recall@10": 0.07692307692307693,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.012133264491758798,
+          "recall@10": 0.019230769230769232,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.01919127104358673,
+          "recall@10": 0.05102040816326531,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.11644286180084444,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "exact_expected_reward_b0.3_seed73_no_feedback": {
+      "primary_user_macro": {
+        "ndcg@10": 0.011436667243080208,
+        "recall@10": 0.02535211267605634,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.0019515939103677252,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.01656364822177147,
+          "recall@10": 0.036281179138321996,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.010029261572461041,
+          "recall@10": 0.02631578947368421,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.021509996681408846,
+          "recall@10": 0.043824701195219126,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.005756977941896065,
+          "recall@10": 0.015105740181268883,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.016397029139365037,
+          "recall@10": 0.03430079155672823,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.010710491771629343,
+          "recall@10": 0.02608695652173913,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.012701204456311083,
+          "recall@10": 0.027450980392156862,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.07155921671549505,
+          "recall@10": 0.1568627450980392,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.011435722120549099,
+          "recall@10": 0.028985507246376812,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.08588422095767,
+          "recall@10": 0.23076923076923078,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.014071279879564889,
+          "recall@10": 0.038461538461538464,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.024997370510626917,
+          "recall@10": 0.05102040816326531,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.11671370017130571,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "exact_expected_reward_b1_seed17_full": {
+      "primary_user_macro": {
+        "ndcg@10": 0.010162870666142914,
+        "recall@10": 0.022535211267605635,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.0019558848342208887,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.014670060630617569,
+          "recall@10": 0.031746031746031744,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.006419691496796216,
+          "recall@10": 0.015789473684210527,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.02091535997494449,
+          "recall@10": 0.043824701195219126,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.0036850192881911813,
+          "recall@10": 0.00906344410876133,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.015820308149261712,
+          "recall@10": 0.03430079155672823,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.010710491771629343,
+          "recall@10": 0.02608695652173913,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.011230589946866478,
+          "recall@10": 0.027450980392156862,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.06117904279947339,
+          "recall@10": 0.11764705882352941,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.011435722120549099,
+          "recall@10": 0.028985507246376812,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.03312896600564562,
+          "recall@10": 0.07692307692307693,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.015404422993538102,
+          "recall@10": 0.038461538461538464,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.021170771531970046,
+          "recall@10": 0.05102040816326531,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.12494682883758007,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "exact_expected_reward_b1_seed42_full": {
+      "primary_user_macro": {
+        "ndcg@10": 0.010455513222544588,
+        "recall@10": 0.023943661971830985,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.0019443607857057234,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.014485732713899429,
+          "recall@10": 0.031746031746031744,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.006419691496796216,
+          "recall@10": 0.015789473684210527,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.02059150096588991,
+          "recall@10": 0.043824701195219126,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.004558326920571507,
+          "recall@10": 0.012084592145015106,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.015605826325323188,
+          "recall@10": 0.03430079155672823,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.010710491771629343,
+          "recall@10": 0.02608695652173913,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.012045398633318195,
+          "recall@10": 0.03137254901960784,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.06117904279947339,
+          "recall@10": 0.11764705882352941,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.011435722120549099,
+          "recall@10": 0.028985507246376812,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.03312896600564562,
+          "recall@10": 0.07692307692307693,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.015404422993538102,
+          "recall@10": 0.038461538461538464,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.020341295906738412,
+          "recall@10": 0.05102040816326531,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.12494682883758007,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "exact_expected_reward_b1_seed73_full": {
+      "primary_user_macro": {
+        "ndcg@10": 0.009738884756757025,
+        "recall@10": 0.02112676056338028,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.0019479951455285342,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.013987452930699244,
+          "recall@10": 0.02947845804988662,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.006419691496796216,
+          "recall@10": 0.015789473684210527,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.01971603728305612,
+          "recall@10": 0.0398406374501992,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.0036850192881911813,
+          "recall@10": 0.00906344410876133,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.015026033754369941,
+          "recall@10": 0.0316622691292876,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.010710491771629343,
+          "recall@10": 0.02608695652173913,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.010050080159948906,
+          "recall@10": 0.023529411764705882,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.06117904279947339,
+          "recall@10": 0.11764705882352941,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.011435722120549099,
+          "recall@10": 0.028985507246376812,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.03312896600564562,
+          "recall@10": 0.07692307692307693,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.015404422993538102,
+          "recall@10": 0.038461538461538464,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.018099036882337584,
+          "recall@10": 0.04081632653061224,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.12494682883758007,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "sampled_loo_b0.3_seed17_full": {
+      "primary_user_macro": {
+        "ndcg@10": 0.01046482441705938,
+        "recall@10": 0.023943661971830985,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.0019915084992727446,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.013198390557327569,
+          "recall@10": 0.02947845804988662,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.0038510871249335487,
+          "recall@10": 0.010526315789473684,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.02027403857388081,
+          "recall@10": 0.043824701195219126,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.0022105938179376866,
+          "recall@10": 0.006042296072507553,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.017673664333442703,
+          "recall@10": 0.0395778364116095,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.011128069249482779,
+          "recall@10": 0.02608695652173913,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.013128581083230298,
+          "recall@10": 0.03137254901960784,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.054951160709763004,
+          "recall@10": 0.11764705882352941,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.0062416892474404795,
+          "recall@10": 0.014492753623188406,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.02315615351261394,
+          "recall@10": 0.07692307692307693,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.018199896737638197,
+          "recall@10": 0.038461538461538464,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.019693619157865844,
+          "recall@10": 0.05102040816326531,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.11644286180084444,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "sampled_loo_b0.3_seed42_full": {
+      "primary_user_macro": {
+        "ndcg@10": 0.010491004458627167,
+        "recall@10": 0.02535211267605634,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.0020028668348044264,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.012886902661416398,
+          "recall@10": 0.02947845804988662,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.0038510871249335487,
+          "recall@10": 0.010526315789473684,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.019726763027678312,
+          "recall@10": 0.043824701195219126,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.0022105938179376866,
+          "recall@10": 0.006042296072507553,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.01772270873849054,
+          "recall@10": 0.04221635883905013,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.011744966417067291,
+          "recall@10": 0.02608695652173913,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.01319512264074998,
+          "recall@10": 0.03529411764705882,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.0535918775347315,
+          "recall@10": 0.11764705882352941,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.0062416892474404795,
+          "recall@10": 0.014492753623188406,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.02315615351261394,
+          "recall@10": 0.07692307692307693,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.01769220345941049,
+          "recall@10": 0.038461538461538464,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.019268693956821164,
+          "recall@10": 0.05102040816326531,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.11279425959418092,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "sampled_loo_b0.3_seed73_full": {
+      "primary_user_macro": {
+        "ndcg@10": 0.009763063032735992,
+        "recall@10": 0.022535211267605635,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.002000371921568513,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.012625792101568256,
+          "recall@10": 0.027210884353741496,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.004021104691614349,
+          "recall@10": 0.010526315789473684,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.01913930049954133,
+          "recall@10": 0.0398406374501992,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.0023081869831018923,
+          "recall@10": 0.006042296072507553,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.016273785915134106,
+          "recall@10": 0.036939313984168866,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.00885028313744347,
+          "recall@10": 0.017391304347826087,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.013208801901518337,
+          "recall@10": 0.03529411764705882,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.049916621716654466,
+          "recall@10": 0.09803921568627451,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.0062416892474404795,
+          "recall@10": 0.014492753623188406,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.02564102564102564,
+          "recall@10": 0.07692307692307693,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.012133264491758798,
+          "recall@10": 0.019230769230769232,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.020006329567320125,
+          "recall@10": 0.05102040816326531,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.11644286180084444,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "sampled_loo_b1_seed17_full": {
+      "primary_user_macro": {
+        "ndcg@10": 0.010481970137549408,
+        "recall@10": 0.023943661971830985,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.0019549460987262858,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.015059339687065982,
+          "recall@10": 0.034013605442176874,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.008004059895027695,
+          "recall@10": 0.021052631578947368,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.020399989728847955,
+          "recall@10": 0.043824701195219126,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.004594475468444901,
+          "recall@10": 0.012084592145015106,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.015623819043812184,
+          "recall@10": 0.03430079155672823,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.011438825015528077,
+          "recall@10": 0.02608695652173913,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.01066669656297637,
+          "recall@10": 0.027450980392156862,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.06679855484932111,
+          "recall@10": 0.13725490196078433,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.011435722120549099,
+          "recall@10": 0.028985507246376812,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.056285119518259555,
+          "recall@10": 0.15384615384615385,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.015682016861264015,
+          "recall@10": 0.038461538461538464,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.019703497931031495,
+          "recall@10": 0.05102040816326531,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.12494682883758007,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "sampled_loo_b1_seed42_full": {
+      "primary_user_macro": {
+        "ndcg@10": 0.010839374469483971,
+        "recall@10": 0.02535211267605634,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.0019632228209977,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.015759216413774372,
+          "recall@10": 0.036281179138321996,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.00794108531952194,
+          "recall@10": 0.021052631578947368,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.021677323616594933,
+          "recall@10": 0.04780876494023904,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.004558326920571507,
+          "recall@10": 0.012084592145015106,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.016324933146766363,
+          "recall@10": 0.036939313984168866,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.010233199938543608,
+          "recall@10": 0.02608695652173913,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.012195850475725781,
+          "recall@10": 0.03137254901960784,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.06684698057041237,
+          "recall@10": 0.13725490196078433,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.011435722120549099,
+          "recall@10": 0.028985507246376812,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.05536472187625238,
+          "recall@10": 0.15384615384615385,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.014348873747290804,
+          "recall@10": 0.038461538461538464,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.02368241882645088,
+          "recall@10": 0.061224489795918366,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.12494682883758007,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "sampled_loo_b1_seed73_full": {
+      "primary_user_macro": {
+        "ndcg@10": 0.01039378962981381,
+        "recall@10": 0.023943661971830985,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.00194426733743066,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.01491737106916967,
+          "recall@10": 0.034013605442176874,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.007576225098855589,
+          "recall@10": 0.021052631578947368,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.02047441383554288,
+          "recall@10": 0.043824701195219126,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.004348890540128586,
+          "recall@10": 0.012084592145015106,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.01567310783215104,
+          "recall@10": 0.03430079155672823,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.011438825015528077,
+          "recall@10": 0.02608695652173913,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.010468096597697232,
+          "recall@10": 0.027450980392156862,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.06656394368567221,
+          "recall@10": 0.13725490196078433,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.010431034556395376,
+          "recall@10": 0.028985507246376812,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.05536472187625238,
+          "recall@10": 0.15384615384615385,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.015682016861264015,
+          "recall@10": 0.038461538461538464,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.01989411477572972,
+          "recall@10": 0.05102040816326531,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.12494682883758007,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "exact_expected_reward_b0.3_seed17_continuation": {
+      "primary_user_macro": {
+        "ndcg@10": 0.01031436218298201,
+        "recall@10": 0.022535211267605635,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.001970044793506685,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.013802208230367237,
+          "recall@10": 0.027210884353741496,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.005195457582523577,
+          "recall@10": 0.010526315789473684,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.020317278441882358,
+          "recall@10": 0.0398406374501992,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.0029822868298473707,
+          "recall@10": 0.006042296072507553,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.01671783696368799,
+          "recall@10": 0.036939313984168866,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.0054863456832300655,
+          "recall@10": 0.008695652173913044,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.015262506985428744,
+          "recall@10": 0.03529411764705882,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.05490839441296943,
+          "recall@10": 0.11764705882352941,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.00914390947205011,
+          "recall@10": 0.014492753623188406,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.027400552854463245,
+          "recall@10": 0.07692307692307693,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.012133264491758798,
+          "recall@10": 0.019230769230769232,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.023730777582158944,
+          "recall@10": 0.05102040816326531,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.11279425959418092,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "analytic_rm_beta_1": {
+      "primary_user_macro": {
+        "ndcg@10": 0.009615285155812335,
+        "recall@10": 0.022535211267605635,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.0019338392812211429,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.01384832443590811,
+          "recall@10": 0.031746031746031744,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.006054831276129864,
+          "recall@10": 0.015789473684210527,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.01974778140944543,
+          "recall@10": 0.043824701195219126,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.0034755829077482603,
+          "recall@10": 0.00906344410876133,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.014977399784068824,
+          "recall@10": 0.03430079155672823,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.010388577821566256,
+          "recall@10": 0.02608695652173913,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.009334509043509435,
+          "recall@10": 0.023529411764705882,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.06376208245199476,
+          "recall@10": 0.13725490196078433,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.0062416892474404795,
+          "recall@10": 0.014492753623188406,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.05536472187625238,
+          "recall@10": 0.15384615384615385,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.014692497911667815,
+          "recall@10": 0.038461538461538464,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.01989411477572972,
+          "recall@10": 0.05102040816326531,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.1180557891759244,
+          "recall@10": 0.21052631578947367,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "analytic_rm_beta_0.3": {
+      "primary_user_macro": {
+        "ndcg@10": 0.011719057546480682,
+        "recall@10": 0.029577464788732393,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.001997720434063115,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.014541738482338954,
+          "recall@10": 0.036281179138321996,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.0038510871249335487,
+          "recall@10": 0.010526315789473684,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.02263426341423946,
+          "recall@10": 0.055776892430278883,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.0022105938179376866,
+          "recall@10": 0.006042296072507553,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.020023283124706883,
+          "recall@10": 0.05013192612137203,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.009157171458474906,
+          "recall@10": 0.02608695652173913,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.016092524815419482,
+          "recall@10": 0.043137254901960784,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.062036515928327436,
+          "recall@10": 0.13725490196078433,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.0062416892474404795,
+          "recall@10": 0.014492753623188406,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.02315615351261394,
+          "recall@10": 0.07692307692307693,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.014692497911667815,
+          "recall@10": 0.038461538461538464,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.025357494560816866,
+          "recall@10": 0.07142857142857142,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.12800819782143816,
+          "recall@10": 0.2631578947368421,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "matched_repeat_analytic_beta_1": {
+      "primary_user_macro": {
+        "ndcg@10": 0.007046661450355219,
+        "recall@10": 0.014084507042253521,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.0019696852319792493,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.005579902245377866,
+          "recall@10": 0.011337868480725623,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.009803732630325253,
+          "recall@10": 0.0199203187250996,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.013200869735493946,
+          "recall@10": 0.026385224274406333,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.011209259359285982,
+          "recall@10": 0.017391304347826087,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.01332784284960231,
+          "recall@10": 0.027450980392156862,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.006185585819328015,
+          "recall@10": 0.0196078431372549,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.02189053074924398,
+          "recall@10": 0.04081632653061224,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.016603414567669936,
+          "recall@10": 0.05263157894736842,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "matched_repeat_analytic_beta_0.3": {
+      "primary_user_macro": {
+        "ndcg@10": 0.006602344722487995,
+        "recall@10": 0.01267605633802817,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "target_in_optimized_support_fraction": 0.3380281690140845,
+      "mean_recommended_target_probability_if_supported": 0.0024814071408586613,
+      "support_size": 500,
+      "top_k": 10,
+      "oov_targets": 289,
+      "aggregation": "event mean within user, then user macro; each frozen panel has one event per user",
+      "tie_break": "probability descending, raw item ID ascending",
+      "fixed_tail": "support probability mass is preserved and catalog probabilities outside support are unchanged",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.004864562388720885,
+          "recall@10": 0.009070294784580499,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.008546900451896057,
+          "recall@10": 0.01593625498007968,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.012368508583025004,
+          "recall@10": 0.023746701846965697,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.011209259359285982,
+          "recall@10": 0.017391304347826087,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.01332784284960231,
+          "recall@10": 0.027450980392156862,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.02189053074924398,
+          "recall@10": 0.04081632653061224,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "train_popularity": {
+      "primary_user_macro": {
+        "ndcg@10": 0.0015808424783820016,
+        "recall@10": 0.004225352112676056,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "oov_targets": 289,
+      "top_k": 10,
+      "aggregation": "event mean within user, then user macro; OOV targets remain misses",
+      "tie_break": "score descending, raw item ID ascending",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.0006554757966392015,
+          "recall@10": 0.0022675736961451248,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.0011516526944935772,
+          "recall@10": 0.00398406374501992,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.0010070493454179255,
+          "recall@10": 0.0030211480362537764,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.002081965240944295,
+          "recall@10": 0.005277044854881266,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.02200780705198473,
+          "recall@10": 0.058823529411764705,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.015213938227257256,
+          "recall@10": 0.05263157894736842,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "recent_train_popularity_14d": {
+      "primary_user_macro": {
+        "ndcg@10": 0.000913800295942341,
+        "recall@10": 0.0028169014084507044,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "oov_targets": 289,
+      "top_k": 10,
+      "aggregation": "event mean within user, then user macro; OOV targets remain misses",
+      "tie_break": "score descending, raw item ID ascending",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.0007153398566569813,
+          "recall@10": 0.0022675736961451248,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.0012568321784291983,
+          "recall@10": 0.00398406374501992,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.0010070493454179255,
+          "recall@10": 0.0030211480362537764,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.0008323611524689413,
+          "recall@10": 0.002638522427440633,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.002898550724637681,
+          "recall@10": 0.008695652173913044,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.006185585819328015,
+          "recall@10": 0.0196078431372549,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.016603414567669936,
+          "recall@10": 0.05263157894736842,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "smoothed_markov": {
+      "primary_user_macro": {
+        "ndcg@10": 0.006119887303761304,
+        "recall@10": 0.009859154929577466,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "oov_targets": 289,
+      "top_k": 10,
+      "aggregation": "event mean within user, then user macro; OOV targets remain misses",
+      "tie_break": "score descending, raw item ID ascending",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.0030501586976655923,
+          "recall@10": 0.009070294784580499,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.00158436839823148,
+          "recall@10": 0.005263157894736842,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.004159721075723287,
+          "recall@10": 0.01195219123505976,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.006951752252761272,
+          "recall@10": 0.00906344410876133,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.005393377282339168,
+          "recall@10": 0.010554089709762533,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.017391304347826087,
+          "recall@10": 0.017391304347826087,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.006619148246660874,
+          "recall@10": 0.011764705882352941,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.012887003583764772,
+          "recall@10": 0.0392156862745098,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.0043627535603475535,
+          "recall@10": 0.014492753623188406,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.003947477624842262,
+          "recall@10": 0.01020408163265306,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.0345914306722107,
+          "recall@10": 0.10526315789473684,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "history_frequency": {
+      "primary_user_macro": {
+        "ndcg@10": 0.003970158530239409,
+        "recall@10": 0.007042253521126761,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "oov_targets": 289,
+      "top_k": 10,
+      "aggregation": "event mean within user, then user macro; OOV targets remain misses",
+      "tie_break": "score descending, raw item ID ascending",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.0038273986460283967,
+          "recall@10": 0.006802721088435374,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.006724632680870609,
+          "recall@10": 0.01195219123505976,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.007437500148997311,
+          "recall@10": 0.013192612137203167,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.004347826086956522,
+          "recall@10": 0.008695652173913044,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.009093382574392081,
+          "recall@10": 0.01568627450980392,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.017223293907127783,
+          "recall@10": 0.030612244897959183,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    },
+    "history_frequency_reranker": {
+      "primary_user_macro": {
+        "ndcg@10": 0.004716183178628544,
+        "recall@10": 0.008450704225352112,
+        "n_users": 710,
+        "n_events": 710
+      },
+      "panel_events": 710,
+      "panel_users": 710,
+      "target_catalog_coverage": 0.5929577464788732,
+      "oov_targets": 289,
+      "top_k": 10,
+      "aggregation": "event mean within user, then user macro; OOV targets remain misses",
+      "tie_break": "score descending, raw item ID ascending",
+      "slices": {
+        "positive_nonorganic": {
+          "ndcg@10": 0.004220755365412214,
+          "recall@10": 0.006802721088435374,
+          "n_users": 441,
+          "n_events": 441
+        },
+        "positive_new": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 190,
+          "n_events": 190
+        },
+        "positive_repeat": {
+          "ndcg@10": 0.007415749466720264,
+          "recall@10": 0.01195219123505976,
+          "n_users": 251,
+          "n_events": 251
+        },
+        "new": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 331,
+          "n_events": 331
+        },
+        "repeat": {
+          "ndcg@10": 0.008835066112998061,
+          "recall@10": 0.0158311345646438,
+          "n_users": 379,
+          "n_events": 379
+        },
+        "rm_fit_support_unsupported": {
+          "ndcg@10": 0.004347826086956522,
+          "recall@10": 0.008695652173913044,
+          "n_users": 115,
+          "n_events": 115
+        },
+        "rm_fit_support_rare_1_9": {
+          "ndcg@10": 0.011170549242455944,
+          "recall@10": 0.0196078431372549,
+          "n_users": 255,
+          "n_events": 255
+        },
+        "rm_fit_support_rare_10_99": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 51,
+          "n_events": 51
+        },
+        "rm_fit_support_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_new_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 21,
+          "n_events": 21
+        },
+        "positive_new_x_rare_1_9": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 69,
+          "n_events": 69
+        },
+        "positive_new_x_rare_10_99": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 13,
+          "n_events": 13
+        },
+        "positive_new_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        },
+        "positive_repeat_x_unsupported": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 52,
+          "n_events": 52
+        },
+        "positive_repeat_x_rare_1_9": {
+          "ndcg@10": 0.018993399144354963,
+          "recall@10": 0.030612244897959183,
+          "n_users": 98,
+          "n_events": 98
+        },
+        "positive_repeat_x_rare_10_99": {
+          "ndcg@10": 0.0,
+          "recall@10": 0.0,
+          "n_users": 19,
+          "n_events": 19
+        },
+        "positive_repeat_x_supported_100_plus": {
+          "ndcg@10": null,
+          "recall@10": null,
+          "n_users": 0,
+          "n_events": 0
+        }
+      }
+    }
+  },
+  "paired_vs_strong": {
+    "analytic_q_distillation_b0.3_seed17_full": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.001400377382370183,
+        "ci_lower": -0.00530615790913331,
+        "ci_upper": 0.0020633310772730485,
+        "one_sided_lower": -0.00462850655079169,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22000
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.004297943264133343,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.0011716440375085788,
+        "ci_lower": -0.004932085223253399,
+        "ci_upper": 0.002207286764563004,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22001
+      }
+    },
+    "analytic_q_distillation_b0.3_seed42_full": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.0009264548420241285,
+        "ci_lower": -0.00492771857918441,
+        "ci_upper": 0.0027541889502924076,
+        "one_sided_lower": -0.004286009224829353,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22001
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.003886516492997816,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.0006977214971625247,
+        "ci_lower": -0.004579057851475752,
+        "ci_upper": 0.0030188895153664373,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22002
+      }
+    },
+    "analytic_q_distillation_b0.3_seed73_full": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.0010426996550347276,
+        "ci_lower": -0.004679630568935478,
+        "ci_upper": 0.002801170616566968,
+        "one_sided_lower": -0.00408893755573839,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22002
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.003882777107541649,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.0008139663101731237,
+        "ci_lower": -0.00436142556864278,
+        "ci_upper": 0.002942310908750071,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22003
+      }
+    },
+    "analytic_q_distillation_b1_seed17_full": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.001388287578729828,
+        "ci_lower": -0.004075657994691526,
+        "ci_upper": 0.0008321972742827711,
+        "one_sided_lower": -0.003597264811283506,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22003
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.00325975992414759,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.0011595542338682233,
+        "ci_lower": -0.00389738137453156,
+        "ci_upper": 0.0009918441547738107,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22004
+      }
+    },
+    "analytic_q_distillation_b1_seed42_full": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.0013062331675177165,
+        "ci_lower": -0.004116025222384521,
+        "ci_upper": 0.0008431248966961164,
+        "one_sided_lower": -0.0034784973705417536,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22004
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.003231840260903807,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.001077499822656112,
+        "ci_lower": -0.0037677226754899724,
+        "ci_upper": 0.0010577232202115948,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22005
+      }
+    },
+    "analytic_q_distillation_b1_seed73_full": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.0014038718181185713,
+        "ci_lower": -0.003324248819047459,
+        "ci_upper": 0.0001670434570924151,
+        "one_sided_lower": -0.002966758939844168,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22005
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.002681921471450154,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.0011751384732569669,
+        "ci_lower": -0.003050354073319409,
+        "ci_upper": 0.0004913883466072962,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22006
+      }
+    },
+    "exact_expected_reward_b0.3_seed17_full": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.0011223050600981952,
+        "ci_lower": -0.004935465928603529,
+        "ci_upper": 0.002468250606898746,
+        "one_sided_lower": -0.004273946250275709,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22006
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.004104893109747611,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.0008935717152365908,
+        "ci_lower": -0.0047226717771936925,
+        "ci_upper": 0.0025640047066160542,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22007
+      }
+    },
+    "exact_expected_reward_b0.3_seed17_no_feedback": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": 0.0,
+        "ci_lower": 0.0,
+        "ci_upper": 0.0,
+        "one_sided_lower": 0.0,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22007
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": true,
+        "lower_bound": 0.00014392837355022838,
+        "n_users": 710,
+        "mean_adjusted_difference": 0.0002287333448616043,
+        "ci_lower": 0.0001308110876711156,
+        "ci_upper": 0.00034710728938092215,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22008
+      }
+    },
+    "exact_expected_reward_b0.3_seed42_full": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.0013850130381045556,
+        "ci_lower": -0.005138669763025243,
+        "ci_upper": 0.002267442104457462,
+        "one_sided_lower": -0.0045818873022354725,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22008
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.004300723573909842,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.0011562796932429512,
+        "ci_lower": -0.004891049965707472,
+        "ci_upper": 0.0025512060560749735,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22009
+      }
+    },
+    "exact_expected_reward_b0.3_seed42_no_feedback": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": 0.0,
+        "ci_lower": 0.0,
+        "ci_upper": 0.0,
+        "one_sided_lower": 0.0,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22009
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": true,
+        "lower_bound": 0.000140688371900798,
+        "n_users": 710,
+        "mean_adjusted_difference": 0.0002287333448616043,
+        "ci_lower": 0.00012737434934003962,
+        "ci_upper": 0.0003436275105078992,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22010
+      }
+    },
+    "exact_expected_reward_b0.3_seed73_full": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.0010009259015067997,
+        "ci_lower": -0.005105353087324319,
+        "ci_upper": 0.0031313327006106157,
+        "one_sided_lower": -0.0045920648879040375,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22010
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.004089387374879028,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.0007721925566451959,
+        "ci_lower": -0.004826284771472149,
+        "ci_upper": 0.0030591626077531835,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22011
+      }
+    },
+    "exact_expected_reward_b0.3_seed73_no_feedback": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": 0.0,
+        "ci_lower": 0.0,
+        "ci_upper": 0.0,
+        "one_sided_lower": 0.0,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22011
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": true,
+        "lower_bound": 0.000140516260767374,
+        "n_users": 710,
+        "mean_adjusted_difference": 0.0002287333448616043,
+        "ci_lower": 0.00012538379010543023,
+        "ci_upper": 0.00034760318549133604,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22012
+      }
+    },
+    "exact_expected_reward_b1_seed17_full": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.0012737965769372922,
+        "ci_lower": -0.0040123652621634615,
+        "ci_upper": 0.0009331054865081006,
+        "one_sided_lower": -0.003426239643091705,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22012
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.0033157501854619367,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.0010450632320756876,
+        "ci_lower": -0.0037202665212109254,
+        "ci_upper": 0.0010921563039606177,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22013
+      }
+    },
+    "exact_expected_reward_b1_seed42_full": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.0009811540205356196,
+        "ci_lower": -0.003837178602390913,
+        "ci_upper": 0.001340843937256725,
+        "one_sided_lower": -0.003361643188789275,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22013
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.0029911097460248257,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.000752420675674015,
+        "ci_lower": -0.003455706524115076,
+        "ci_upper": 0.001569055027713754,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22014
+      }
+    },
+    "exact_expected_reward_b1_seed73_full": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.001697782486323181,
+        "ci_lower": -0.004206146853092848,
+        "ci_upper": 0.00023355952140102437,
+        "one_sided_lower": -0.0037777546650254574,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22014
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.0034775405735385564,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.0014690491414615769,
+        "ci_lower": -0.003947382845750059,
+        "ci_upper": 0.00042457147722609404,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22015
+      }
+    },
+    "sampled_loo_b0.3_seed17_full": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.0009718428260208291,
+        "ci_lower": -0.004451584311667125,
+        "ci_upper": 0.0025105355523513547,
+        "one_sided_lower": -0.0038860045684184176,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22015
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.0034118633074796,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.0007431094811592248,
+        "ci_lower": -0.004237043279552425,
+        "ci_upper": 0.0027787910210174166,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22016
+      }
+    },
+    "sampled_loo_b0.3_seed42_full": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.0009456627844530387,
+        "ci_lower": -0.004395069265825281,
+        "ci_upper": 0.0023833138247016756,
+        "one_sided_lower": -0.0036715352148854415,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22016
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.0035152090296360033,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.0007169294395914347,
+        "ci_lower": -0.00428590443902526,
+        "ci_upper": 0.002338081467988823,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22017
+      }
+    },
+    "sampled_loo_b0.3_seed73_full": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.0016736042103442173,
+        "ci_lower": -0.0052654780705025765,
+        "ci_upper": 0.0014266760535202613,
+        "one_sided_lower": -0.004682372495578546,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22017
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.004446753479862016,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.0014448708654826129,
+        "ci_lower": -0.005084941296020185,
+        "ci_upper": 0.0017498903850541568,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22018
+      }
+    },
+    "sampled_loo_b1_seed17_full": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.0009546971055307986,
+        "ci_lower": -0.0025942987747301295,
+        "ci_upper": 0.00040300680992628063,
+        "one_sided_lower": -0.002366903978075433,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22018
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.0020168340795222494,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.0007259637606691942,
+        "ci_lower": -0.0023256460867249083,
+        "ci_upper": 0.0006578798761543512,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22019
+      }
+    },
+    "sampled_loo_b1_seed42_full": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.0005972927735962352,
+        "ci_lower": -0.0024865707966765967,
+        "ci_upper": 0.0010461832924585548,
+        "one_sided_lower": -0.002076743350304631,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22019
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.0018082302211673877,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.0003685594287346309,
+        "ci_lower": -0.0021485827198184956,
+        "ci_upper": 0.0012629934644109097,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22020
+      }
+    },
+    "sampled_loo_b1_seed73_full": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.001042877613266396,
+        "ci_lower": -0.0035818531161506254,
+        "ci_upper": 0.0008886868665520652,
+        "one_sided_lower": -0.0031603835026929447,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22020
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.0028469591332148853,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.0008141442684047917,
+        "ci_lower": -0.0032680752946218548,
+        "ci_upper": 0.0011875571371097904,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22021
+      }
+    },
+    "exact_expected_reward_b0.3_seed17_continuation": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.0011223050600981952,
+        "ci_lower": -0.0047958661231777815,
+        "ci_upper": 0.0023443334485330905,
+        "one_sided_lower": -0.004112933642999376,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22021
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.003907902368466483,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.0008935717152365908,
+        "ci_lower": -0.004372811288672196,
+        "ci_upper": 0.002466197701584719,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22022
+      }
+    },
+    "analytic_rm_beta_1": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.0018213820872678723,
+        "ci_lower": -0.004353198855704029,
+        "ci_upper": 0.000160840722822985,
+        "one_sided_lower": -0.003921354742708766,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22022
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.0035426102417820244,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.0015926487424062676,
+        "ci_lower": -0.004180701577085344,
+        "ci_upper": 0.0004905873311432683,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22023
+      }
+    },
+    "analytic_rm_beta_0.3": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": 0.00028239030340047264,
+        "ci_lower": -0.003791608382342819,
+        "ci_upper": 0.004287974930716253,
+        "one_sided_lower": -0.0031862720769788924,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22023
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.0029189681773754764,
+        "n_users": 710,
+        "mean_adjusted_difference": 0.0005111236482620769,
+        "ci_lower": -0.003673828479367649,
+        "ci_upper": 0.0043747125106425215,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22024
+      }
+    },
+    "matched_repeat_analytic_beta_1": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.004390005792724988,
+        "ci_lower": -0.01046962903196052,
+        "ci_upper": 0.0009598192819584782,
+        "one_sided_lower": -0.009512418460572795,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22024
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.008777045792455545,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.004161272447863384,
+        "ci_lower": -0.009652098076848883,
+        "ci_upper": 0.0010066291534724088,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22025
+      }
+    },
+    "matched_repeat_analytic_beta_0.3": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.004834322520592212,
+        "ci_lower": -0.010947819751755994,
+        "ci_upper": 0.0006491490232085185,
+        "one_sided_lower": -0.009796013585758835,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22025
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.009619271668982724,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.004605589175730607,
+        "ci_lower": -0.010598602090423397,
+        "ci_upper": 0.0011409734947866867,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22026
+      }
+    },
+    "train_popularity": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.009855824764698207,
+        "ci_lower": -0.01606127391284028,
+        "ci_upper": -0.00447681469932348,
+        "one_sided_lower": -0.014829571726144648,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22026
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.014543785782076192,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.0096270914198366,
+        "ci_lower": -0.015345440795481167,
+        "ci_upper": -0.004235430837499376,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22027
+      }
+    },
+    "recent_train_popularity_14d": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.010522866947137865,
+        "ci_lower": -0.016160581803132082,
+        "ci_upper": -0.0055514101914847895,
+        "one_sided_lower": -0.015186584010053841,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22027
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.015303909737640021,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.010294133602276262,
+        "ci_lower": -0.016244161391452613,
+        "ci_upper": -0.005305231487901936,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22028
+      }
+    },
+    "smoothed_markov": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.005316779939318903,
+        "ci_lower": -0.012567219276753326,
+        "ci_upper": 0.0016651594544569482,
+        "one_sided_lower": -0.011482261015739128,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22028
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.010959212159413827,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.005088046594457298,
+        "ci_lower": -0.012059193276665074,
+        "ci_upper": 0.0022175346045260245,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22029
+      }
+    },
+    "history_frequency": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.007466508712840798,
+        "ci_lower": -0.014006700655459932,
+        "ci_upper": -0.0009235305099857434,
+        "one_sided_lower": -0.012920398303078241,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22029
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.01233181636183946,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.007237775367979193,
+        "ci_lower": -0.013663358671436837,
+        "ci_upper": -0.0010016393783027415,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22030
+      }
+    },
+    "history_frequency_reranker": {
+      "paired_ndcg10": {
+        "n_users": 710,
+        "mean_difference": -0.006720484064451662,
+        "ci_lower": -0.013472036680941761,
+        "ci_upper": -0.0003274241468376138,
+        "one_sided_lower": -0.01220803093057198,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22030
+      },
+      "relative_2_percent_guard": {
+        "tolerance": 0.02,
+        "criterion": "one-sided 95% user-cluster bootstrap lower bound > 0",
+        "passes": false,
+        "lower_bound": -0.012423048079334816,
+        "n_users": 710,
+        "mean_adjusted_difference": -0.00649175071959006,
+        "ci_lower": -0.013465368186032526,
+        "ci_upper": -0.00011884944728907127,
+        "confidence": 0.95,
+        "n_bootstrap": 2000,
+        "seed": 22031
+      }
+    }
+  },
+  "head_provenance": {
+    "analytic_q_distillation_b0.3_seed17_full": {
+      "checkpoint_sha256": "eb178cadeda9d744363200ea207fdd1c8e10548a6f675f8d00ff04516cf01093",
+      "objective": "analytic_q_distillation",
+      "beta": 0.3,
+      "seed": 17,
+      "variant": "full",
+      "updates_completed": 10000
+    },
+    "analytic_q_distillation_b0.3_seed42_full": {
+      "checkpoint_sha256": "1dcf8fb7f76d761ece9cfcb5a848fd6db6ce56eeae5a64c841f3427f200e34e4",
+      "objective": "analytic_q_distillation",
+      "beta": 0.3,
+      "seed": 42,
+      "variant": "full",
+      "updates_completed": 10000
+    },
+    "analytic_q_distillation_b0.3_seed73_full": {
+      "checkpoint_sha256": "9b8ed4a37f533060724d8ff364aba46cbd6c63e3c3f3c0e4b54d5014b66b86ae",
+      "objective": "analytic_q_distillation",
+      "beta": 0.3,
+      "seed": 73,
+      "variant": "full",
+      "updates_completed": 10000
+    },
+    "analytic_q_distillation_b1_seed17_full": {
+      "checkpoint_sha256": "2d445a3d4c516e3e1ba6cbee432a49e244c2e4798d402a257d8c82ef37e99024",
+      "objective": "analytic_q_distillation",
+      "beta": 1.0,
+      "seed": 17,
+      "variant": "full",
+      "updates_completed": 6500
+    },
+    "analytic_q_distillation_b1_seed42_full": {
+      "checkpoint_sha256": "0ae42538a11787bf4ca53bc80dd85288a014045a920c8f8ab92759a93a9c90ff",
+      "objective": "analytic_q_distillation",
+      "beta": 1.0,
+      "seed": 42,
+      "variant": "full",
+      "updates_completed": 10000
+    },
+    "analytic_q_distillation_b1_seed73_full": {
+      "checkpoint_sha256": "838794a3a37f9e8379971c57ede26d5ce84fe9522e0237ee6328d25e63646b49",
+      "objective": "analytic_q_distillation",
+      "beta": 1.0,
+      "seed": 73,
+      "variant": "full",
+      "updates_completed": 10000
+    },
+    "exact_expected_reward_b0.3_seed17_full": {
+      "checkpoint_sha256": "b095db454a84af036b4dce7c45758fbe3d20f7f25e7ea12c9fd0d5a53038df43",
+      "objective": "exact_expected_reward",
+      "beta": 0.3,
+      "seed": 17,
+      "variant": "full",
+      "updates_completed": 10000
+    },
+    "exact_expected_reward_b0.3_seed17_no_feedback": {
+      "checkpoint_sha256": "77d6891995739a89dcd77e8dfc87071e13e26a55afb60b10945976d9c9056a96",
+      "objective": "exact_expected_reward",
+      "beta": 0.3,
+      "seed": 17,
+      "variant": "no_feedback",
+      "updates_completed": 9000
+    },
+    "exact_expected_reward_b0.3_seed42_full": {
+      "checkpoint_sha256": "5fc8cbcf063352cc4e15f11d5e8cee04a7a449121ce8aab58829fac54038138f",
+      "objective": "exact_expected_reward",
+      "beta": 0.3,
+      "seed": 42,
+      "variant": "full",
+      "updates_completed": 10000
+    },
+    "exact_expected_reward_b0.3_seed42_no_feedback": {
+      "checkpoint_sha256": "67437721d614fbc176953ab6a76893de5b2394b403337a2a43ce618d81c2e9d4",
+      "objective": "exact_expected_reward",
+      "beta": 0.3,
+      "seed": 42,
+      "variant": "no_feedback",
+      "updates_completed": 10000
+    },
+    "exact_expected_reward_b0.3_seed73_full": {
+      "checkpoint_sha256": "390879444c4414dd777051685a6d9acedb21f686829fd26d08dca60d34ebf1ad",
+      "objective": "exact_expected_reward",
+      "beta": 0.3,
+      "seed": 73,
+      "variant": "full",
+      "updates_completed": 10000
+    },
+    "exact_expected_reward_b0.3_seed73_no_feedback": {
+      "checkpoint_sha256": "009ec9395c0fab9337ce98185ed4b81886b86eadff9f907d306151d8217dc440",
+      "objective": "exact_expected_reward",
+      "beta": 0.3,
+      "seed": 73,
+      "variant": "no_feedback",
+      "updates_completed": 10000
+    },
+    "exact_expected_reward_b1_seed17_full": {
+      "checkpoint_sha256": "312c8fdddc33ee5d42ac3bb3b5d24c1bc59e40fec3bdf91ea31e0139be8503f4",
+      "objective": "exact_expected_reward",
+      "beta": 1.0,
+      "seed": 17,
+      "variant": "full",
+      "updates_completed": 6500
+    },
+    "exact_expected_reward_b1_seed42_full": {
+      "checkpoint_sha256": "bd22f2705f7cc2cefbc9ab978093f0a67ff33f363a05d5be0e6c4f0109fe2484",
+      "objective": "exact_expected_reward",
+      "beta": 1.0,
+      "seed": 42,
+      "variant": "full",
+      "updates_completed": 6500
+    },
+    "exact_expected_reward_b1_seed73_full": {
+      "checkpoint_sha256": "57d8f9af1aecb4a5b3ee4f5d4933df162b86db8bf766cda9873323c8694264b9",
+      "objective": "exact_expected_reward",
+      "beta": 1.0,
+      "seed": 73,
+      "variant": "full",
+      "updates_completed": 10000
+    },
+    "sampled_loo_b0.3_seed17_full": {
+      "checkpoint_sha256": "dd663996999253628d1a3832286ed0bb7003d4c2951fa1e1afcf5131ae977cf8",
+      "objective": "sampled_loo",
+      "beta": 0.3,
+      "seed": 17,
+      "variant": "full",
+      "updates_completed": 10000
+    },
+    "sampled_loo_b0.3_seed42_full": {
+      "checkpoint_sha256": "f8a0239e5651c60cff354348415209386046a9930ff988fc2bb817be73600e9a",
+      "objective": "sampled_loo",
+      "beta": 0.3,
+      "seed": 42,
+      "variant": "full",
+      "updates_completed": 10000
+    },
+    "sampled_loo_b0.3_seed73_full": {
+      "checkpoint_sha256": "9d3503d29d5805de074fc69072bca8cd3ddd2df03aeb2ec726f1235489f0ecf6",
+      "objective": "sampled_loo",
+      "beta": 0.3,
+      "seed": 73,
+      "variant": "full",
+      "updates_completed": 10000
+    },
+    "sampled_loo_b1_seed17_full": {
+      "checkpoint_sha256": "2ff7ecc7f62bd22c82a6a5d2fee46f4e3ef60e9a0cbd0c10a60a825799c1a214",
+      "objective": "sampled_loo",
+      "beta": 1.0,
+      "seed": 17,
+      "variant": "full",
+      "updates_completed": 7500
+    },
+    "sampled_loo_b1_seed42_full": {
+      "checkpoint_sha256": "6d126bfb591aeb76a891e5fc5df82f9c5fdbab50fe94e943341c4c0299433a18",
+      "objective": "sampled_loo",
+      "beta": 1.0,
+      "seed": 42,
+      "variant": "full",
+      "updates_completed": 9000
+    },
+    "sampled_loo_b1_seed73_full": {
+      "checkpoint_sha256": "b35276a87e8e2964ba7dd39c760872a697f4ec5144073020d1eed2f5012d89b1",
+      "objective": "sampled_loo",
+      "beta": 1.0,
+      "seed": 73,
+      "variant": "full",
+      "updates_completed": 7500
+    },
+    "exact_expected_reward_b0.3_seed17_continuation": {
+      "checkpoint_sha256": "928da80f5b9adfa9bc53bef2ad72387b29990ed20da2069d2b27aa1409779bc3",
+      "objective": "exact_expected_reward",
+      "beta": 0.3,
+      "seed": 17,
+      "variant": "full_continuation",
+      "updates_completed": 17500
+    }
+  },
+  "baseline_reference": "same strong full_model actor, same full-catalog scores and user-disjoint final panel",
+  "matched_policy_factors": {
+    "support_size": 500,
+    "reference_checkpoint_sha256": "51b6e2d6635c7ef4b08f9a345d6f08003d0ce2d3f98f63cba991ee8a4dea8381",
+    "reward_scale": {
+      "mean": 0.675908088684082,
+      "std": 0.4220077097415924,
+      "std_floor": 0.001,
+      "version": "residual_support_f_rm_fit_sample_ratio_z_v1"
+    },
+    "candidate_contexts": "identical final contexts for sampled, exact, distill, analytic, and repeat support policies"
+  },
+  "guard_interpretation": "A failed 2% guard means preservation of quality is not established; a CI containing zero is not evidence of equality.",
+  "runtime": {
+    "transition_fit_seconds": 1.1751650999940466,
+    "transition_examples": 10441413,
+    "total_final_scoring_seconds": 88.67205330001889,
+    "device": "cuda",
+    "head_count": 22
+  },
+  "limitations": [
+    "This source test period and revision were opened in V1-full_model; user disjointness prevents within-panel_tools.1 role overlap but not historical outcome exposure.",
+    "Logged-action reward predictions remain observational proxies; optimized proxy and audit predictor do not establish causal preference.",
+    "The strong actor checkpoint may overlap with A_RL training events; its use as reference is retained by protocol and disclosed.",
+    "Seed runs are repeated fits over the same users and do not increase the number of independent users."
+  ],
+  "completed_at_utc": "2026-10-22T01:41:41.548042+00:00"
+}

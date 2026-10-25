@@ -1,0 +1,32 @@
+project:
+  seed: 17
+  data_dir: data
+  artifacts_dir: artifacts/smoke
+
+dataset:
+  repo_id: yandex/yambda
+  revision: main
+  files:
+    listens: flat/50m/listens.parquet
+  timestamp_unit_seconds: 1
+  timestamp_bin_seconds: 5
+  catalog_size: 1000
+  history_length: 50
+
+model:
+  n_layer: 2
+  n_embd: 128
+  n_head: 4
+  n_positions: 64
+  dropout: 0.1
+
+training:
+  precision: auto
+  sft_microbatch: 2
+  sft_effective_batch: 4
+  rl_group_size: 4
+
+data:
+  source_dir: data/raw
+  processed_dir: data/processed
+  num_workers: 0

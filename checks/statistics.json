@@ -1,0 +1,110 @@
+{
+  "passed": true,
+  "errors": [],
+  "contrasts": [
+    {
+      "source": "results/policy/reward_scaling/",
+      "contrast": "L - S",
+      "metric": "24h_positive_nonorganic_NDCG@10",
+      "mean_difference": 0.00023774716121518355,
+      "n_users": 3024,
+      "bootstrap_draws": 2000,
+      "seed": 20261022,
+      "ci95_low": -1.3929983200083069e-05,
+      "ci95_high": 0.000501972228286676,
+      "ci97.5_low": -6.0605280249969776e-05,
+      "ci97.5_high": 0.0005345481605012348
+    },
+    {
+      "source": "results/policy/reward_scaling/",
+      "contrast": "L - strong_gpt",
+      "metric": "24h_positive_nonorganic_NDCG@10",
+      "mean_difference": 0.0010432616569619262,
+      "n_users": 3024,
+      "bootstrap_draws": 2000,
+      "seed": 20261023,
+      "ci95_low": 0.0003852374811852585,
+      "ci95_high": 0.001726338094150388,
+      "ci97.5_low": 0.00028725538302887954,
+      "ci97.5_high": 0.0017994250057815511
+    },
+    {
+      "source": "results/policy/reward_scaling/",
+      "contrast": "L - S",
+      "metric": "next_item_NDCG@10",
+      "mean_difference": 7.51453307904363e-05,
+      "n_users": 4065,
+      "bootstrap_draws": 2000,
+      "seed": 20361022,
+      "ci95_low": -0.00013366606684842513,
+      "ci95_high": 0.0003256653236259536,
+      "ci97.5_low": -0.00015793915812520554,
+      "ci97.5_high": 0.0003663762471570972
+    },
+    {
+      "source": "results/policy/reward_scaling/",
+      "contrast": "L - strong_gpt",
+      "metric": "next_item_NDCG@10",
+      "mean_difference": 0.0003626647429372448,
+      "n_users": 4065,
+      "bootstrap_draws": 2000,
+      "seed": 20361023,
+      "ci95_low": -0.00022628580500284363,
+      "ci95_high": 0.0009600171729092871,
+      "ci97.5_low": -0.0002844941912183769,
+      "ci97.5_high": 0.0010506010216410763
+    },
+    {
+      "source": "results/temporal/",
+      "contrast": "L - S",
+      "metric": "24h positive-nonorganic NDCG@10",
+      "mean_difference": 0.0002816015080630505,
+      "n_users": 487,
+      "bootstrap_draws": 2000,
+      "seed": 20261041,
+      "ci95_low": -0.0002085332066592973,
+      "ci95_high": 0.0008447954132478362,
+      "ci97.5_low": -0.00029791765432352963,
+      "ci97.5_high": 0.0009514560245435452
+    },
+    {
+      "source": "results/temporal/",
+      "contrast": "L - strong_gpt",
+      "metric": "24h positive-nonorganic NDCG@10",
+      "mean_difference": 0.00012576925768606798,
+      "n_users": 487,
+      "bootstrap_draws": 2000,
+      "seed": 20261042,
+      "ci95_low": -0.001187117092489817,
+      "ci95_high": 0.0012894373390136917,
+      "ci97.5_low": -0.0013891805952923168,
+      "ci97.5_high": 0.0014546325034467537
+    },
+    {
+      "source": "RM predictions",
+      "contrast": "large_affinity - small_affinity",
+      "mean_difference": -0.001615100457617643,
+      "n_users": 1074,
+      "bootstrap_draws": 2000,
+      "seed": 63017,
+      "ci95_low": -0.0031423759054245476,
+      "ci95_high": -0.00010728053199332327,
+      "ci97.5_low": -0.0032759166242696132,
+      "ci97.5_high": 0.00012287259399556893
+    },
+    {
+      "source": "RM predictions",
+      "contrast": "large_affinity - large_base",
+      "mean_difference": -0.001982788214639469,
+      "n_users": 1074,
+      "bootstrap_draws": 2000,
+      "seed": 63019,
+      "ci95_low": -0.0030480951224180004,
+      "ci95_high": -0.00098223013943576,
+      "ci97.5_low": -0.0031204398632873284,
+      "ci97.5_high": -0.0008170241817422959
+    }
+  ],
+  "tolerance": 1e-12,
+  "aggregation": "Average seed within each user, then users; omit 24h NA; retain OOV misses."
+}

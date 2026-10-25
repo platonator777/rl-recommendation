@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "updated_at_utc": "2026-10-22T07:18:39.428558+00:00",
+  "stages": {
+    "A": {
+      "status": "complete",
+      "evidence": [
+        "artifacts/policy_diagnostics/evaluation/legacy_completion.csv",
+        "artifacts/policy_diagnostics/diagnostics/external_audit_expectations.csv"
+      ],
+      "note": "A1-A3 completed; external audit predictions for all trained head endpoints and analytic tilts on the fixed common-support cache; audit is descriptive only."
+    },
+    "B1": {
+      "status": "complete",
+      "evidence": [
+        "artifacts/policy_diagnostics/diagnostics/reward_variance_alignment_beta.csv"
+      ]
+    },
+    "B2": {
+      "status": "complete",
+      "evidence": [
+        "artifacts/policy_diagnostics/diagnostics/reward_variance_alignment_beta.csv"
+      ]
+    },
+    "B3": {
+      "status": "complete",
+      "evidence": [
+        "artifacts/policy_diagnostics/diagnostics/reward_variance_alignment_beta.csv"
+      ]
+    },
+    "B4": {
+      "status": "complete",
+      "evidence": [
+        "artifacts/policy_diagnostics/diagnostics/gradient_noise.csv",
+        "artifacts/policy_diagnostics/diagnostics/gradient_parameter_noise.csv"
+      ]
+    },
+    "B5": {
+      "status": "complete",
+      "evidence": [
+        "artifacts/policy_diagnostics/diagnostics/representability_embedding_ridge.csv"
+      ]
+    },
+    "B6": {
+      "status": "complete",
+      "evidence": [
+        "artifacts/policy_diagnostics/diagnostics/support_coverage.csv"
+      ]
+    },
+    "C": {
+      "status": "complete",
+      "evidence": [
+        "artifacts/policy_diagnostics/rm/C_split_manifest.json",
+        "artifacts/policy_diagnostics/rm/C_ablation_manifest.json",
+        "artifacts/policy_diagnostics/rm/C_compatibility_report.json",
+        "artifacts/policy_diagnostics/rm/C_metrics.csv",
+        "artifacts/policy_diagnostics/rm/C_paired_contrasts.csv",
+        "artifacts/policy_diagnostics/rm/C_shuffle_history_sensitivity.csv"
+      ],
+      "note": "Same-split controls and prefix-safe affinity extension completed; historical all-fit model excluded from held-out scoring because of fit-pool overlap."
+    },
+    "decision": {
+      "status": "complete",
+      "evidence": [
+        "final/policy_diagnostics/decision_log.md",
+        "artifacts/policy_diagnostics/branches/branch_registration.json"
+      ]
+    },
+    "branches": {
+      "status": "evaluated",
+      "evidence": [
+        "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/branch_policy_quality.csv",
+        "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/branch_support_metrics.csv",
+        "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/branch_contrasts.csv",
+        "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/branch_policy_audit.csv"
+      ],
+      "note": "All 9 registered fits (3 arms × 3 seeds) and full-panel evaluation are complete; every arm failed the registered strong guard."
+    },
+    "final_evaluation": {
+      "status": "complete",
+      "evidence": [
+        "artifacts/policy_diagnostics/evaluation/legacy_completion.csv",
+        "artifacts/policy_diagnostics/evaluation/policy_audit_expectations.csv",
+        "artifacts/policy_diagnostics/evaluation/policy_audit_slices.csv",
+        "artifacts/policy_diagnostics/evaluation/top10_action_predictions.csv",
+        "artifacts/policy_diagnostics/diagnostics/proxy_audit_alignment_user_ci.csv",
+        "artifacts/policy_diagnostics/branches/sample_count_4_vs_16/branch_contrasts.csv",
+        "artifacts/policy_diagnostics/rm/C_paired_contrasts.csv",
+        "artifacts/policy_diagnostics/figures/figures_manifest.json",
+        "final/policy_diagnostics/figures/branch_contrasts_user_ci.png"
+      ],
+      "note": "Final numeric tables and nine graphs are generated; user/seed paired contrasts and CI are saved."
+    },
+    "report": {
+      "status": "complete",
+      "evidence": [
+        "final/policy_diagnostics/REPORT.md",
+        "final/policy_diagnostics/DIAGNOSTIC_DECISIONS.md",
+        "final/policy_diagnostics/ERRATA_residual_support.md",
+        "final/policy_diagnostics/REPRODUCE.md",
+        "final/policy_diagnostics/agent_handoff.md",
+        "final/policy_diagnostics/criteria_checklist.json"
+      ],
+      "note": "Report and supporting closeout documents are prepared; hashes after-pass remains the final gate."
+    },
+    "integrity": {
+      "status": "passed",
+      "evidence": [
+        "artifacts/policy_diagnostics/protection/before.json",
+        "artifacts/policy_diagnostics/protection/verify-after.json"
+      ],
+      "note": "Passed: 3,102 protected files; zero changed, missing, or added. Final SHA-256 check completed before panel_tools.2 implementation manifest generation."
+    }
+  }
+}

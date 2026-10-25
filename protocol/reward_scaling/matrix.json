@@ -1,0 +1,10 @@
+{
+  "protocol": "artifacts/rm_scaling/protocol.json",
+  "beta": 3.0,
+  "reward_scale": {"mean": 0.6826758018853311, "std": 0.22662487462369968, "std_floor": 0.001},
+  "seeds": [17, 42, 73],
+  "updates": 3000,
+  "evaluation_interval": 500,
+  "branches": ["S", "L", "E", "A"],
+  "hgb": {"learning_rate": 0.05, "max_iter": 220, "max_leaf_nodes": 23, "min_samples_leaf": 35, "l2_regularization": 1.0, "early_stopping": false, "random_state": 19}
+}

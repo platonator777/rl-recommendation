@@ -1,0 +1,13 @@
+{
+  "runtime_seconds": 321.363,
+  "n_audit_rows": 148,
+  "n_B1_B2_rows": 120,
+  "n_beta_rows": 148,
+  "n_gradient_rows": 48,
+  "n_embedding_ridge_contexts": 642,
+  "n_alignment_user_rows": 8903,
+  "n_alignment_user_ci_rows": 24,
+  "external_audit_role": "diagnostic only; never used for branch selection",
+  "raw_rewards_and_z_rewards": "reported separately",
+  "policy_expectation": "conditional over same fixed top-500 support; mass-weighted delta assumes the identical reference tail"
+}

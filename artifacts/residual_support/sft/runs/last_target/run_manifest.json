@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "method": "last_target",
+  "status": "completed_time_budget",
+  "protocol_id": "tlab_yambda_residual_support_exploratory_2026-10-22",
+  "sampler_signature": "371a2b2d6d004acc50683242daba4296c56b35cf3f9e90fa6806eb5b9b17db91",
+  "sampler_length": 10441413,
+  "initial_actor_sha256": "cb52365379f678da39c5fb099d16e8c625ddd1fb8f7bd738467b13bfa7500afe",
+  "config_sha256": "4208dc631b07281b7774645269833a24d4d0c674e4ccc27765a4a3ed21a9d320",
+  "execution_config_sha256": "15dc116ebebf71f1415ad59ba034d9f5989fd1d244a6d52754def2987e659488",
+  "device": "cuda",
+  "started_at_utc": "2026-10-22T00:00:08.661284+00:00",
+  "updates_completed": 48943,
+  "initial_evaluation": {
+    "train_sample": {
+      "cross_entropy": 9.95072353631258,
+      "targets": 1024.0
+    },
+    "development_ce": {
+      "cross_entropy": 9.931509406370957,
+      "known_catalog_targets": 329.0,
+      "oov_targets": 185.0
+    },
+    "development_ranking": {
+      "ndcg@10": 0.0027834174281583524,
+      "recall@10": 0.0038910505836575876,
+      "n_users": 514,
+      "n_events": 514
+    },
+    "development_panel_events": 514,
+    "evaluation_seconds": 0.986731899989536
+  },
+  "amp_scale": null,
+  "benchmark_steps_completed": 40,
+  "benchmark_seconds": 4.861470799864037,
+  "benchmark_supervised_targets_per_second": 65.82370092790634,
+  "projected_sampler_pass_seconds": 158626.95127756486,
+  "training_seconds": 5700.078394197859,
+  "epoch": 0,
+  "cursor": 391544,
+  "unique_target_events": 391544,
+  "amp_skipped_updates": 0,
+  "last_checkpoint_sha256": "7b4fa8a933702939390236a5c5632934ff9f2c8234292f315cc1f42592bf4486",
+  "last_checkpoint_step": 48943,
+  "next_evaluation_seconds": 6300.0,
+  "preparation_config_sha256": "4208dc631b07281b7774645269833a24d4d0c674e4ccc27765a4a3ed21a9d320",
+  "execution_config_update": "Added held-out CE and ranking checks every 900 training seconds; optimizer, sampler, and time budget unchanged.",
+  "wall_budget_seconds": 5700.0,
+  "unique_sampler_indices": 391544,
+  "mean_context_events": 194.76991926284308,
+  "final_evaluation": {
+    "train_sample": {
+      "cross_entropy": 9.014232000336051,
+      "targets": 1024.0
+    },
+    "development_ce": {
+      "cross_entropy": 9.201035258980145,
+      "known_catalog_targets": 329.0,
+      "oov_targets": 185.0
+    },
+    "development_ranking": {
+      "ndcg@10": 0.0032686985146822803,
+      "recall@10": 0.009727626459143969,
+      "n_users": 514,
+      "n_events": 514
+    },
+    "development_panel_events": 514,
+    "evaluation_seconds": 0.9944875000219326
+  },
+  "completed_at_utc": "2026-10-22T01:37:28.981436+00:00"
+}

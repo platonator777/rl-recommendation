@@ -1,0 +1,56 @@
+project:
+  seed: 17
+  data_dir: data
+  artifacts_dir: artifacts
+
+dataset:
+  repo_id: yandex/yambda
+  revision: main
+  files:
+    listens: flat/50m/listens.parquet
+    likes: flat/50m/likes.parquet
+    unlikes: flat/50m/unlikes.parquet
+  timestamp_unit_seconds: 1
+  timestamp_bin_seconds: 5
+  timestamp_unit_evidence: "Yambda paper §3.3: T' = floor((T-T_start)/5)*5; Parquet EDA found zero values off the 5-second grid."
+  rm_user_split_seed: 17
+  rm_audit_fraction: 0.2
+  catalog_size: 20000
+  history_length: 200
+  train_days: 21
+  validation_days: 14
+  test_days: 7
+  rm_validation_days: 7
+  rl_anchor_days: 7
+
+model:
+  n_layer: 4
+  n_embd: 256
+  n_head: 4
+  n_positions: 256
+  dropout: 0.1
+
+training:
+  precision: auto
+  sft_microbatch: 4
+  sft_effective_batch: 64
+  sft_max_targets_per_epoch: 100000  # post-pilot budget-limited target pass
+  sft_epochs: 5
+  sft_learning_rate: 0.0003
+  rm_learning_rate: 0.0001
+  rm_hidden_size: 128
+  rm_layers: 2
+  rm_heads: 4
+  rm_max_targets_per_epoch: 100000
+  rm_validation_targets: 50000
+  rm_batch_size: 64
+  rm_epochs: 5
+  rl_learning_rate: 0.00001
+  rl_group_size: 8
+  rl_clip_epsilon: 0.2
+  beta_values: [0.0, 0.01, 0.03, 0.1, 0.3, 1.0]
+
+data:
+  source_dir: data/raw
+  processed_dir: data/processed
+  num_workers: 0

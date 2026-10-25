@@ -1,0 +1,9 @@
+{
+  "mean": 0.6826758018853311,
+  "std": 0.22662487462369968,
+  "std_floor": 0.001,
+  "version": "frozen_policy_C_refit_reference_conditional_train_v1",
+  "definition": "same-split C control predictions; reference-conditional expectation over top-500 candidates, equally averaged over fixed policy-train contexts",
+  "train_contexts": 4134,
+  "RM": "same_split_control"
+}

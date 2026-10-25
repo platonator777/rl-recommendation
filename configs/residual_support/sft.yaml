@@ -1,0 +1,33 @@
+protocol_id: tlab_yambda_residual_support_exploratory_2026-10-22
+data:
+  processed_dir: data/processed_full_model_tminus14
+  sequence_index: data/processed_full_model_tminus14/sequence_index
+  catalog: data/processed_full_model_tminus14/catalog.parquet
+  development_panel: artifacts/residual_support/panels/validation_development.jsonl
+model:
+  n_layer: 4
+  n_embd: 256
+  n_head: 4
+  dropout: 0.1
+samplers:
+  window_events: 64
+  context_tokens_including_bos: 138
+  history_events: 200
+training:
+  seed: 17
+  learning_rate: 0.0003
+  weight_decay: 0.1
+  physical_batch_size: 2
+  accumulation_microbatches: 4
+  logit_chunk_size: 32
+  gradient_clip: 1.0
+  amp: true
+  benchmark_steps: 40
+  fit_time_budget_seconds: 5700
+  checkpoint_every_updates: 500
+  evaluation_every_seconds: 900
+evaluation:
+  batch_size: 16
+  train_ce_targets: 1024
+outputs:
+  root: artifacts/residual_support/sft

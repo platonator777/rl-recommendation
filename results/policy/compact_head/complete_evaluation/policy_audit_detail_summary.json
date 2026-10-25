@@ -1,0 +1,11 @@
+{
+  "runtime_seconds": 967.093,
+  "n_policy_slice_rows": 1323,
+  "n_top10_summary_rows": 354,
+  "unique_actual_top10_actions": 573288,
+  "top10_recommendation_source": "A1 actual full-catalog top-10 recommendations",
+  "top10_feature_schema": "exact panel_tools.1-compatible 35-column RM schema using frozen policy priors, event prefix and catalog IDs",
+  "external_audit_role": "diagnostic only; not used for beta/checkpoint/RM/policy selection",
+  "inference": "support slice expectations are conditional on K=500; mass-weighted changes share the unchanged strong-reference tail",
+  "top10_uncertainty": "normal-approximation 95% interval over user-level list means; lists are descriptive, panels were previously opened"
+}

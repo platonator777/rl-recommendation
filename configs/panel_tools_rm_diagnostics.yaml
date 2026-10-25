@@ -1,0 +1,22 @@
+protocol_id: tlab_yambda_policy_diagnostics026-10-21_r1
+data:
+  processed_dir: data/processed_full_model_tminus14
+  processed_listens_sha256: d5238bed68632ac452943263454a236c3fd2559457f0dca240d601919991c49b
+population:
+  fit_user_partition: fit
+  audit_user_partition: audit
+  fit_subsplit: F_RM
+  audit_subsplit: V_RM
+  max_events_per_user: 5
+  sample_seed: 17
+features:
+  version: panel_tools_asof_candidate_v1
+  history_windows: [200, 1000]
+  candidate_duration: last_observed_duration_in_strict_history
+  candidate_support: strict_prior_history_only
+  current_target_feedback: excluded
+  artist_metadata: unavailable
+models:
+  backend: sklearn_hist_gradient_boosting
+  role: external_audit_evaluator
+output: artifacts/panel_tools/rm/action_added_value.json

@@ -1,0 +1,10 @@
+panel,endpoint,contrast,n_users,mean_difference,ci_lower,ci_upper,one_sided_lower,bootstrap_draws,bootstrap_unit,selection_role
+development,last,sampled16 - sampled4,514,0.00048375189720313566,-0.0006730667109587575,0.0017975913880357553,-0.00044366022741184366,2000,user after averaging fixed-seed policy scores per user,development_only
+development,last,sampled4 - exact,514,0.0004115926919477741,-0.0014312537120708898,0.00215469044075382,-0.0010922979491662006,2000,user after averaging fixed-seed policy scores per user,development_only
+development,last,sampled16 - exact,514,0.0008953445891509098,-9.416513666488852e-05,0.002046102360059395,5.923432967857162e-05,2000,user after averaging fixed-seed policy scores per user,development_only
+retrospective_final,last,sampled16 - sampled4,710,0.0009608943313913106,-0.00021658983777257632,0.0022473466636674304,-6.47068611341818e-05,2000,user after averaging fixed-seed policy scores per user,descriptive_only
+retrospective_final,last,sampled4 - exact,710,-0.000612795651887031,-0.0019110177430797439,0.0005806070217083636,-0.0016909298690260702,2000,user after averaging fixed-seed policy scores per user,descriptive_only
+retrospective_final,last,sampled16 - exact,710,0.00034809867950427964,-0.0008320145884697324,0.0017203492037911948,-0.0006585683793856759,2000,user after averaging fixed-seed policy scores per user,descriptive_only
+common_open_6655,last,sampled16 - sampled4,6655,-0.0002541400199518973,-0.000573677787299989,3.809558783142173e-05,-0.0005195071467404061,2000,user after averaging fixed-seed policy scores per user,descriptive_only
+common_open_6655,last,sampled4 - exact,6655,-1.4448405538834367e-06,-0.00041365579618061853,0.0004361911405419715,-0.00034748437557093753,2000,user after averaging fixed-seed policy scores per user,descriptive_only
+common_open_6655,last,sampled16 - exact,6655,-0.0002555848605057807,-0.000590471219927309,8.198574391715709e-05,-0.0005455569291348843,2000,user after averaging fixed-seed policy scores per user,descriptive_only

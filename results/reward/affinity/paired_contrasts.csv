@@ -1,0 +1,9 @@
+contrast,metric,positive_favors_candidate,n_users,mean_difference,ci_lower,ci_upper,bootstrap_draws
+refit_residual_support_optimized_control - history_only,per_user_MAE_improvement,True,1074,-0.005192909933246705,-0.007128494048472615,-0.0032776554511981244,2000
+refit_residual_support_optimized_control - history_only,per_user_RMSE_improvement,True,1074,-0.0031045706888054446,-0.0050569292804104275,-0.001047595379522651,2000
+refit_residual_support_optimized_control - item_only,per_user_MAE_improvement,True,1074,-0.09057309967963674,-0.09821099362186625,-0.08276840279271369,2000
+refit_residual_support_optimized_control - item_only,per_user_RMSE_improvement,True,1074,-0.0772204500696055,-0.08507981080837985,-0.06932363292052438,2000
+refit_residual_support_optimized_control - strict_additive_linear,per_user_MAE_improvement,True,1074,-0.002629071579948465,-0.004873475017791477,-0.00045202025183676604,2000
+refit_residual_support_optimized_control - strict_additive_linear,per_user_RMSE_improvement,True,1074,-0.0006880223652364762,-0.003012613129332716,0.0017006544012457235,2000
+refit_residual_support_optimized_control - prefix_safe_affinity_extension,per_user_MAE_improvement,True,1074,0.003133205889969663,0.0018268791736942964,0.004500626390718136,2000
+refit_residual_support_optimized_control - prefix_safe_affinity_extension,per_user_RMSE_improvement,True,1074,0.0025569720656390934,0.0011633612115389325,0.004008578367559207,2000

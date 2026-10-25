@@ -1,0 +1,3 @@
+condition,n_rows,rmse,mae,mean_abs_prediction_change_vs_original
+original,5133,0.35451952129581027,0.27885756361723485,0.0
+history_event_order_shuffled,5133,0.35531149357657443,0.28143760154644726,0.01878805162739073

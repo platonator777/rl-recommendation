@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "protocol_id": "tlab_yambda_residual_support_exploratory_2026-10-22",
+  "status": "frozen_before panel_tools.1 policy scoring",
+  "role_assignment": "sort eligible A_RL user IDs by SHA256('residual_support:role:401:uid'); first floor(75%) train, next floor(10%) development, remainder final",
+  "n_eligible_a_rl_users": 5513,
+  "n_train_users": 4134,
+  "n_development_users": 551,
+  "n_final_users": 828,
+  "n_train_contexts": 4134,
+  "n_development_events": 514,
+  "n_final_events": 710,
+  "a_rl_cutoff_raw": 22371205.0,
+  "train_cutoff_raw_exclusive": 22976005.0,
+  "validation_is_development": true,
+  "test_label": "retrospective final scoring; prior exposure remains",
+  "role_user_ids_sha256": {
+    "train": "08fcb9fe7ce0800d4b9b760eab948901dcae731573a432c079e9ed86e43d130d",
+    "development": "82f09798f6698122faefd93480d98c237f75918ea305a8a67d247f10496e2551",
+    "final": "9a1f7bf214d079dd355132c8b21551060aba08305a65cb5f0ec057ae153ffaba"
+  },
+  "source_sha256": "d5238bed68632ac452943263454a236c3fd2559457f0dca240d601919991c49b",
+  "user_overlap": {
+    "train_development": 0,
+    "train_final": 0,
+    "development_final": 0
+  },
+  "evaluation_outcome_independence": false
+}

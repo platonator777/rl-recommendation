@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "split": "test",
+  "source_sha256": "d5238bed68632ac452943263454a236c3fd2559457f0dca240d601919991c49b",
+  "selection_seed": 401,
+  "selection_rule": "stable SHA256(seed,event_id), selected before scoring; no ratio/catalog filter",
+  "targets_per_user_max": 3,
+  "n_events": 710,
+  "n_users": 710,
+  "event_ids_sha256": "154bb172513a44b7c93b251fe7192f956c014d3fc533ca7d2309ccbc422929ca",
+  "oov_targets": 289,
+  "role": "final",
+  "not_independent_test": true,
+  "panel_sha256": "27b27e6494e19e07c76b9da94f744cda6fc35ac018119014c426b7dcfb52d699"
+}

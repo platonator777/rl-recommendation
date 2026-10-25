@@ -1,0 +1,8 @@
+{
+  "policy_split_prefix_hex": "76355f666173743a",
+  "rm_dev_split_prefix_hex": "76345f323a433a726d6465763a",
+  "policy_rule": "SHA256 hex digest as integer modulo 10; <4 development",
+  "rm_rule": "SHA256 first 8 digest bytes, big-endian, modulo 5; 0 dev",
+  "uid_encoding": "decimal ASCII, no leading zeroes",
+  "note": "Compatibility bytes preserve historical partitions. Stored row/user IDs are authoritative."
+}

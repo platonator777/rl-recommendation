@@ -1,0 +1,37 @@
+protocol_id: tlab_yambda_policy_diagnostics_sample_count_matched_2026-10-22
+core_config: configs/residual_support/core.yaml
+rm_config: configs/residual_support/rm.yaml
+panels:
+  train: artifacts/residual_support/panels/a_rl_train.jsonl
+  development: artifacts/residual_support/panels/validation_development.jsonl
+  final: artifacts/residual_support/panels/test_retrospective.jsonl
+cache_root: artifacts/residual_support/cache
+support_size: 500
+history_events: 200
+batch_size: 16
+train:
+  seed_values:
+  - 17
+  - 42
+  - 73
+  beta_values:
+  - 0.3
+  hidden_dim: 32
+  learning_rate: 0.001
+  batch_contexts: 32
+  max_updates: 6000
+  minimum_updates: 6000
+  check_every: 500
+  patience_checks: 99
+  objective_min_delta: 0.0001
+  no_feedback_control: false
+  dev_guard_tolerance: 0.02
+  bootstrap_draws: 2000
+  checkpoint_rule: last.pt at exactly 6000 updates is the primary endpoint for this
+    matched-update comparison; best.pt under the inherited dev-objective + 2% guard
+    is reported separately; seeds 17/42/73 are never selected by per-seed result.
+  objectives:
+  - sampled_loo
+  samples_per_context: 16
+outputs:
+  run_root: artifacts/policy_diagnostics/branches/sample_count_4_vs_16/sampled16

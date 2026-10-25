@@ -1,0 +1,10 @@
+{
+  "diagnostic_name": "exact_expected_reward_b0.3_seed17_continuation",
+  "source_run": "artifacts\\residual_support\\policy\\runs\\exact_expected_reward_b0.3_seed17_full",
+  "source_run_manifest_sha256": "6ebe7d61851bc88ce46e729776d6bf877cb144b8ee24dbb8fdb81c5bc9b3ebdc",
+  "source_last_checkpoint_sha256": "0777de05dcf9a6d214b06cd9fc5f98d6d2014fb4d6ed4b86659f94d4102cec69",
+  "source_updates_completed": 10000,
+  "registered_max_updates": 20000,
+  "selection_role": "additional pre-registered candidate using the same train/development users, support, scaler and reward scale",
+  "created_at_utc": "2026-10-21T21:56:24.684161+00:00"
+}

@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "protocol_id": "tlab_yambda_policy_diagnostics_retrospective_2026-10-22",
+  "registered_at_utc": "2026-10-22T04:17:31.573120+00:00",
+  "status": "registered_before_new_scoring",
+  "study_classification": "retrospective_exploratory_all_historical_panels_previously_opened",
+  "primary_question": "Which measured limitations explain the absence of a confirmed policy-quality gain, and which at most two controlled follow-up branches are justified?",
+  "protected_scope": [
+    "submission/",
+    "historical V1-panel_tools.1 source, checkpoints, reports, and artifacts"
+  ],
+  "data_roles": {
+    "train": {
+      "path": "artifacts/residual_support/panels/a_rl_train.jsonl",
+      "role": "fit/diagnostic train only",
+      "known_rows": 4134
+    },
+    "development": {
+      "path": "artifacts/residual_support/panels/validation_development.jsonl",
+      "role": "selection and diagnostics; previously opened",
+      "known_rows": 514
+    },
+    "retrospective_final": {
+      "path": "artifacts/residual_support/panels/test_retrospective.jsonl",
+      "role": "descriptive endpoint only; previously opened",
+      "known_rows": 710
+    },
+    "common_open_panel": {
+      "path": "artifacts/panel_tools/evaluation/frozen_primary_validation_panel.jsonl",
+      "role": "descriptive common comparison only; previously opened",
+      "known_rows": 6655
+    },
+    "rm_fit": {
+      "path": "data/processed_full_model_tminus14/rm_user_partitions.parquet",
+      "role": "historical RM fitting rows; temporal validity to be checked"
+    },
+    "rm_development": {
+      "path": "not_yet_assigned",
+      "role": "must be fixed from permitted pre-audit pool before any C model selection"
+    },
+    "external_audit": {
+      "path": "artifacts/residual_support/rm/models/external_audit_predictor.joblib",
+      "role": "frozen after model/branch freeze; never selection"
+    }
+  },
+  "metrics": {
+    "primary": "existing user-macro NDCG@10, original positive/nonorganic/OOV/tie definitions",
+    "secondary": [
+      "Recall@10",
+      "positive-new and positive-repeat outcomes",
+      "proxy and external-audit expectations",
+      "KL",
+      "support coverage",
+      "RMSE/MAE/calibration"
+    ],
+    "user_aggregation": "Aggregate events within user; average method scores across fixed seeds before paired user bootstrap.",
+    "guard": "One-sided 95% lower bound of user-level metric_policy - 0.98 * metric_reference; report separately from two-sided paired-difference CI.",
+    "checkpoint": "Existing run last.pt primary; best.pt separate; step-0 identity fallback is never a trained checkpoint.",
+    "full_catalog": "Preserve catalog 20k, top support K=500, ratio objective, and unchanged reference tail."
+  },
+  "registered_contrasts": [
+    "dense - strong",
+    "dense - matched last_target",
+    "each principal policy - strong",
+    "sampled_loo - exact_expected_reward separately at beta 1.0 and 0.3",
+    "analytic_q_distillation - exact_expected_reward separately at beta 1.0 and 0.3",
+    "trained no_feedback - full separately by seed at beta 0.3"
+  ],
+  "branch_selection_rule": "Use only fixed train/development evidence and diagnostics B/C. The 6655 panel, 710 retrospective final, and external audit are descriptive endpoints after the model list is frozen.",
+  "pre_scoring_temporal_gate": "Determine row-wise event-time validity of actor, RM, and prior features before including any policy-quality comparison; report exclusions and common eligible panel.",
+  "new_policy_fits": {
+    "maximum_branches": 2,
+    "seeds": [
+      17,
+      42,
+      73
+    ],
+    "primary_beta": 0.3,
+    "conditional_beta_1_sensitivity": true,
+    "pilot_required_but_not_sufficient": true
+  }
+}
